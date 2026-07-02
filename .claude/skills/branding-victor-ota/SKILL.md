@@ -131,3 +131,6 @@ Sempre validar via **Playwright headless** antes de considerar pronto:
 
 `index.html` na raiz, sem build. Deploy estático zero-config na Vercel a partir
 de `main` (`vercel.json`: `cleanUrls`, `trailingSlash: false`).
+
+- **Produção (ao vivo):** https://chronos-two-eta.vercel.app — projeto `chronos`
+  (time `samais`), conectado ao repo; cada push em `main` re-deploya sozinho.
