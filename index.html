@@ -771,21 +771,57 @@ function showSent(ok){
     : `<p style="color:var(--danger); font-size:14px; margin:0;">Não consegui enviar automaticamente. Baixe o arquivo .json abaixo e envie ao responsável pela marca.</p>`;
 }
 
+function stripTags(s){ return String(s==null?'':s).replace(/<[^>]*>/g,'').trim(); }
+
+function fmtAnswer(q, ans){
+  if(q.type==='scale-grid'){
+    const sc = ans||{};
+    return (q.scales||[]).map(s=>`${s.left} ↔ ${s.right}: ${sc[s.id]!=null?sc[s.id]:'—'}`).join('  |  ');
+  }
+  if(q.type==='archetype-checklist'){
+    const scores = computeArchetypeScores();
+    const ranked = Object.entries(scores).filter(r=>r[1]>0).sort((a,b)=>b[1]-a[1]).map(r=>`${ARCH[r[0]].name} (${r[1]})`);
+    return `${(ans||[]).length} afirmações marcadas — ${ranked.join(', ')||'nenhuma'}`;
+  }
+  if(Array.isArray(ans)) return ans.join(', ');
+  if(q.type==='radio'){
+    const opts = q.dynamicOptions ? q.dynamicOptions(state.answers) : (q.options||[]);
+    const o = opts.find(o=>o.v===ans);
+    return o ? o.label : String(ans==null?'':ans);
+  }
+  return String(ans==null?'':ans);
+}
+
+// Monta o e-mail do FormSubmit de forma LEGÍVEL: cada pergunta respondida vira
+// uma linha "NN. Título da pergunta: resposta" (com valores traduzidos), seguida
+// do arquétipo predominante e do JSON completo para copiar/colar.
 function buildSubmitBody(){
   const data = buildPayload();
-  const arqs = (data.arquetipo_predominante||[]).map(r=>`${r.nome} (${r.quadrante}) — ${r.contagem}/6`).join('  ·  ');
-  // Corpo achatado para o e-mail do FormSubmit: campos legíveis + o JSON
-  // completo como string, para nada se perder. _campos com "_" são diretivas
-  // do FormSubmit (assunto, template, sem captcha).
-  return {
-    _subject: 'Novo briefing de marca — ' + (data.respostas.nome || 'respondente'),
+  const A = data.respostas;
+  const body = {
+    _subject: 'Novo briefing de marca — ' + (A.nome || 'respondente'),
     _template: 'table',
-    _captcha: 'false',
-    nome: data.respostas.nome || '(sem nome informado)',
-    arquetipo_predominante: arqs || '(nenhum arquétipo marcado)',
-    respondido_em: data.respondido_em,
-    briefing_completo_json: JSON.stringify(data)
+    _captcha: 'false'
   };
+  let n = 1;
+  visibleQuestions().forEach(q=>{
+    if(['intro','statement','result'].includes(q.type)) return;
+    let ans;
+    if(q.type==='scale-grid') ans = A.scales;
+    else if(q.type==='archetype-checklist') ans = A.arq_checklist_ids;
+    else ans = A[q.id];
+    const hasAns = q.type==='scale-grid'
+      ? (ans && Object.keys(ans).length)
+      : (Array.isArray(ans) ? ans.length : (ans!==undefined && ans!==null && ans!==''));
+    if(!hasAns) return;
+    const title = stripTags(q.dynamicTitle ? q.dynamicTitle(A) : q.title).slice(0,90);
+    body[('0'+n).slice(-2)+'. '+title] = fmtAnswer(q, ans);
+    n++;
+  });
+  body['» Arquétipo predominante'] = (data.arquetipo_predominante||[]).map(r=>`${r.nome} (${r.quadrante}) ${r.contagem}/6`).join('  ·  ') || '—';
+  body['» Respondido em'] = data.respondido_em;
+  body['» JSON completo (copie e cole no JARVIS)'] = JSON.stringify(data);
+  return body;
 }
 
 async function finish(){
