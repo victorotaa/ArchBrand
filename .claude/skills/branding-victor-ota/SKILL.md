@@ -114,6 +114,10 @@ arquétipo e reduzir viés de resposta.
    de arquétipos em teste de resultado fechado.
 4. **O arquivo permanece 100% autocontido.** Assets novos entram em base64
    inline; nada de dependência externa que quebre offline.
+5. **Captura completa — o dado bruto é o produto.** O envio (e-mail) e o download
+   sempre carregam **todas as respostas** (`state.answers` inteiro), não só o
+   arquétipo/resultado. O `briefing_completo_json` no envio nunca pode ser
+   resumido ou podado — o cruzamento posterior depende do dado total.
 
 ## Testar antes de entregar (obrigatório)
 
