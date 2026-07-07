@@ -141,5 +141,6 @@ automático a cada push em `main`). O deploy anterior na Vercel foi descontinuad
   `chronos/fase-1-essencia-mvv.html` = Fase 1 do documento de marca da Chronos).
   Servido em `/chronos/fase-1-essencia-mvv.html`.
 
-> URL pública do Netlify: preencher com o domínio do site (ex.:
-> `https://<site>.netlify.app`) quando confirmado.
+**URLs públicas (Netlify):**
+- Briefing: https://peppy-kulfi-855c6b.netlify.app
+- Fase 1 Chronos: https://peppy-kulfi-855c6b.netlify.app/chronos/fase-1-essencia-mvv.html
