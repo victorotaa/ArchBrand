@@ -133,8 +133,13 @@ Sempre validar via **Playwright headless** antes de considerar pronto:
 
 ## Deploy
 
-`index.html` na raiz, sem build. Deploy estático zero-config na Vercel a partir
-de `main` (`vercel.json`: `cleanUrls`, `trailingSlash: false`).
+Estático, sem build. **Host oficial: Netlify**, conectado ao repo (deploy
+automático a cada push em `main`). O deploy anterior na Vercel foi descontinuado.
 
-- **Produção (ao vivo):** https://chronos-two-eta.vercel.app — projeto `chronos`
-  (time `samais`), conectado ao repo; cada push em `main` re-deploya sozinho.
+- **Briefing (ferramenta):** `index.html` na raiz → servido em `/`.
+- **Entregas ao cliente:** ficam em `chronos/` (ex.:
+  `chronos/fase-1-essencia-mvv.html` = Fase 1 do documento de marca da Chronos).
+  Servido em `/chronos/fase-1-essencia-mvv.html`.
+
+> URL pública do Netlify: preencher com o domínio do site (ex.:
+> `https://<site>.netlify.app`) quando confirmado.
