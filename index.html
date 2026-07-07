@@ -548,12 +548,51 @@ const QUESTIONS = [
 
 const state = { i:0, answers:{} };
 
+// ── Persistência (localStorage) + envio das respostas ────────────────
+// Cole aqui a URL do seu formulário (Formspree/Basin), ex.:
+//   'https://formspree.io/f/abcdwxyz'  ou  'https://usebasin.com/f/xxxxxxxx'
+// Atual: FormSubmit.co (sem cadastro) enviando para o e-mail do Victor.
+// Requer 1 ativação única: o primeiro envio dispara um e-mail do FormSubmit
+// com um link "Activate Form" que precisa ser clicado uma vez.
+// Para ocultar o e-mail no código-fonte, troque pelo alias aleatório que o
+// FormSubmit fornece após a ativação: 'https://formsubmit.co/ajax/<hash>'.
+// Enquanto estiver vazio, "Concluir" apenas baixa o .json (sem enviar e-mail).
+const SUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/victorpotier@hotmail.com';
+const STORAGE_KEY = 'chronos_briefing_v1';
+
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify({ i:state.i, answers:state.answers })); }catch(e){}
+}
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return;
+    const saved = JSON.parse(raw);
+    if(saved && saved.answers && typeof saved.i==='number'){
+      state.answers = saved.answers;
+      const max = visibleQuestions().length-1;
+      state.i = Math.max(0, Math.min(saved.i, max));
+    }
+  }catch(e){}
+}
+function clearState(){ try{ localStorage.removeItem(STORAGE_KEY); }catch(e){} }
+function hasSaved(){ try{ return !!localStorage.getItem(STORAGE_KEY); }catch(e){ return false; } }
+function resetBriefing(){
+  if(!confirm('Recomeçar do zero? As respostas salvas neste navegador serão apagadas.')) return;
+  clearState(); state.i=0; state.answers={}; window.scrollTo(0,0); render();
+}
+function stashInput(id){
+  const el = document.getElementById('f_'+id);
+  if(el){ state.answers[id] = el.value; saveState(); }
+}
+
 function visibleQuestions(){
   return QUESTIONS.filter(q => !q.cond || q.cond(state.answers));
 }
 function currentQuestion(){ return visibleQuestions()[state.i]; }
 
 function render(){
+  saveState();
   const list = visibleQuestions();
   const q = list[state.i];
   const card = document.getElementById('card');
@@ -569,6 +608,7 @@ function render(){
       + `<span class="eyebrow">O Método · Arquétipos de Marca</span>`
       + `<img class="wheel-img" src="${WHEEL_ARQUETIPOS}" alt="Roda dos 12 arquétipos de marca, organizados em quatro quadrantes: Plenitude, Maestria, Pertencimento e Estabilidade">`
       + `<p class="intro-text">Toda marca carrega um arquétipo — um padrão simbólico que molda como ela é percebida e sentida. Este briefing conduz você pelo meu método autoral: da base do negócio à personalidade, até revelar o arquétipo predominante da sua marca. Reserve alguns minutos e responda com honestidade — marca que marca nasce de respostas verdadeiras.</p>`
+      + (hasSaved() ? `<p class="intro-text" style="font-size:13px; color:var(--text-tertiary);">Você tem respostas salvas neste navegador — é só continuar. <button onclick="resetBriefing()" style="background:none;border:none;color:var(--text-tertiary);font-size:13px;text-decoration:underline;cursor:pointer;padding:0;">recomeçar do zero</button></p>` : '')
       + `</div>`;
     card.innerHTML = html;
     const btnNext = document.getElementById('btnNext');
@@ -588,9 +628,9 @@ function render(){
   if(q.help) html += `<p class="q-help">${q.help}</p>`;
 
   if(q.type==='text' || q.type==='email' || q.type==='url'){
-    html += `<input type="${q.type}" id="f_${q.id}" value="${state.answers[q.id]||''}" placeholder="${q.placeholder||'Sua resposta'}">`;
+    html += `<input type="${q.type}" id="f_${q.id}" value="${state.answers[q.id]||''}" placeholder="${q.placeholder||'Sua resposta'}" oninput="stashInput('${q.id}')">`;
   } else if(q.type==='textarea'){
-    html += `<textarea id="f_${q.id}" placeholder="${q.placeholder||'Sua resposta'}">${state.answers[q.id]||''}</textarea>`;
+    html += `<textarea id="f_${q.id}" placeholder="${q.placeholder||'Sua resposta'}" oninput="stashInput('${q.id}')">${state.answers[q.id]||''}</textarea>`;
   } else if(q.type==='radio'){
     const opts = q.dynamicOptions ? q.dynamicOptions(state.answers) : q.options;
     html += `<div class="option-grid">` + opts.map(o=>{
@@ -631,8 +671,9 @@ function render(){
   card.innerHTML = html;
   const btnNext = document.getElementById('btnNext');
   if(q.type==='result'){
-    btnNext.textContent = 'Baixar respostas (.json)';
-    btnNext.onclick = downloadResults;
+    btnNext.textContent = SUBMIT_ENDPOINT ? 'Enviar respostas →' : 'Baixar respostas (.json)';
+    btnNext.disabled = false;
+    btnNext.onclick = SUBMIT_ENDPOINT ? finish : downloadResults;
   } else {
     btnNext.textContent = (state.i===list.length-2) ? 'Ver resultado →' : 'Continuar →';
     btnNext.onclick = goNext;
@@ -706,17 +747,73 @@ function renderResult(){
   html += `<div class="signal-row"><span class="k">Estilo de comunicação do cliente</span><span class="v">${comm ? comm.label+' → '+ARCH[comm.v].name : '—'}</span></div>`;
   html += `<div class="signal-row"><span class="k">"Por onde passar"</span><span class="v">${rec ? rec.label : '—'}</span></div>`;
 
+  html += `<div id="sentMsg" style="margin-top:18px;"></div>`;
+  html += `<div style="margin-top:20px;"><a href="#" onclick="downloadResults();return false;" style="color:var(--text-tertiary); font-size:13px; text-decoration:underline;">baixar as respostas em .json</a></div>`;
+
   return html;
 }
 
-function downloadResults(){
+function buildPayload(){
   const scores = computeArchetypeScores();
   const ranked = Object.entries(scores).sort((a,b)=>b[1]-a[1]).filter(r=>r[1]>0).slice(0,2).map(r=>({letra:r[0], nome:ARCH[r[0]].name, quadrante:ARCH[r[0]].quadrant, contagem:r[1]}));
-  const payload = {
+  return {
     respondido_em: new Date().toISOString(),
     respostas: state.answers,
     arquetipo_predominante: ranked
   };
+}
+
+function showSent(ok){
+  const el = document.getElementById('sentMsg');
+  if(!el) return;
+  el.innerHTML = ok
+    ? `<p style="color:var(--success); font-size:14px; margin:0;">✓ Respostas enviadas. Obrigado! Se quiser, baixe uma cópia abaixo.</p>`
+    : `<p style="color:var(--danger); font-size:14px; margin:0;">Não consegui enviar automaticamente. Baixe o arquivo .json abaixo e envie ao responsável pela marca.</p>`;
+}
+
+function buildSubmitBody(){
+  const data = buildPayload();
+  const arqs = (data.arquetipo_predominante||[]).map(r=>`${r.nome} (${r.quadrante}) — ${r.contagem}/6`).join('  ·  ');
+  // Corpo achatado para o e-mail do FormSubmit: campos legíveis + o JSON
+  // completo como string, para nada se perder. _campos com "_" são diretivas
+  // do FormSubmit (assunto, template, sem captcha).
+  return {
+    _subject: 'Novo briefing de marca — ' + (data.respostas.nome || 'respondente'),
+    _template: 'table',
+    _captcha: 'false',
+    nome: data.respostas.nome || '(sem nome informado)',
+    arquetipo_predominante: arqs || '(nenhum arquétipo marcado)',
+    respondido_em: data.respondido_em,
+    briefing_completo_json: JSON.stringify(data)
+  };
+}
+
+async function finish(){
+  if(!SUBMIT_ENDPOINT){ downloadResults(); return; }
+  const btn = document.getElementById('btnNext');
+  btn.disabled = true; btn.textContent = 'Enviando…';
+  try{
+    const res = await fetch(SUBMIT_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(buildSubmitBody())
+    });
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    clearState();
+    btn.disabled = false;
+    btn.textContent = '✓ Enviado — baixar cópia (.json)';
+    btn.onclick = downloadResults;
+    showSent(true);
+  }catch(e){
+    btn.disabled = false;
+    btn.textContent = 'Baixar respostas (.json)';
+    btn.onclick = downloadResults;
+    showSent(false);
+  }
+}
+
+function downloadResults(){
+  const payload = buildPayload();
   const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
   const aTag = document.createElement('a');
@@ -725,6 +822,7 @@ function downloadResults(){
   URL.revokeObjectURL(url);
 }
 
+loadState();
 render();
 </script>
 </body>

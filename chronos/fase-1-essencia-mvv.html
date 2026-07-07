@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Documento de Marca — Fase 1 · Essência & MVV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0F10; --surface:#1C1C1D; --overlay:#2C2C2C; --elevated:#232324;
+  --gold:#C3A262; --gold-soft:#DAC5A5;
+  --ink:#F7F4E8; --ink-2:#DAC5A5; --ink-3:#8C877D;
+  --line:rgba(247,244,232,.10); --line-2:rgba(247,244,232,.16); --line-gold:rgba(195,162,98,.38);
+  --display:'Syne',sans-serif; --body:'Red Hat Display',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--body); font-weight:300; color:var(--ink); background:var(--bg);
+  line-height:1.62; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 620px at 82% -10%, rgba(195,162,98,.09), transparent 60%),
+                   radial-gradient(900px 500px at -12% 18%, rgba(218,197,165,.05), transparent 55%);
+}
+.wrap{max-width:860px; margin:0 auto; padding:0 26px;}
+
+/* topbar */
+.topbar{position:sticky; top:0; z-index:10; background:rgba(15,15,16,.74); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+.topbar .inner{max-width:860px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; justify-content:space-between; gap:14px;}
+.otalogo svg{height:22px; width:auto; display:block;}
+.topbar .doc{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); text-align:right;}
+.topbar .doc b{color:var(--gold); font-weight:600;}
+
+/* hero */
+.hero{padding:60px 0 34px;}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--line-gold); border-radius:100px; padding:6px 15px; margin-bottom:24px;}
+.eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+.hero h1{font-family:var(--display); font-weight:800; font-size:clamp(33px,5.6vw,56px); line-height:1.03; letter-spacing:-.01em;}
+.hero h1 .thin{color:var(--gold-soft); font-weight:700;}
+.hero .lede{margin-top:20px; font-size:clamp(16px,2.1vw,19px); color:var(--ink-2); max-width:62ch;}
+.metabar{margin-top:26px; display:flex; flex-wrap:wrap; gap:8px;}
+.chip{font-size:12px; color:var(--ink-2); background:rgba(35,35,36,.6); border:1px solid var(--line); border-radius:100px; padding:6px 13px;}
+.chip b{color:var(--ink); font-weight:500;}
+.status{color:var(--bg)!important; background:var(--gold)!important; border-color:var(--gold)!important; font-weight:600; letter-spacing:.04em;}
+
+section{padding:40px 0; border-top:1px solid var(--line);}
+.kicker{display:flex; align-items:center; gap:12px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin-bottom:20px;}
+.kicker .ic{color:var(--gold); display:flex;}
+.kicker .ic svg{width:17px; height:17px;}
+h2{font-family:var(--display); font-weight:700; font-size:clamp(22px,3.3vw,30px); letter-spacing:-.01em; margin-bottom:14px; line-height:1.12;}
+p{max-width:66ch;} p+p{margin-top:13px;}
+.muted{color:var(--ink-2);} .q{color:var(--gold-soft); font-style:italic;}
+strong,b{font-weight:600;}
+
+/* método intro */
+.method{display:grid; gap:16px;}
+.method .note{border-left:2px solid var(--line-gold); padding:4px 0 4px 18px; color:var(--ink-2);}
+.define{display:grid; grid-template-columns:1fr; gap:14px; margin-top:6px;}
+.define .box{border:1px solid var(--line); border-radius:14px; padding:20px 22px; background:rgba(28,28,29,.42);}
+.define .box .t{font-family:var(--display); font-weight:700; font-size:15px; color:var(--gold); margin-bottom:7px; display:flex; align-items:center; gap:9px;}
+.define .box .t svg{width:17px; height:17px;}
+
+/* infográfico quadrantes */
+.quad-legend{display:flex; flex-wrap:wrap; gap:14px; margin:4px 0 22px; font-size:12.5px; color:var(--ink-3);}
+.quad-legend span{display:inline-flex; align-items:center; gap:7px;}
+.swatch{width:11px; height:11px; border-radius:3px; display:inline-block;}
+.quadgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+.quadcol{border:1px solid var(--line); border-radius:14px; padding:14px 12px; background:rgba(28,28,29,.35);}
+.quadcol h4{font-family:var(--display); font-weight:700; font-size:12.5px; letter-spacing:.02em; margin-bottom:12px; padding-bottom:9px; border-bottom:1px solid var(--line); color:var(--ink-2); display:flex; align-items:center; gap:7px;}
+.quadcol h4 .swatch{width:9px;height:9px;border-radius:2px;}
+.arch{font-size:13px; padding:7px 9px; border-radius:8px; margin-bottom:6px; color:var(--ink-3); border:1px solid transparent; transition:.2s var(--ease); position:relative;}
+.arch.on{color:var(--ink); background:rgba(195,162,98,.10); border-color:var(--line-gold); font-weight:500; cursor:pointer;}
+.arch.on:hover{background:rgba(195,162,98,.18);}
+.arch .badge{position:absolute; right:7px; top:50%; transform:translateY(-50%); font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold);}
+.arch.primary{background:rgba(195,162,98,.20); border-color:var(--gold);}
+.hint{font-size:12px; color:var(--ink-3); margin-top:14px; display:flex; align-items:center; gap:8px;}
+.hint svg{width:14px;height:14px;color:var(--gold);}
+
+/* painel de detalhe do arquétipo (interativo) */
+.detail{margin-top:16px; border:1px solid var(--line-gold); border-radius:14px; padding:0; background:rgba(195,162,98,.06); overflow:hidden; max-height:0; opacity:0; transition:.35s var(--ease);}
+.detail.open{max-height:340px; opacity:1;}
+.detail .in{padding:20px 22px;}
+.detail .dt{font-family:var(--display); font-weight:700; font-size:16px; color:var(--gold); margin-bottom:6px; display:flex; align-items:center; gap:9px;}
+.detail .role{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-left:auto;}
+.detail p{font-size:14.5px; color:var(--ink-2); margin-top:6px;}
+.detail .mvv{font-size:13px; color:var(--ink); margin-top:10px; padding-top:10px; border-top:1px solid var(--line);}
+.detail .mvv b{color:var(--gold);}
+
+/* blend bar */
+.blend{margin-top:22px;}
+.blend .bar{display:flex; height:38px; border-radius:10px; overflow:hidden; border:1px solid var(--line);}
+.blend .seg{display:flex; align-items:center; justify-content:center; font-size:11.5px; font-weight:600; color:var(--bg); letter-spacing:.02em; white-space:nowrap;}
+.blend .cap{display:flex; justify-content:space-between; margin-top:8px; font-size:11.5px; color:var(--ink-3);}
+
+/* escuta */
+.listen{background:linear-gradient(180deg, rgba(44,44,44,.34), rgba(28,28,29,.34)); border:1px solid var(--line); border-radius:16px; padding:24px 26px;}
+.listen li{list-style:none; padding-left:32px; position:relative; color:var(--ink-2); font-size:15px; margin-bottom:15px;}
+.listen li:last-child{margin-bottom:0;}
+.listen li svg{position:absolute; left:0; top:2px; width:19px; height:19px; color:var(--gold);}
+.listen li b{color:var(--ink); font-weight:500;}
+
+/* essência */
+.essence{border:1px solid var(--line-gold); border-radius:18px; padding:36px 30px; background:radial-gradient(620px 320px at 50% -40%, rgba(195,162,98,.15), transparent 70%), rgba(28,28,29,.5); text-align:center;}
+.essence .k{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:9px;}
+.essence .k svg{width:16px;height:16px;}
+.essence p{font-family:var(--display); font-weight:700; font-size:clamp(20px,3.3vw,27px); line-height:1.32; color:var(--ink); margin:16px auto 0; letter-spacing:-.01em; max-width:24ch;}
+
+/* MVV */
+.mv{display:grid; gap:16px;}
+.card{border:1px solid var(--line); border-radius:16px; padding:24px 26px; background:rgba(28,28,29,.42);}
+.card .tag{font-family:var(--display); font-weight:800; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:flex; align-items:center; gap:10px;}
+.card .tag svg{width:18px;height:18px;}
+.card p{font-size:17px; color:var(--ink); max-width:none;}
+
+.values{display:grid; gap:12px;}
+.value{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; border:1px solid var(--line); border-radius:14px; padding:17px 20px; background:rgba(35,35,36,.34); transition:.2s var(--ease);}
+.value:hover{border-color:var(--line-gold); background:rgba(195,162,98,.06);}
+.value .ic{width:38px; height:38px; border-radius:10px; background:rgba(195,162,98,.12); border:1px solid var(--line-gold); display:flex; align-items:center; justify-content:center; color:var(--gold);}
+.value .ic svg{width:19px;height:19px;}
+.value .t b{display:block; font-family:var(--display); font-weight:700; font-size:15.5px; color:var(--ink); margin-bottom:2px;}
+.value .t span{font-size:13.5px; color:var(--ink-2);}
+
+/* roadmap */
+.roadmap{display:grid; gap:9px;}
+.step{display:grid; grid-template-columns:auto 1fr; gap:15px; align-items:center; padding:13px 17px; border:1px solid var(--line); border-radius:12px; background:rgba(28,28,29,.3);}
+.step.active{border-color:var(--line-gold); background:rgba(195,162,98,.07);}
+.step .ph{font-family:var(--display); font-weight:800; font-size:12.5px; color:var(--gold); letter-spacing:.05em; white-space:nowrap; min-width:52px;}
+.step .d{font-size:13.5px; color:var(--ink-2);}
+.step.active .d{color:var(--ink);}
+.step .now{font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--bg); background:var(--gold); border-radius:100px; padding:3px 9px; margin-left:8px;}
+.bookline{margin-top:14px; border:1px dashed var(--line-gold); border-radius:12px; padding:15px 18px; font-size:13.5px; color:var(--ink-2); display:flex; gap:12px; align-items:flex-start;}
+.bookline svg{width:20px;height:20px;color:var(--gold); flex-shrink:0; margin-top:1px;}
+.bookline b{color:var(--ink);}
+
+/* closing */
+.closing{border-top:1px solid var(--line); margin-top:6px; padding:40px 0 22px;}
+.ask{border:1px solid var(--line-gold); border-radius:16px; padding:26px 28px; background:rgba(195,162,98,.05);}
+.ask h3{font-family:var(--display); font-weight:700; font-size:20px; margin-bottom:12px; display:flex; align-items:center; gap:10px;}
+.ask h3 svg{width:20px;height:20px;color:var(--gold);}
+.ask .qs{margin-top:12px; color:var(--ink-2); font-size:15px;}
+.ask .qs b{color:var(--ink);}
+.sign{margin-top:26px; font-size:13px; color:var(--ink-3);}
+.sign b{color:var(--ink); font-weight:600;}
+footer{padding:28px 0 46px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:16px;}
+
+@media (max-width:640px){
+  .quadgrid{grid-template-columns:repeat(2,1fr);}
+  .value{grid-template-columns:auto 1fr;}
+  .step{grid-template-columns:auto 1fr;}
+}
+@media print{
+  .topbar{position:static;}
+  body{background:#0F0F10 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .hint,.detail{display:none !important;}
+  section,.closing{break-inside:avoid;}
+  .card,.value,.quadcol,.essence,.step{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <span class="otalogo"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></span>
+    <span class="doc">Documento de Marca · <b>Chronos</b><br>Fase 1 de 8</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="dot"></span>Fase 1 · Essência, Missão, Visão &amp; Valores</span>
+    <h1>A alma da <span class="thin">Chronos</span>,<br>em palavras.</h1>
+    <p class="lede">Netanya e Bárbara — antes de qualquer logo ou post, uma marca precisa de um porquê claro. Esta primeira fase é isso: a essência, a missão, a visão e os valores da Chronos, traduzidos a partir de tudo o que vocês nos contaram. Uma proposta para vocês sentirem, confirmarem e ajustarem.</p>
+    <div class="metabar">
+      <span class="chip"><b>Marca:</b> Chronos — fisioterapia + educação física</span>
+      <span class="chip"><b>Local:</b> Bela Vista do Paraíso/PR</span>
+      <span class="chip"><b>Sócias:</b> Netanya e Bárbara</span>
+      <span class="chip status">Proposta v1 — para validação</span>
+    </div>
+  </header>
+
+  <!-- MÉTODO -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/><path d="M12 6v6l4 2"/></svg></span> O método</div>
+    <h2>Como construímos uma marca</h2>
+    <div class="method">
+      <p>Este documento inaugura o <strong>método de construção de marca do estúdio Victor Ota</strong> — e é também o <strong>padrão de comunicação</strong> que seguiremos com vocês em cada fase. Tudo parte de um instrumento estratégico: o <strong>modelo de arquétipos de Mark &amp; Pearson</strong>, que traduz aquilo que uma marca sente em uma direção clara e coerente.</p>
+      <p class="note">A ideia é simples: uma marca com alma bem definida é sentida antes de ser lida. Cada escolha — a voz, as cores, o atendimento — passa a contar a mesma história.</p>
+      <div class="define">
+        <div class="box">
+          <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M5 8l7-5 7 5"/><circle cx="12" cy="14" r="3"/></svg> O que são arquétipos?</div>
+          <p class="muted" style="font-size:14.5px;">São <strong>padrões universais</strong> de comportamento e significado que a humanidade reconhece instintivamente — o Sábio, o Herói, o Cuidador, o Explorador. Estão nas histórias, nas pessoas e nas marcas. Ativar um arquétipo é dar à marca um caráter reconhecível, humano, com o qual as pessoas se identificam.</p>
+        </div>
+        <div class="box">
+          <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg> Por que orientam a percepção?</div>
+          <p class="muted" style="font-size:14.5px;">Porque a mente humana decide por padrões, não por listas de atributos. Quando uma marca encarna um arquétipo com consistência, ela <strong>ocupa um lugar claro na cabeça e no coração</strong> das pessoas — e passa a ser lembrada e escolhida por aquilo que representa, não só pelo que vende.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARQUÉTIPOS DA CHRONOS -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span> O mapa da Chronos</div>
+    <h2>Os 12 arquétipos — e onde a Chronos vive</h2>
+    <p class="muted" style="margin-bottom:20px;">Os doze arquétipos se organizam em quatro grandes motivações. A partir das respostas de vocês, mapeamos onde a Chronos pulsa mais forte. <b style="color:var(--ink);">Toque nos arquétipos em destaque</b> para ver como cada um se conecta com a marca.</p>
+
+    <div class="quad-legend">
+      <span><i class="swatch" style="background:var(--gold);"></i> Núcleo da Chronos</span>
+      <span><i class="swatch" style="background:rgba(195,162,98,.35);"></i> Presente / faísca</span>
+      <span><i class="swatch" style="background:rgba(247,244,232,.14);"></i> Latente</span>
+    </div>
+
+    <div class="quadgrid">
+      <div class="quadcol">
+        <h4><i class="swatch" style="background:#DAC5A5;"></i> Plenitude</h4>
+        <div class="arch on" data-k="inocente">Inocente</div>
+        <div class="arch on primary" data-k="sabio">Sábio <span class="badge">núcleo</span></div>
+        <div class="arch on" data-k="explorador">Explorador</div>
+      </div>
+      <div class="quadcol">
+        <h4><i class="swatch" style="background:#C88B6A;"></i> Maestria</h4>
+        <div class="arch on" data-k="heroi">Herói <span class="badge">faísca</span></div>
+        <div class="arch">Fora da Lei</div>
+        <div class="arch on" data-k="mago">Mago</div>
+      </div>
+      <div class="quadcol">
+        <h4><i class="swatch" style="background:#8FA68E;"></i> Pertencimento</h4>
+        <div class="arch">Amante</div>
+        <div class="arch">Bobo da Corte</div>
+        <div class="arch">Homem Comum</div>
+      </div>
+      <div class="quadcol">
+        <h4><i class="swatch" style="background:#7E93B8;"></i> Estabilidade</h4>
+        <div class="arch on primary" data-k="cuidador">Cuidador <span class="badge">núcleo</span></div>
+        <div class="arch">Criador</div>
+        <div class="arch on" data-k="governante">Governante <span class="badge">base</span></div>
+      </div>
+    </div>
+
+    <div class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11a3 3 0 1 1 6 0c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> Clique em um arquétipo em destaque para entender a conexão com a Chronos.</div>
+
+    <div class="detail" id="detail"><div class="in" id="detailIn"></div></div>
+
+    <div class="blend">
+      <div class="bar">
+        <div class="seg" style="width:38%; background:#C3A262;">Sábio · especialista</div>
+        <div class="seg" style="width:32%; background:#B98F5E;">Cuidador · acolhimento</div>
+        <div class="seg" style="width:20%; background:#8B7A63;">Governante · ordem</div>
+        <div class="seg" style="width:10%; background:#5c5344;">Herói</div>
+      </div>
+      <div class="cap"><span>A voz e o saber que guiam</span><span>A firmeza que sustenta →</span></div>
+    </div>
+    <p class="muted" style="margin-top:18px; font-size:14.5px;">Em uma frase: a Chronos é <b style="color:var(--ink);">a especialista que acolhe</b> — o Sábio que sabe o caminho, o Cuidador que caminha ao seu lado, com a firmeza do Governante e a coragem (faísca de Herói) de fazer diferente. Tudo a serviço de uma promessa maior: a <b style="color:var(--ink);">Plenitude</b> de viver mais e melhor.</p>
+  </section>
+
+  <!-- ESCUTA -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11a9 9 0 0 1 18 0v5a3 3 0 0 1-3 3h-1v-7h4"/><path d="M3 16v-5"/></svg></span> O que ouvimos em vocês</div>
+    <div class="listen">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg>Vocês não descreveram uma academia — descreveram um lugar onde a pessoa é <b>aluno e paciente ao mesmo tempo</b>. Fisioterapia e educação física, juntas.</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg>O medo que vocês querem resolver apareceu três vezes: a pessoa <b>“se sente perdida”</b>, treina no escuro, não é vista. A Chronos existe para <b>orientar e enxergar</b>.</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg>Vocês não falam em vender treino. Falam em <b>vender cuidado, longevidade, tempo bem vivido</b> — exatamente o que o nome Chronos carrega.</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg>E vocês trazem autoridade real: 16 anos de fisioterapia e uma década no alto rendimento esportivo. Chronos nasce com <b>quem entende de corpo — e de tempo.</b></li>
+    </div>
+  </section>
+
+  <!-- ESSÊNCIA -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2Z"/><path d="M9 22h6"/></svg></span> A essência</div>
+    <div class="essence">
+      <span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> O coração da marca</span>
+      <p>A Chronos cuida do seu bem mais valioso: o tempo. Especialistas em movimento — fisioterapia e educação física juntas — trabalhamos o seu tempo em duas dimensões: a eficiência de hoje e a longevidade de amanhã. Para você viver mais. E viver melhor.</p>
+    </div>
+  </section>
+
+  <!-- MVV -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v12H4z"/><path d="M4 20h16"/></svg></span> Missão, Visão &amp; Valores</div>
+    <div class="mv">
+      <div class="card">
+        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg> Missão · por que existimos, todo dia</div>
+        <p>Cuidar de cada pessoa como aluno e paciente ao mesmo tempo — unindo fisioterapia e educação física para que se movimentar seja seguro, acolhedor e prazeroso, e nunca mais um motivo para se sentir perdido.</p>
+      </div>
+      <div class="card">
+        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg> Visão · onde queremos chegar</div>
+        <p>Ser a referência em Bela Vista do Paraíso — e na região — para quem quer cuidar da saúde com quem realmente entende de corpo e de tempo; crescendo, em cerca de dez anos, para estrutura própria e um cuidado ainda mais seleto.</p>
+      </div>
+    </div>
+
+    <div class="values" style="margin-top:22px;">
+      <div class="value"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 5.6a5 5 0 0 0-8.8 3 5 5 0 0 0-8.8-3 5 5 0 0 0 0 7L12 21l8.8-8.4a5 5 0 0 0 0-7Z"/></svg></span><div class="t"><b>Cuidado que se sente</b><span>Trazer, em cada atendimento, a sensação de ser cuidado — não só treinado.</span></div></div>
+      <div class="value"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 8v6l9 5 9-5V8"/></svg></span><div class="t"><b>Excelência que orienta</b><span>Conhecimento técnico de fisioterapia e educação física para ninguém treinar no escuro.</span></div></div>
+      <div class="value"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div class="t"><b>Proximidade real</b><span>Atenção de verdade: ser visto, ser acompanhado, nunca ser só mais um.</span></div></div>
+      <div class="value"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/></svg></span><div class="t"><b>Ordem e zelo</b><span>Organização, limpeza, manutenção e um ambiente elegante — o cuidado também está nos detalhes.</span></div></div>
+      <div class="value"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 7h14M7 7l-3 6a3 3 0 0 0 6 0L7 7Zm10 0-3 6a3 3 0 0 0 6 0l-3-6Z"/></svg></span><div class="t"><b>Ética e respeito</b><span>Bom senso e responsabilidade guiando cada decisão, com cada aluno-paciente.</span></div></div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="4" cy="6" r="1.4" fill="currentColor" stroke="none"/><circle cx="4" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span> O caminho — 8 fases</div>
+    <div class="roadmap">
+      <div class="step active"><span class="ph">Fase 1</span><span class="d">Essência, Missão, Visão &amp; Valores <span class="now">Você está aqui</span></span></div>
+      <div class="step"><span class="ph">Fase 2</span><span class="d">Posicionamento &amp; narrativa — a promessa, o público e o que nos torna diferentes</span></div>
+      <div class="step"><span class="ph">Fase 3</span><span class="d">Personalidade &amp; tom de voz — como a Chronos fala</span></div>
+      <div class="step"><span class="ph">Fase 4</span><span class="d">Persona &amp; jornada do aluno-paciente</span></div>
+      <div class="step"><span class="ph">Fase 5</span><span class="d">Território visual — cores, tipografia e direção de identidade</span></div>
+      <div class="step"><span class="ph">Fase 6</span><span class="d">Ativação &amp; experiência — Instagram, parcerias, atendimento e ambiente</span></div>
+      <div class="step"><span class="ph">Fase 7</span><span class="d">Logotipo — a assinatura visual da Chronos</span></div>
+      <div class="step"><span class="ph">Fase 8</span><span class="d">Materiais gráficos de marca — aplicações e papelaria</span></div>
+    </div>
+    <div class="bookline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M19 3v18"/></svg><span><b>Brandbook vivo:</b> cada fase aprovada vira um capítulo deste documento. Ao final, todas se reúnem no manual completo da marca Chronos — construído junto com vocês, passo a passo.</span></div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="ask">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg> Agora é com vocês</h3>
+      <p class="muted">Leiam com o coração e com o olhar de dona. Três perguntas para guiar o retorno:</p>
+      <p class="qs">• O que aqui faz vocês pensarem <span class="q">“é exatamente isso”</span>?<br>• O que soa quase certo, mas ajustariam em uma palavra?<br>• Falta algo inegociável pra vocês que não apareceu?</p>
+      <p style="margin-top:16px;">Com o “sim” de vocês nesta essência, seguimos firmes para a <b>Fase 2 — Posicionamento &amp; Narrativa</b>.</p>
+    </div>
+    <p class="sign">Feito com cuidado por <b>Victor Ota</b> · branding · <span style="color:var(--gold);">marca que marca</span></p>
+  </div>
+
+</div>
+
+<footer>Chronos · Documento de Marca · Fase 1 de 8 — proposta para validação</footer>
+
+<script>
+  const DETAILS = {
+    sabio:{name:'Sábio', role:'Núcleo · a mente', role2:'Plenitude',
+      txt:'O especialista que busca a verdade e ensina o caminho. É a autoridade da Chronos: fisioterapia + educação física, conhecimento que orienta quem se sente perdido.',
+      mvv:'Aparece em: a união fisio+EF · valor <b>“Excelência que orienta”</b> · a missão de ninguém treinar no escuro.'},
+    cuidador:{name:'Cuidador', role:'Núcleo · o coração', role2:'Estabilidade',
+      txt:'Aquele que protege e nutre. É a voz e o vínculo da Chronos: acolhimento, atenção próxima, a “sensação de ser cuidado” que vocês querem entregar.',
+      mvv:'Aparece em: valores <b>“Cuidado que se sente”</b> e <b>“Proximidade real”</b> · o tom acolhedor e atencioso.'},
+    governante:{name:'Governante', role:'Base · a estrutura', role2:'Estabilidade',
+      txt:'Traz ordem, qualidade e confiança. É a firmeza operacional da Chronos: ambiente premium, organizado, referência de excelência.',
+      mvv:'Aparece em: valores <b>“Ordem e zelo”</b> e <b>“Ética e respeito”</b> · a visão de ser referência com estrutura própria.'},
+    heroi:{name:'Herói', role:'Faísca · a coragem', role2:'Maestria',
+      txt:'A determinação de encarar o desafio. Na Chronos é tempero: a coragem de abraçar o nicho e oferecer o oposto das academias comuns da cidade.',
+      mvv:'Aparece em: a ambição de crescer sem perder qualidade e a decisão de elevar a estrutura.'},
+    inocente:{name:'Inocente', role:'Presente · a leveza', role2:'Plenitude',
+      txt:'Otimismo e simplicidade — a promessa de que cuidar de si pode ser leve e prazeroso, não uma obrigação pesada.',
+      mvv:'Aparece em: o desejo de que “praticar atividade física seja prazeroso”.'},
+    explorador:{name:'Explorador', role:'Presente · o horizonte', role2:'Plenitude',
+      txt:'A busca por mais vida e liberdade. Na Chronos, é o convite à longevidade ativa — mais autonomia, mais movimento, mais tempo bem vivido.',
+      mvv:'Aparece em: a promessa de “viver mais e viver melhor”.'},
+    mago:{name:'Mago', role:'Presente · a transformação', role2:'Maestria',
+      txt:'Quem gera transformação real. Na Chronos, é a mudança de vida e a recuperação de função que o cuidado especializado provoca.',
+      mvv:'Aparece em: “ser referência para quem busca a mudança de vida”.'}
+  };
+  const detail = document.getElementById('detail');
+  const detailIn = document.getElementById('detailIn');
+  let current = null;
+  document.querySelectorAll('.arch.on').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const k = el.dataset.k; const d = DETAILS[k];
+      if(!d) return;
+      if(current===k){ detail.classList.remove('open'); current=null; return; }
+      current = k;
+      detailIn.innerHTML = '<div class="dt">'+d.name+' <span class="role">'+d.role+'</span></div>'
+        + '<p>'+d.txt+'</p><div class="mvv">'+d.mvv+'</div>';
+      detail.classList.add('open');
+      detail.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  });
+</script>
+</body>
+</html>
