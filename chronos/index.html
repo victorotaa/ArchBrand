@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Documento de Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0F10; --surface:#1C1C1D; --overlay:#2C2C2C;
+  --gold:#C3A262; --gold-soft:#DAC5A5;
+  --ink:#F7F4E8; --ink-2:#DAC5A5; --ink-3:#8C877D;
+  --line:rgba(247,244,232,.10); --line-gold:rgba(195,162,98,.38);
+  --display:'Syne',sans-serif; --body:'Red Hat Display',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 80% -10%, rgba(195,162,98,.10), transparent 60%), radial-gradient(800px 480px at -10% 15%, rgba(218,197,165,.05), transparent 55%);
+  min-height:100vh;}
+.wrap{max-width:760px; margin:0 auto; padding:0 26px;}
+.topbar{border-bottom:1px solid var(--line);}
+.topbar .inner{max-width:760px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; justify-content:space-between; gap:14px;}
+.otalogo svg{height:22px; width:auto; display:block;}
+.topbar .doc{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); text-align:right;}
+.topbar .doc b{color:var(--gold); font-weight:600;}
+
+.hero{padding:66px 0 30px; text-align:center;}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); border:1px solid var(--line-gold); border-radius:100px; padding:6px 16px; margin-bottom:26px;}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.hero h1{font-family:var(--display); font-weight:800; font-size:clamp(48px,11vw,96px); letter-spacing:-.02em; line-height:.98;}
+.hero .tag{margin-top:16px; font-size:clamp(15px,2.2vw,18px); color:var(--ink-2); max-width:44ch; margin-left:auto; margin-right:auto;}
+.meta{margin-top:24px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+.chip{font-size:12px; color:var(--ink-2); background:rgba(35,35,36,.6); border:1px solid var(--line); border-radius:100px; padding:6px 13px;}
+.chip b{color:var(--ink); font-weight:500;}
+
+.intro{padding:30px 0; border-top:1px solid var(--line); margin-top:20px;}
+.intro p{color:var(--ink-2); font-size:15.5px; max-width:62ch; margin:0 auto; text-align:center;}
+.intro p b{color:var(--ink); font-weight:500;}
+
+.phases{padding:14px 0 8px; display:grid; gap:11px;}
+.ph{display:grid; grid-template-columns:auto 1fr auto; gap:18px; align-items:center; border:1px solid var(--line); border-radius:14px; padding:18px 22px; background:rgba(28,28,29,.4); transition:.18s var(--ease); text-decoration:none; color:inherit;}
+.ph.live{border-color:var(--line-gold); background:rgba(195,162,98,.07);}
+.ph.live:hover{background:rgba(195,162,98,.13); transform:translateY(-1px);}
+.ph .no{font-family:var(--display); font-weight:800; font-size:15px; color:var(--gold); min-width:56px; letter-spacing:.03em;}
+.ph .body .t{display:block; font-family:var(--display); font-weight:700; font-size:16px; color:var(--ink);}
+.ph .body .d{display:block; font-size:13px; color:var(--ink-3); margin-top:3px;}
+.ph .end{display:flex; align-items:center; gap:8px; white-space:nowrap;}
+.ph.soon .body .t{color:var(--ink-2);}
+.ph .st{font-size:10px; letter-spacing:.12em; text-transform:uppercase; padding:5px 11px; border-radius:100px; white-space:nowrap;}
+.ph.live .st{color:var(--bg); background:var(--gold); font-weight:700;}
+.ph.soon .st{color:var(--ink-3); border:1px solid var(--line);}
+.ph .arrow{color:var(--gold); font-size:18px; margin-left:2px;}
+
+.note{margin-top:26px; border:1px dashed var(--line-gold); border-radius:14px; padding:20px 24px; text-align:center;}
+.note p{font-size:14px; color:var(--ink-2); max-width:56ch; margin:0 auto;}
+.note p b{color:var(--ink);}
+
+footer{padding:34px 0 54px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:34px;}
+footer .o{color:var(--gold);}
+@media (max-width:520px){ .ph{grid-template-columns:auto 1fr; } .ph .arrow{display:none;} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <span class="otalogo"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></span>
+    <span class="doc">Documento de Marca · <b>Chronos</b></span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="dot"></span>Marca em construção</span>
+    <h1>Chronos</h1>
+    <p class="tag">O documento de marca da Chronos — construído com Netanya e Bárbara, fase a fase.</p>
+    <div class="meta">
+      <span class="chip"><b>Fisioterapia + Educação Física</b></span>
+      <span class="chip">Bela Vista do Paraíso/PR</span>
+      <span class="chip"><b>Sócias:</b> Netanya e Bárbara</span>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p>Este é o <b>documento vivo</b> da marca. Cada fase é desenvolvida, apresentada e validada com vocês — e vira um capítulo aqui. Ao final, todas se reúnem no <b>brandbook completo</b> da Chronos.</p>
+  </section>
+
+  <section class="phases">
+    <a class="ph live" href="fase-1-essencia-mvv.html">
+      <span class="no">Fase 1</span>
+      <span class="body"><span class="t">Essência, Missão, Visão &amp; Valores</span><span class="d">A alma da marca em palavras</span></span>
+      <span class="end"><span class="st">Disponível</span><span class="arrow">→</span></span>
+    </a>
+    <div class="ph soon"><span class="no">Fase 2</span><span class="body"><span class="t">Posicionamento &amp; Narrativa</span><span class="d">A promessa, o público e o que nos torna diferentes</span></span><span class="st">Em breve</span></div>
+    <div class="ph soon"><span class="no">Fase 3</span><span class="body"><span class="t">Personalidade &amp; Tom de Voz</span><span class="d">Como a Chronos fala</span></span><span class="st">Em breve</span></div>
+    <div class="ph soon"><span class="no">Fase 4</span><span class="body"><span class="t">Persona &amp; Jornada</span><span class="d">O aluno-paciente, do primeiro contato ao hábito</span></span><span class="st">Em breve</span></div>
+    <div class="ph soon"><span class="no">Fase 5</span><span class="body"><span class="t">Território Visual</span><span class="d">Cores, tipografia e direção de identidade</span></span><span class="st">Em breve</span></div>
+    <div class="ph soon"><span class="no">Fase 6</span><span class="body"><span class="t">Ativação &amp; Experiência</span><span class="d">Instagram, parcerias, atendimento e ambiente</span></span><span class="st">Em breve</span></div>
+    <div class="ph soon"><span class="no">Fase 7</span><span class="body"><span class="t">Logotipo</span><span class="d">A assinatura visual da Chronos</span></span><span class="st">Em breve</span></div>
+    <div class="ph soon"><span class="no">Fase 8</span><span class="body"><span class="t">Materiais Gráficos</span><span class="d">Aplicações e papelaria de marca</span></span><span class="st">Em breve</span></div>
+  </section>
+
+  <div class="note">
+    <p><b>Como acompanhar:</b> a cada fase concluída, o capítulo correspondente fica disponível aqui — é só voltar a esta página.</p>
+  </div>
+
+</div>
+
+<footer>Chronos · documento vivo &nbsp;·&nbsp; feito por Victor <span class="o">Ota</span> · marca que marca</footer>
+
+</body>
+</html>
