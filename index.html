@@ -551,8 +551,13 @@ const state = { i:0, answers:{} };
 // ── Persistência (localStorage) + envio das respostas ────────────────
 // Cole aqui a URL do seu formulário (Formspree/Basin), ex.:
 //   'https://formspree.io/f/abcdwxyz'  ou  'https://usebasin.com/f/xxxxxxxx'
+// Atual: FormSubmit.co (sem cadastro) enviando para o e-mail do Victor.
+// Requer 1 ativação única: o primeiro envio dispara um e-mail do FormSubmit
+// com um link "Activate Form" que precisa ser clicado uma vez.
+// Para ocultar o e-mail no código-fonte, troque pelo alias aleatório que o
+// FormSubmit fornece após a ativação: 'https://formsubmit.co/ajax/<hash>'.
 // Enquanto estiver vazio, "Concluir" apenas baixa o .json (sem enviar e-mail).
-const SUBMIT_ENDPOINT = '';
+const SUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/victorpotier@hotmail.com';
 const STORAGE_KEY = 'chronos_briefing_v1';
 
 function saveState(){
@@ -766,16 +771,32 @@ function showSent(ok){
     : `<p style="color:var(--danger); font-size:14px; margin:0;">Não consegui enviar automaticamente. Baixe o arquivo .json abaixo e envie ao responsável pela marca.</p>`;
 }
 
+function buildSubmitBody(){
+  const data = buildPayload();
+  const arqs = (data.arquetipo_predominante||[]).map(r=>`${r.nome} (${r.quadrante}) — ${r.contagem}/6`).join('  ·  ');
+  // Corpo achatado para o e-mail do FormSubmit: campos legíveis + o JSON
+  // completo como string, para nada se perder. _campos com "_" são diretivas
+  // do FormSubmit (assunto, template, sem captcha).
+  return {
+    _subject: 'Novo briefing de marca — ' + (data.respostas.nome || 'respondente'),
+    _template: 'table',
+    _captcha: 'false',
+    nome: data.respostas.nome || '(sem nome informado)',
+    arquetipo_predominante: arqs || '(nenhum arquétipo marcado)',
+    respondido_em: data.respondido_em,
+    briefing_completo_json: JSON.stringify(data)
+  };
+}
+
 async function finish(){
   if(!SUBMIT_ENDPOINT){ downloadResults(); return; }
   const btn = document.getElementById('btnNext');
-  const payload = buildPayload();
   btn.disabled = true; btn.textContent = 'Enviando…';
   try{
     const res = await fetch(SUBMIT_ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify(payload)
+      body: JSON.stringify(buildSubmitBody())
     });
     if(!res.ok) throw new Error('HTTP '+res.status);
     clearState();
