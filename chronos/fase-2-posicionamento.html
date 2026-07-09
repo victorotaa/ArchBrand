@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Fase 2 — Posicionamento &amp; Narrativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0F10; --surface:#1C1C1D; --overlay:#2C2C2C;
+  --gold:#C3A262; --gold-soft:#DAC5A5;
+  --ink:#F7F4E8; --ink-2:#DAC5A5; --ink-3:#8C877D;
+  --line:rgba(247,244,232,.10); --line-gold:rgba(195,162,98,.38);
+  --danger:#B54A3A; --success:#4F8A64;
+  --display:'Syne',sans-serif; --body:'Red Hat Display',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--bg); line-height:1.62; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 620px at 82% -10%, rgba(195,162,98,.09), transparent 60%), radial-gradient(900px 500px at -12% 18%, rgba(218,197,165,.05), transparent 55%);}
+.wrap{max-width:860px; margin:0 auto; padding:0 26px;}
+.topbar{position:sticky; top:0; z-index:10; background:rgba(15,15,16,.74); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+.topbar .inner{max-width:860px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; justify-content:space-between; gap:14px;}
+.otalogo svg{height:22px; width:auto; display:block;}
+.topbar .doc{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); text-align:right;}
+.topbar .doc b{color:var(--gold); font-weight:600;}
+
+.hero{padding:60px 0 34px;}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--line-gold); border-radius:100px; padding:6px 15px; margin-bottom:24px;}
+.eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+.hero h1{font-family:var(--display); font-weight:800; font-size:clamp(31px,5.2vw,52px); line-height:1.05; letter-spacing:-.01em;}
+.hero h1 .thin{color:var(--gold-soft); font-weight:700;}
+.hero .lede{margin-top:20px; font-size:clamp(16px,2.1vw,19px); color:var(--ink-2); max-width:62ch;}
+.metabar{margin-top:26px; display:flex; flex-wrap:wrap; gap:8px;}
+.chip{font-size:12px; color:var(--ink-2); background:rgba(35,35,36,.6); border:1px solid var(--line); border-radius:100px; padding:6px 13px;}
+.chip b{color:var(--ink); font-weight:500;}
+.status{color:var(--bg)!important; background:var(--gold)!important; border-color:var(--gold)!important; font-weight:600; letter-spacing:.04em;}
+
+section{padding:40px 0; border-top:1px solid var(--line);}
+.kicker{display:flex; align-items:center; gap:12px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin-bottom:20px;}
+.kicker .ic{color:var(--gold); display:flex;} .kicker .ic svg{width:17px; height:17px;}
+h2{font-family:var(--display); font-weight:700; font-size:clamp(22px,3.3vw,30px); letter-spacing:-.01em; margin-bottom:14px; line-height:1.12;}
+p{max-width:66ch;} p+p{margin-top:13px;}
+.muted{color:var(--ink-2);} strong,b{font-weight:600;}
+
+.promise{border:1px solid var(--line-gold); border-radius:18px; padding:38px 32px; background:radial-gradient(620px 320px at 50% -40%, rgba(195,162,98,.15), transparent 70%), rgba(28,28,29,.5); text-align:center;}
+.promise .k{font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold);}
+.promise p{font-family:var(--display); font-weight:700; font-size:clamp(20px,3.2vw,27px); line-height:1.32; color:var(--ink); margin:16px auto 0; letter-spacing:-.01em; max-width:26ch;}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.card{border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:rgba(28,28,29,.42);}
+.card .tag{font-family:var(--display); font-weight:800; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;}
+.card p{font-size:15.5px; color:var(--ink); max-width:none;}
+
+.model{display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:stretch; margin-top:6px;}
+.model .disc{border:1px solid var(--line); border-radius:14px; padding:20px 22px; background:rgba(28,28,29,.4);}
+.model .disc h3{font-family:var(--display); font-weight:700; font-size:16px; color:var(--ink); margin-bottom:6px;}
+.model .disc p{font-size:14px; color:var(--ink-2);}
+.model .join{display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--gold); min-width:44px;}
+.model .join .plus{font-family:var(--display); font-weight:800; font-size:26px;}
+.model .join .ln{flex:1; width:1px; background:var(--line-gold);}
+.model-note{margin-top:14px; border:1px dashed var(--line-gold); border-radius:12px; padding:16px 20px; font-size:14.5px; color:var(--ink-2);}
+.model-note b{color:var(--ink);}
+
+.persona{display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:start; border:1px solid var(--line); border-radius:16px; padding:24px 26px; background:rgba(28,28,29,.42);}
+.persona .av{width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg, rgba(195,162,98,.3), rgba(195,162,98,.08)); border:1px solid var(--line-gold); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:800; font-size:22px; color:var(--gold);}
+.persona h3{font-family:var(--display); font-weight:700; font-size:18px; color:var(--ink);}
+.persona .role{font-size:13px; color:var(--ink-3); margin-bottom:8px;}
+.persona p{font-size:14.5px; color:var(--ink-2);}
+.persona .traits{margin-top:12px; display:flex; flex-wrap:wrap; gap:7px;}
+.persona .traits span{font-size:12px; color:var(--ink-2); background:rgba(35,35,36,.6); border:1px solid var(--line); border-radius:100px; padding:5px 11px;}
+
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.col{border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:rgba(28,28,29,.4);}
+.col.yes{border-color:rgba(79,138,100,.4);} .col.no{border-color:rgba(181,74,58,.32);}
+.col h3{font-family:var(--display); font-weight:700; font-size:15px; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
+.col.yes h3{color:var(--success);} .col.no h3{color:var(--danger);}
+.col ul{list-style:none; display:grid; gap:10px;}
+.col li{font-size:14px; color:var(--ink-2); padding-left:20px; position:relative;}
+.col li::before{position:absolute; left:0; top:0; font-weight:700;}
+.col.yes li::before{content:'+'; color:var(--success);} .col.no li::before{content:'–'; color:var(--danger);}
+
+.cmp{width:100%; border-collapse:separate; border-spacing:0; margin-top:4px; font-size:14px;}
+.cmp th,.cmp td{padding:13px 16px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top;}
+.cmp thead th{font-family:var(--display); font-weight:700; font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-3);}
+.cmp thead th.ch{color:var(--gold);}
+.cmp td.k{color:var(--ink-3); width:26%;}
+.cmp td.a{color:var(--ink-2);}
+.cmp td.ch{color:var(--ink);}
+.cmp tr:last-child td{border-bottom:none;}
+.cmp-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:rgba(28,28,29,.4);}
+
+.story{border-left:3px solid var(--gold); padding:4px 0 4px 22px;}
+.story p{font-size:16px; color:var(--ink-2);} .story p b{color:var(--ink); font-weight:500;}
+
+.closing{border-top:1px solid var(--line); margin-top:6px; padding:40px 0 22px;}
+.ask{border:1px solid var(--line-gold); border-radius:16px; padding:26px 28px; background:rgba(195,162,98,.05);}
+.ask h3{font-family:var(--display); font-weight:700; font-size:20px; margin-bottom:12px;}
+.ask .qs{margin-top:12px; color:var(--ink-2); font-size:15px;}
+.sign{margin-top:26px; font-size:13px; color:var(--ink-3);} .sign b{color:var(--ink); font-weight:600;}
+footer{padding:28px 0 46px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:16px;}
+footer .o{color:var(--gold);}
+@media (max-width:640px){ .grid2,.model,.cols{grid-template-columns:1fr;} .model .join{flex-direction:row; min-height:20px;} .model .join .ln{width:auto; height:1px;} }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="inner">
+  <span class="otalogo"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></span>
+  <span class="doc">Documento de Marca · <b>Chronos</b><br>Fase 2 de 8</span>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="dot"></span>Fase 2 · Posicionamento &amp; Narrativa</span>
+    <h1>O lugar da <span class="thin">Chronos</span><br>no mundo — e a história que ela conta.</h1>
+    <p class="lede">Na Fase 1 definimos a alma. Agora definimos o <b style="color:var(--ink);font-weight:500;">lugar</b>: para quem a Chronos existe, o que a torna diferente das outras opções da cidade, e a história que ela conta em cada ponto de contato. É a bússola que orienta o tom de voz, o visual e a comunicação que vêm a seguir.</p>
+    <div class="metabar">
+      <span class="chip"><b>Marca:</b> Chronos</span>
+      <span class="chip">Bela Vista do Paraíso/PR</span>
+      <span class="chip status">Proposta v1 — para validação</span>
+    </div>
+  </header>
+
+  <!-- PROMESSA -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2Z"/><path d="M9 22h6"/></svg></span> A promessa da marca</div>
+    <div class="promise">
+      <span class="k">O que a Chronos entrega</span>
+      <p>Aqui, cuidar do corpo deixa de ser obrigação e vira experiência: movimento seguro, acolhedor e prazeroso — guiado por quem entende de fisioterapia e de educação física. Para você viver mais, e viver melhor.</p>
+    </div>
+  </section>
+
+  <!-- POSICIONAMENTO -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span> O posicionamento</div>
+    <h2>Onde a Chronos se planta</h2>
+    <p class="muted" style="margin-bottom:20px;">Posicionamento é o lugar que a marca ocupa na cabeça das pessoas. O da Chronos, em quatro frases:</p>
+    <div class="grid2">
+      <div class="card"><div class="tag">Para quem</div><p>Pessoas de meia-idade em diante que querem cuidar da saúde e da qualidade de vida — e voltar a se movimentar com segurança.</p></div>
+      <div class="card"><div class="tag">A categoria</div><p>Um <b>espaço de saúde e movimento</b> onde fisioterapia e educação física convivem. Não é uma academia comum.</p></div>
+      <div class="card"><div class="tag">A diferença</div><p>Estrutura premium, atenção próxima e o conhecimento técnico das duas áreas — tudo num só lugar, acolhedor e organizado.</p></div>
+      <div class="card"><div class="tag">O porquê (a prova)</div><p>Só quem entende de corpo — e de tempo — faz do exercício algo seguro e prazeroso. Aqui ninguém treina no escuro.</p></div>
+    </div>
+    <div class="story" style="margin-top:22px;">
+      <p><b>Em uma frase:</b> Para quem quer cuidar da saúde com quem realmente entende, a Chronos é o espaço de movimento e cuidado que une fisioterapia e educação física com estrutura premium e atenção de verdade — porque cuidar do corpo deve ser seguro, acolhedor e prazeroso.</p>
+    </div>
+  </section>
+
+  <!-- MODELO: DOIS OLHARES, UM CUIDADO -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-2 5 5 0 0 1 9 2c-2 4.5-9 9-9 9Z"/></svg></span> Como a Chronos cuida</div>
+    <h2>Dois olhares, um só cuidado</h2>
+    <p class="muted" style="margin-bottom:20px;">O diferencial da Chronos é reunir, sob o mesmo teto, duas especialidades que quase nunca conversam — cada uma com seu profissional, o conhecimento se unindo quando o corpo pede.</p>
+    <div class="model">
+      <div class="disc"><h3>Fisioterapia</h3><p>Cuida da recuperação, da função e da segurança — para se mover sem dor e sem medo.</p></div>
+      <div class="join"><span class="ln"></span><span class="plus">+</span><span class="ln"></span></div>
+      <div class="disc"><h3>Educação Física</h3><p>Cuida do condicionamento, do desempenho e do hábito — para evoluir com constância.</p></div>
+    </div>
+    <div class="model-note"><b>Como funciona na prática:</b> os atendimentos acontecem no mesmo ambiente, com <b>profissionais separados</b> para cada área. O conhecimento se une na <b>avaliação</b> e, quando necessário, em <b>intervenção conjunta</b> — mas, no dia a dia, cada especialidade cuida do seu. Você é atendido por um; olhado pelo todo.</div>
+  </section>
+
+  <!-- PERSONA -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span> Quem a Chronos atende</div>
+    <h2>A pessoa no centro</h2>
+    <div class="persona">
+      <div class="av">H</div>
+      <div>
+        <h3>Helena, 54 anos</h3>
+        <div class="role">Profissional estabelecida · cuida da saúde · valoriza qualidade</div>
+        <p>Sente o corpo cobrar o tempo — uma dor aqui, uma perda de disposição ali. Sabe que precisa se movimentar, mas trava: academia lotada intimida, o treino parece pesado demais, e ninguém olha de perto. Ela não quer estética a qualquer custo — quer <b style="color:var(--ink);font-weight:500;">viver bem por mais tempo</b>, com segurança e sendo cuidada por quem entende.</p>
+        <div class="traits"><span>Meia-idade em diante</span><span>Renda estável</span><span>Compra cuidado, não treino</span><span>Quer ser vista e orientada</span><span>Busca longevidade</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOMOS / NÃO SOMOS -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M3 12h18"/></svg></span> A fronteira da marca</div>
+    <h2>O que somos — e o que não somos</h2>
+    <p class="muted" style="margin-bottom:20px;">Uma marca forte é definida tanto pelo que abraça quanto pelo que recusa.</p>
+    <div class="cols">
+      <div class="col yes">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> A Chronos é</h3>
+        <ul>
+          <li>Um espaço de <b>saúde e movimento</b></li>
+          <li>Cuidado <b>especializado</b> (fisio + educação física)</li>
+          <li>Premium, elegante e acolhedora</li>
+          <li>Sobre <b>longevidade, autonomia e bem-estar</b></li>
+          <li>Um lugar onde você é visto e orientado</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg> A Chronos não é</h3>
+        <ul>
+          <li>Uma academia comum</li>
+          <li>Um lugar de <b>treinar no escuro</b></li>
+          <li>Sobre estética a qualquer custo</li>
+          <li>Massificada ou impessoal</li>
+          <li>Sobre pressa e obrigação</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAÇÃO -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M12 20V4M20 20v-6"/></svg></span> Diferente das outras</div>
+    <h2>Chronos vs. a academia comum</h2>
+    <p class="muted" style="margin-bottom:18px;">A cidade tem 10 academias. A Chronos não compete no mesmo jogo — ela muda o jogo.</p>
+    <div class="cmp-wrap"><table class="cmp">
+      <thead><tr><th>&nbsp;</th><th>Academia comum</th><th class="ch">Chronos</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Atendimento</td><td class="a">Genérico — você se vira</td><td class="ch">Próximo — você é visto e orientado</td></tr>
+        <tr><td class="k">Segurança</td><td class="a">Treino padrão, risco de dor e lesão</td><td class="ch">Fisio + EF avaliam e adaptam a você</td></tr>
+        <tr><td class="k">Estrutura</td><td class="a">Limitada</td><td class="ch">Premium, elegante, bem cuidada</td></tr>
+        <tr><td class="k">Objetivo</td><td class="a">Estética e volume</td><td class="ch">Saúde, função e longevidade</td></tr>
+        <tr><td class="k">Ambiente</td><td class="a">Lotado, impessoal</td><td class="ch">Acolhedor e organizado</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- NARRATIVA -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></span> A narrativa</div>
+    <h2>A história que a Chronos conta</h2>
+    <div class="story">
+      <p>Muita gente sabe que precisa se mexer — mas trava. A academia intimida, o treino parece pesado demais, e ninguém olha de perto. O corpo dói, a dúvida cresce, e a atividade física vira uma obrigação sempre adiada.</p>
+      <p>A <b>Chronos</b> nasce para virar esse jogo: reunir, sob o mesmo teto, quem entende de recuperação e quem entende de movimento — para que cada pessoa, seja aluno ou paciente, se mova com <b>segurança</b>, seja <b>vista de verdade</b> e sinta <b>prazer</b> em cuidar de si.</p>
+      <p>Porque o tempo é o bem mais valioso que existe. E cuidar dele hoje — com conhecimento e com carinho — é o que permite viver mais, e melhor, amanhã.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="ask">
+      <h3>Agora é com vocês</h3>
+      <p class="muted">Esta é a direção estratégica da marca. Para validar:</p>
+      <p class="qs">• O posicionamento (“espaço de saúde e movimento”, não academia) representa vocês?<br>• O modelo “dois olhares, um cuidado” descreve certo como fisio e educação física convivem?<br>• A persona (Helena) parece o público que vocês querem?<br>• Na comparação e no “o que não somos”, tem algo que vocês recusariam com mais força?</p>
+      <p style="margin-top:16px;">Com o “sim” de vocês, seguimos para a <b>Fase 3 — Personalidade &amp; Tom de Voz</b>: como a Chronos fala.</p>
+    </div>
+    <p class="sign">Feito com cuidado por <b>Victor Ota</b> · branding · <span style="color:var(--gold);">marca que marca</span></p>
+  </div>
+
+</div>
+
+<footer>Chronos · Documento de Marca · Fase 2 de 8 — proposta para validação &nbsp;·&nbsp; Victor <span class="o">Ota</span></footer>
+
+</body>
+</html>
