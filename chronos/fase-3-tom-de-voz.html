@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Fase 3 — Personalidade &amp; Tom de Voz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0F10; --surface:#1C1C1D; --overlay:#2C2C2C;
+  --gold:#C3A262; --gold-soft:#DAC5A5;
+  --ink:#F7F4E8; --ink-2:#DAC5A5; --ink-3:#8C877D;
+  --line:rgba(247,244,232,.10); --line-gold:rgba(195,162,98,.38);
+  --danger:#B54A3A; --success:#4F8A64;
+  --display:'Syne',sans-serif; --body:'Red Hat Display',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--bg); line-height:1.62; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 620px at 82% -10%, rgba(195,162,98,.09), transparent 60%), radial-gradient(900px 500px at -12% 18%, rgba(218,197,165,.05), transparent 55%);}
+.wrap{max-width:860px; margin:0 auto; padding:0 26px;}
+.topbar{position:sticky; top:0; z-index:10; background:rgba(15,15,16,.74); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+.topbar .inner{max-width:860px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; justify-content:space-between; gap:14px;}
+.otalogo svg{height:22px; width:auto; display:block;}
+.topbar .doc{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); text-align:right;}
+.topbar .doc b{color:var(--gold); font-weight:600;}
+
+.hero{padding:60px 0 34px;}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--line-gold); border-radius:100px; padding:6px 15px; margin-bottom:24px;}
+.eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+.hero h1{font-family:var(--display); font-weight:800; font-size:clamp(31px,5.2vw,52px); line-height:1.05; letter-spacing:-.01em;}
+.hero h1 .thin{color:var(--gold-soft); font-weight:700;}
+.hero .lede{margin-top:20px; font-size:clamp(16px,2.1vw,19px); color:var(--ink-2); max-width:62ch;}
+.metabar{margin-top:26px; display:flex; flex-wrap:wrap; gap:8px;}
+.chip{font-size:12px; color:var(--ink-2); background:rgba(35,35,36,.6); border:1px solid var(--line); border-radius:100px; padding:6px 13px;}
+.chip b{color:var(--ink); font-weight:500;}
+.status{color:var(--bg)!important; background:var(--gold)!important; border-color:var(--gold)!important; font-weight:600; letter-spacing:.04em;}
+
+section{padding:40px 0; border-top:1px solid var(--line);}
+.kicker{display:flex; align-items:center; gap:12px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin-bottom:20px;}
+.kicker .ic{color:var(--gold); display:flex;} .kicker .ic svg{width:17px; height:17px;}
+h2{font-family:var(--display); font-weight:700; font-size:clamp(22px,3.3vw,30px); letter-spacing:-.01em; margin-bottom:14px; line-height:1.12;}
+p{max-width:66ch;} p+p{margin-top:13px;}
+.muted{color:var(--ink-2);} strong,b{font-weight:600;}
+
+.traits{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.trait{display:grid; grid-template-columns:auto 1fr; gap:15px; align-items:start; border:1px solid var(--line); border-radius:14px; padding:18px 20px; background:rgba(28,28,29,.4);}
+.trait .ic{width:36px;height:36px;border-radius:10px;background:rgba(195,162,98,.12);border:1px solid var(--line-gold);display:flex;align-items:center;justify-content:center;color:var(--gold);}
+.trait .ic svg{width:18px;height:18px;}
+.trait b{display:block; font-family:var(--display); font-weight:700; font-size:15.5px; color:var(--ink); margin-bottom:2px;}
+.trait span{font-size:13.5px; color:var(--ink-2);}
+
+.dims{display:grid; gap:12px;}
+.dim{border:1px solid var(--line); border-radius:14px; padding:18px 22px; background:rgba(28,28,29,.4);}
+.dim .h{font-family:var(--display); font-weight:700; font-size:16px; margin-bottom:8px;}
+.dim .h .is{color:var(--gold);} .dim .h .isnot{color:var(--ink-3);}
+.dim p{font-size:14px; color:var(--ink-2);}
+
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.col{border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:rgba(28,28,29,.4);}
+.col.yes{border-color:rgba(195,162,98,.4);} .col.no{border-color:rgba(181,74,58,.32);}
+.col h3{font-family:var(--display); font-weight:700; font-size:15px; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
+.col h3 svg{width:18px; height:18px; flex-shrink:0;}
+.col.yes h3{color:var(--gold);} .col.no h3{color:var(--danger);}
+.col .words{display:flex; flex-wrap:wrap; gap:8px;}
+.col .words span{font-size:13px; padding:6px 12px; border-radius:100px;}
+.col.yes .words span{color:var(--ink); background:rgba(195,162,98,.12); border:1px solid var(--line-gold);}
+.col.no .words span{color:var(--ink-3); background:rgba(181,74,58,.08); border:1px solid rgba(181,74,58,.25); text-decoration:line-through;}
+
+.ex{border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:rgba(28,28,29,.42); margin-bottom:14px;}
+.ex .lbl{font-family:var(--display); font-weight:800; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:flex; align-items:center; gap:9px;}
+.ex .lbl svg{width:16px;height:16px;}
+.ex .say{font-size:15px; color:var(--ink); border-left:2px solid var(--gold); padding:2px 0 2px 16px; white-space:pre-line;}
+.ex .contrast{margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.ex .mini{border-radius:10px; padding:12px 14px; font-size:13px;}
+.ex .mini.bad{background:rgba(181,74,58,.08); border:1px solid rgba(181,74,58,.22); color:var(--ink-3);}
+.ex .mini.good{background:rgba(195,162,98,.09); border:1px solid var(--line-gold); color:var(--ink-2);}
+.ex .mini .t{display:block; font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:5px;}
+.ex .mini.bad .t{color:var(--danger);} .ex .mini.good .t{color:var(--gold);}
+
+.story{border-left:3px solid var(--gold); padding:4px 0 4px 22px;}
+.story p{font-size:15.5px; color:var(--ink-2);} .story p b{color:var(--ink); font-weight:500;}
+
+.closing{border-top:1px solid var(--line); margin-top:6px; padding:40px 0 22px;}
+.ask{border:1px solid var(--line-gold); border-radius:16px; padding:26px 28px; background:rgba(195,162,98,.05);}
+.ask h3{font-family:var(--display); font-weight:700; font-size:20px; margin-bottom:12px;}
+.ask .qs{margin-top:12px; color:var(--ink-2); font-size:15px;}
+.sign{margin-top:26px; font-size:13px; color:var(--ink-3);} .sign b{color:var(--ink); font-weight:600;}
+footer{padding:28px 0 46px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:16px;}
+footer .o{color:var(--gold);}
+@media (max-width:640px){ .traits,.cols,.ex .contrast{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="inner">
+  <span class="otalogo"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></span>
+  <span class="doc">Documento de Marca · <b>Chronos</b><br>Fase 3 de 8</span>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="dot"></span>Fase 3 · Personalidade &amp; Tom de Voz</span>
+    <h1>Como a <span class="thin">Chronos</span> fala.</h1>
+    <p class="lede">Se a marca fosse uma pessoa, como ela conversaria? Esta fase transforma o arquétipo <b style="color:var(--ink);font-weight:500;">Sábio-Cuidador</b> em jeito de falar — a personalidade, o tom, as palavras e exemplos prontos para bio, posts e atendimento. É o que faz cada mensagem soar inconfundivelmente Chronos.</p>
+    <div class="metabar">
+      <span class="chip"><b>Marca:</b> Chronos</span>
+      <span class="chip"><b>Arquétipo:</b> Sábio-Cuidador</span>
+      <span class="chip status">Proposta v1 — para validação</span>
+    </div>
+  </header>
+
+  <!-- PERSONALIDADE -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span> A personalidade</div>
+    <h2>Se a Chronos fosse uma pessoa</h2>
+    <p class="muted" style="margin-bottom:20px;">Ela seria a profissional experiente que te recebe pelo nome, explica com calma e te faz sentir em boas mãos. Seis traços definem esse jeito de ser:</p>
+    <div class="traits">
+      <div class="trait"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 5.6a5 5 0 0 0-8.8 3 5 5 0 0 0-8.8-3 5 5 0 0 0 0 7L12 21l8.8-8.4a5 5 0 0 0 0-7Z"/></svg></span><div><b>Acolhedora</b><span>Recebe, escuta e tranquiliza antes de qualquer coisa.</span></div></div>
+      <div class="trait"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 8v6l9 5 9-5V8"/></svg></span><div><b>Especialista</b><span>Sabe do que fala e orienta com clareza — sem intimidar.</span></div></div>
+      <div class="trait"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/></svg></span><div><b>Serena &amp; confiável</b><span>Passa segurança sem alarde, sem pressa, sem hype.</span></div></div>
+      <div class="trait"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6L12 2Z"/></svg></span><div><b>Elegante</b><span>Cuidada nos detalhes e nas palavras, sem exageros.</span></div></div>
+      <div class="trait"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span><div><b>Próxima</b><span>Fala com você, pelo nome — nunca massificada ou fria.</span></div></div>
+      <div class="trait"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2Z"/><path d="M9 22h6"/></svg></span><div><b>Inspiradora na medida</b><span>Motiva pelo cuidado real, nunca por promessa de milagre.</span></div></div>
+    </div>
+  </section>
+
+  <!-- 4 DIMENSÕES -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span> As quatro dimensões da voz</div>
+    <h2>O equilíbrio do tom</h2>
+    <p class="muted" style="margin-bottom:20px;">Todo bom tom de voz vive de equilíbrios — o que a marca <b style="color:var(--ink);">é</b>, sem cair no que ela <b style="color:var(--ink);">não é</b>.</p>
+    <div class="dims">
+      <div class="dim"><div class="h"><span class="is">Acolhedora</span> <span class="isnot">— mas não meiga demais</span></div><p>Calor humano com a firmeza de quem entende. Recebe bem, mas fala com propriedade.</p></div>
+      <div class="dim"><div class="h"><span class="is">Especialista</span> <span class="isnot">— mas não arrogante</span></div><p>Traduz o técnico em linguagem simples. Ensina sem fazer ninguém se sentir pequeno.</p></div>
+      <div class="dim"><div class="h"><span class="is">Clara</span> <span class="isnot">— mas não fria</span></div><p>Objetiva e organizada, sempre com humanidade. Direta, nunca robótica.</p></div>
+      <div class="dim"><div class="h"><span class="is">Inspiradora</span> <span class="isnot">— mas não exagerada</span></div><p>Convida ao cuidado com verdade. Sem "transformação relâmpago" nem promessa impossível.</p></div>
+    </div>
+  </section>
+
+  <!-- VOCABULÁRIO -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></span> O vocabulário</div>
+    <h2>Palavras que usamos — e que evitamos</h2>
+    <p class="muted" style="margin-bottom:20px;">As palavras carregam o arquétipo. Estas são as da Chronos:</p>
+    <div class="cols">
+      <div class="col yes">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Falamos assim</h3>
+        <div class="words"><span>cuidar</span><span>movimento</span><span>longevidade</span><span>seguro</span><span>acolhedor</span><span>no seu ritmo</span><span>viver melhor</span><span>bem-estar</span><span>orientação</span><span>com você</span><span>autonomia</span><span>aluno ou paciente</span></div>
+      </div>
+      <div class="col no">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg> Evitamos</h3>
+        <div class="words"><span>malhar / bombar</span><span>sarar</span><span>no pain no gain</span><span>milagre</span><span>corpo dos sonhos</span><span>transformação relâmpago</span><span>secar</span><span>projeto verão</span><span>pressa</span><span>jargão sem tradução</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXEMPLOS -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span> A voz na prática</div>
+    <h2>Como isso vira mensagem</h2>
+    <p class="muted" style="margin-bottom:20px;">O tom só existe quando vira texto. Alguns exemplos prontos para usar:</p>
+
+    <div class="ex">
+      <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg> Bio do Instagram</div>
+      <div class="say">Chronos · movimento com quem entende de corpo
+Fisioterapia + Educação Física · Bela Vista do Paraíso/PR
+Cuidar de você, no seu ritmo — para viver mais e melhor.</div>
+    </div>
+
+    <div class="ex">
+      <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/></svg> Legenda de post</div>
+      <div class="say">Sentir o corpo cobrar o tempo é normal — travar por causa disso, não precisa ser.
+Na Chronos, fisioterapia e educação física caminham juntas para que você se movimente com segurança e no seu ritmo. Sem pressa. Sem treino no escuro.
+Aqui, cuidar de você é o plano.</div>
+    </div>
+
+    <div class="ex">
+      <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 0 1-11.9 7.6L3 21l1.9-6.1A8.5 8.5 0 1 1 21 11.5Z"/></svg> Atendimento no WhatsApp (primeiro contato)</div>
+      <div class="say">Oi, [nome]! Que bom te ver por aqui 💛
+Antes de falar de plano, me conta um pouco: o que te fez pensar em começar agora? Assim a gente entende como cuidar de você da melhor forma — no seu tempo e com segurança.</div>
+      <div class="contrast">
+        <div class="mini bad"><span class="t">✗ Genérico</span>Temos planos a partir de R$X! Matrícula grátis essa semana. Vem treinar com a gente! 💪🔥</div>
+        <div class="mini good"><span class="t">✓ Chronos</span>Acolhe primeiro, entende a pessoa, e só então orienta — cuidado antes de venda.</div>
+      </div>
+    </div>
+
+    <div class="ex">
+      <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/><path d="M12 7v5l3 2"/></svg> Chamada / headline</div>
+      <div class="say">Cuidar do corpo pode ser leve. E, acima de tudo, seguro.</div>
+    </div>
+  </section>
+
+  <!-- SÍNTESE -->
+  <section>
+    <div class="kicker"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg></span> Em uma linha</div>
+    <div class="story">
+      <p>A Chronos fala como <b>uma especialista que acolhe</b>: com a segurança de quem sabe, o carinho de quem cuida e a elegância de quem respeita o tempo de cada pessoa. Nunca vende pressa — convida ao cuidado.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="ask">
+      <h3>Agora é com vocês</h3>
+      <p class="muted">Este é o jeito de falar da Chronos. Para validar:</p>
+      <p class="qs">• Os seis traços de personalidade soam como vocês gostariam de ser percebidas?<br>• O vocabulário (o que usamos / evitamos) faz sentido? Falta alguma palavra que é a cara de vocês, ou alguma que odeiam?<br>• Os exemplos (bio, post, WhatsApp) soam bem para falar com o público de vocês?</p>
+      <p style="margin-top:16px;">Com o “sim” de vocês, seguimos para a <b>Fase 4 — Persona &amp; Jornada</b>.</p>
+    </div>
+    <p class="sign">Feito com cuidado por <b>Victor Ota</b> · branding · <span style="color:var(--gold);">marca que marca</span></p>
+  </div>
+
+</div>
+
+<footer>Chronos · Documento de Marca · Fase 3 de 8 — proposta para validação &nbsp;·&nbsp; Victor <span class="o">Ota</span></footer>
+
+</body>
+</html>
