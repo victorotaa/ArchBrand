@@ -3,185 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chronos · Design System (Terroso-Âmbar)</title>
+<title>Chronos · Design System (Azul-Marinho + Dourado)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Caveat:wght@500;600;700&family=Ephesis&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* ——— COR (azul-marinho + bronze) — azul predominante, elevado ——— */
-  --espresso:#0F1F39; --wood:#18294A; --wood-2:#213458; --wood-3:#2C4570;
-  --sand:#D9CBB3; --cream:#F4EFE6; --paper:#EDE4D4;
-  --terracota:#C8A05A; --terracota-deep:#AE8641; --bronze:#B08D57; /* acento quente = dourado/bronze */
-  --olive:#3E78B2; /* azul-assinatura (destaque) */
+  /* ——— COR — paleta enxuta (azul-marinho + dourado) ——— */
+  --marinho:#0F1F39; --marinho-2:#1A2C4E; --marinho-3:#243a63; --marinho-4:#2C4570;
+  --azul:#3E78B2;            /* azul-assinatura */
+  --dourado:#CBA152;         /* destaque (metálico-nobre) */
+  --dourado-deep:#B0863F;
+  --terracota:#B4623F;       /* acento elegante (quente/humano) */
+  --areia:#D9CBB3; --cream:#F4EFE6; --neutro:#8A97AC;
   --ink:#F4EFE6; --ink-2:#C3CDDC; --ink-3:#8A97AC; --ink-inv:#0F1F39;
-  --line:rgba(244,239,230,.10); --line-2:rgba(244,239,230,.18); --line-terra:rgba(200,160,90,.45);
+  --line:rgba(244,239,230,.10); --line-2:rgba(244,239,230,.18); --line-gold:rgba(203,161,82,.42);
   --danger:#C15A44;
   /* ——— TIPOGRAFIA ——— */
-  --display:'Fraunces',serif; --body:'Manrope',sans-serif;
-  /* ——— RAIO / SOMBRA / EASE ——— */
+  --display:'Sora',sans-serif;   /* headline — DEFAULT provisório (a escolher no Font Lab) */
+  --body:'Manrope',sans-serif;   /* corpo — definido */
+  --script:'Ephesis',cursive;    /* afeto / assinatura */
+  /* ——— RAIO / SOMBRA ——— */
   --r-sm:6px; --r-md:10px; --r-lg:16px; --r-xl:22px; --r-pill:100px;
-  --sh-1:0 1px 2px rgba(0,0,0,.25); --sh-2:0 6px 20px rgba(0,0,0,.30); --sh-3:0 18px 50px rgba(0,0,0,.40);
+  --sh-1:0 1px 2px rgba(0,0,0,.28); --sh-2:0 8px 24px rgba(0,0,0,.34); --sh-3:0 20px 54px rgba(0,0,0,.44);
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--espresso); line-height:1.6; -webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(200,160,90,.12), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(62,120,178,.14), transparent 55%);}
+body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--marinho); line-height:1.6; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(203,161,82,.12), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(62,120,178,.16), transparent 55%);}
 .wrap{max-width:920px; margin:0 auto; padding:0 26px;}
 .topbar{border-bottom:1px solid var(--line);}
 .topbar .in{max-width:920px; margin:0 auto; padding:16px 26px; display:flex; justify-content:space-between; align-items:baseline; gap:14px;}
-.topbar .b{font-family:var(--display); font-weight:600; font-size:16px; letter-spacing:.02em;}
-.topbar .b i{color:var(--terracota); font-style:normal;}
+.topbar .b{font-family:var(--display); font-weight:700; font-size:16px; letter-spacing:.02em;}
+.topbar .b i{color:var(--dourado); font-style:normal;}
 .topbar .m{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3);}
 
 .hero{padding:64px 0 40px;}
-.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--terracota); border:1px solid var(--line-terra); border-radius:var(--r-pill); padding:6px 15px; margin-bottom:24px;}
-.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--terracota);}
-h1{font-family:var(--display); font-weight:600; font-size:clamp(40px,8vw,74px); line-height:1.0; letter-spacing:-.02em;}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--dourado); border:1px solid var(--line-gold); border-radius:var(--r-pill); padding:6px 15px; margin-bottom:24px;}
+.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--dourado);}
+h1{font-family:var(--display); font-weight:800; font-size:clamp(38px,7.4vw,68px); line-height:1.02; letter-spacing:-.02em;}
 .hero p{margin-top:20px; font-size:clamp(16px,2.1vw,18px); color:var(--ink-2); max-width:60ch;}
 
 section{padding:44px 0; border-top:1px solid var(--line);}
 .kick{display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px;}
-.kick .n{font-family:var(--display); color:var(--terracota); font-weight:600;}
-h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3.6vw,34px); letter-spacing:-.01em; margin-bottom:8px;}
-.lead{color:var(--ink-2); max-width:64ch; margin-bottom:26px;}
-.lead b{color:var(--ink); font-weight:500;}
+.kick .n{font-family:var(--display); color:var(--dourado); font-weight:700;}
+h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px); letter-spacing:-.01em; margin-bottom:8px;}
+.lead{color:var(--ink-2); max-width:64ch; margin-bottom:26px;} .lead b{color:var(--ink); font-weight:500;}
 
 /* paleta */
 .swatches{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;}
-.sw{border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; background:var(--wood);}
+.sw{border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; background:var(--marinho-2);}
 .sw .chip{height:82px;}
 .sw .meta{padding:11px 13px;}
 .sw .nm{font-weight:600; font-size:13.5px; color:var(--ink);}
-.sw .hx{font-family:var(--body); font-size:12px; color:var(--ink-3); letter-spacing:.02em; margin-top:2px;}
+.sw .hx{font-size:12px; color:var(--ink-3); margin-top:2px;}
 .sw .role{font-size:11px; color:var(--ink-3); margin-top:5px;}
 
-/* tipografia */
-.type-row{display:grid; grid-template-columns:110px 1fr; gap:22px; align-items:baseline; padding:16px 0; border-bottom:1px solid var(--line);}
-.type-row:last-child{border-bottom:none;}
-.type-row .tag{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);}
-.d1{font-family:var(--display); font-weight:600; font-size:clamp(34px,6vw,56px); line-height:1.02; letter-spacing:-.02em;}
-.d2{font-family:var(--display); font-weight:600; font-size:clamp(24px,4vw,34px); line-height:1.08; letter-spacing:-.01em;}
-.d3{font-family:var(--display); font-weight:500; font-size:22px;}
-.b1{font-family:var(--body); font-weight:400; font-size:17px; color:var(--ink-2);}
-.bsm{font-family:var(--body); font-weight:500; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);}
-.fonts{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px;}
-.fontcard{border:1px solid var(--line); border-radius:var(--r-md); padding:20px 22px; background:var(--wood);}
-.fontcard .big{font-size:40px; line-height:1; margin-bottom:10px;}
-.fontcard .lbl{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--terracota);}
-.fontcard .desc{font-size:13.5px; color:var(--ink-3); margin-top:6px;}
+/* FONT LAB */
+.fl-body{border:1px solid var(--line-gold); border-radius:var(--r-lg); padding:22px 24px; background:rgba(203,161,82,.05); margin-bottom:24px; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:center;}
+.fl-body .aa{font-family:var(--body); font-weight:700; font-size:52px; line-height:1;}
+.fl-body .tt{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dourado);}
+.fl-body p{font-size:14px; color:var(--ink-2); margin-top:5px;}
+.fl-note{font-size:13px; color:var(--ink-3); margin:0 0 18px;}
+.opts{display:grid; gap:14px;}
+.opt{border:1px solid var(--line); border-radius:var(--r-lg); padding:20px 24px; background:var(--marinho-2); transition:.18s var(--ease);}
+.opt:hover{border-color:var(--line-gold);}
+.opt .name{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dourado); margin-bottom:12px;}
+.opt .wm{font-weight:800; font-size:clamp(30px,5vw,46px); letter-spacing:.14em; line-height:1;}
+.opt .ph{font-weight:600; font-size:clamp(20px,3vw,26px); margin-top:8px; letter-spacing:-.01em;}
+.opt .desc{font-size:13px; color:var(--ink-3); margin-top:10px;}
+.f-sora .wm,.f-sora .ph{font-family:'Sora',sans-serif;}
+.f-space .wm,.f-space .ph{font-family:'Space Grotesk',sans-serif;}
+.f-archivo .wm,.f-archivo .ph{font-family:'Archivo',sans-serif;}
+.f-bric .wm,.f-bric .ph{font-family:'Bricolage Grotesque',sans-serif;}
+.scripts{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}
+.scriptcard{border:1px solid var(--line); border-radius:var(--r-lg); padding:22px 24px; background:var(--marinho-2); text-align:center;}
+.scriptcard .s{font-size:clamp(34px,6vw,50px); line-height:1.1; color:var(--dourado);}
+.scriptcard .lbl{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-top:8px;}
+.f-eph .s{font-family:'Ephesis',cursive;}
+.f-cav .s{font-family:'Caveat',cursive; font-weight:600;}
 
-/* escala espaço / raio */
+/* forma */
 .scale{display:flex; flex-wrap:wrap; gap:14px; align-items:flex-end;}
-.scale .item{text-align:center;}
-.scale .box{background:var(--terracota); border-radius:4px; opacity:.85;}
-.scale .lab{font-size:11px; color:var(--ink-3); margin-top:6px;}
+.scale .box{background:var(--dourado); border-radius:4px; opacity:.9;}
+.scale .lab{font-size:11px; color:var(--ink-3); margin-top:6px; text-align:center;}
 .radii{display:flex; flex-wrap:wrap; gap:14px;}
-.radii .r{width:74px; height:74px; background:var(--wood-2); border:1px solid var(--line-2);}
+.radii .r{width:74px; height:74px; background:var(--marinho-3); border:1px solid var(--line-2);}
 .radii .lab{font-size:11px; color:var(--ink-3); text-align:center; margin-top:6px;}
-.shadows{display:flex; flex-wrap:wrap; gap:20px;}
-.shadows .s{width:120px; height:80px; border-radius:var(--r-md); background:var(--wood-2);}
-.shadows .lab{font-size:11px; color:var(--ink-3); text-align:center; margin-top:8px;}
 
 /* componentes */
 .comp{display:grid; gap:22px;}
-.compbox{border:1px solid var(--line); border-radius:var(--r-lg); padding:24px; background:var(--wood);}
+.compbox{border:1px solid var(--line); border-radius:var(--r-lg); padding:24px; background:var(--marinho-2);}
 .compbox .h{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:16px;}
 .row{display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
-.btn{font-family:var(--body); font-weight:600; font-size:14px; border-radius:var(--r-pill); padding:11px 22px; border:1px solid transparent; cursor:pointer; transition:.18s var(--ease);}
-.btn.primary{background:var(--terracota); color:var(--ink-inv); font-weight:700;}
-.btn.primary:hover{background:var(--terracota-deep);}
-.btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-2);}
-.btn.ghost:hover{border-color:var(--terracota); color:var(--terracota);}
-.btn.solid-cream{background:var(--cream); color:var(--ink-inv);}
+.btn{font-family:var(--body); font-weight:700; font-size:14px; border-radius:var(--r-pill); padding:11px 22px; border:1px solid transparent; cursor:pointer; transition:.18s var(--ease);}
+.btn.primary{background:var(--dourado); color:var(--ink-inv);}
+.btn.primary:hover{background:var(--dourado-deep);}
+.btn.terra{background:var(--terracota); color:var(--cream);}
+.btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-2); font-weight:600;}
+.btn.ghost:hover{border-color:var(--dourado); color:var(--dourado);}
 .tags{display:flex; flex-wrap:wrap; gap:9px;}
-.tag2{font-size:12.5px; padding:6px 13px; border-radius:var(--r-pill); background:rgba(192,112,60,.14); border:1px solid var(--line-terra); color:var(--sand);}
-.card{border:1px solid var(--line-2); border-radius:var(--r-lg); overflow:hidden; background:var(--wood-2); max-width:320px; box-shadow:var(--sh-2);}
-.card .top{height:110px; background:linear-gradient(135deg, var(--olive), var(--terracota));}
+.tag2{font-size:12.5px; padding:6px 13px; border-radius:var(--r-pill); background:rgba(203,161,82,.14); border:1px solid var(--line-gold); color:var(--areia);}
+.tag2.t{background:rgba(180,98,63,.16); border-color:rgba(180,98,63,.4); color:#E6B79E;}
+.card{border:1px solid var(--line-2); border-radius:var(--r-lg); overflow:hidden; background:var(--marinho-3); max-width:320px; box-shadow:var(--sh-2);}
+.card .top{height:110px; background:linear-gradient(135deg, var(--azul), var(--dourado));}
 .card .body{padding:18px 20px;}
-.card .body h4{font-family:var(--display); font-weight:600; font-size:19px; margin-bottom:6px;}
+.card .body h4{font-family:var(--display); font-weight:700; font-size:19px; margin-bottom:6px;}
 .card .body p{font-size:14px; color:var(--ink-2);}
-.input{width:100%; max-width:360px; background:var(--espresso); border:1px solid var(--line-2); border-radius:var(--r-md); padding:12px 15px; color:var(--ink); font-family:var(--body); font-size:15px;}
-.input::placeholder{color:var(--ink-3);}
-.input:focus{outline:none; border-color:var(--terracota);}
+.input{width:100%; max-width:360px; background:var(--marinho); border:1px solid var(--line-2); border-radius:var(--r-md); padding:12px 15px; color:var(--ink); font-family:var(--body); font-size:15px;}
+.input::placeholder{color:var(--ink-3);} .input:focus{outline:none; border-color:var(--dourado);}
 
-/* aplicação light (a paleta também funciona clara) */
-.light{background:var(--cream); color:var(--ink-inv); border-radius:var(--r-lg); padding:28px 30px; border:1px solid var(--line-2);}
-.light h3{font-family:var(--display); font-weight:600; font-size:26px; color:var(--espresso);}
-.light p{color:#5B5148; margin-top:8px; font-size:15px;}
-.light .btn.primary{color:var(--ink-inv);}
-.light .tag2{background:rgba(192,112,60,.12); color:var(--terracota-deep); border-color:var(--line-terra);}
+/* aplicação */
+.apps{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+.app-dark{background:var(--marinho); border:1px solid var(--line-2); border-radius:var(--r-lg); padding:26px;}
+.app-light{background:var(--cream); color:var(--ink-inv); border-radius:var(--r-lg); padding:26px; border:1px solid var(--line-2);}
+.app-dark h3,.app-light h3{font-family:var(--display); font-weight:700; font-size:22px;}
+.app-dark h3{color:var(--ink);} .app-light h3{color:var(--marinho);}
+.app-dark p,.app-light p{font-size:14px; margin-top:8px;} .app-dark p{color:var(--ink-2);} .app-light p{color:#5B5348;}
+.app-light .tag2{background:rgba(203,161,82,.14); color:var(--dourado-deep); border-color:var(--line-gold);}
+.app-light .btn.primary{color:var(--ink-inv);}
+.sig{font-family:var(--script); color:var(--dourado); font-size:34px; line-height:1; margin-top:14px;}
+.app-light .sig{color:var(--terracota);}
 
 footer{padding:30px 0 56px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:20px;}
-footer i{color:var(--terracota); font-style:normal;}
-@media (max-width:600px){ .fonts,.comp{grid-template-columns:1fr;} .type-row{grid-template-columns:1fr;} }
+footer i{color:var(--dourado); font-style:normal;}
+@media (max-width:600px){ .comp,.scripts,.apps{grid-template-columns:1fr;} .fl-body{grid-template-columns:1fr; text-align:center;} }
 </style>
 </head>
 <body>
 
 <div class="topbar"><div class="in">
   <span class="b">Chronos <i>·</i> Design System</span>
-  <span class="m">Azul-Marinho &amp; Bronze · v1</span>
+  <span class="m">Azul-Marinho &amp; Dourado · v2</span>
 </div></div>
 
 <div class="wrap">
 
   <header class="hero">
     <span class="eyebrow"><span class="d"></span>Fase 5 · Território Visual — fundação</span>
-    <h1>O sistema<br>que veste a Chronos.</h1>
-    <p>Cores, tipografia, formas e componentes que traduzem <b style="color:var(--ink);font-weight:500;">azul profundo · elegante · forte · quente</b> — o azul da marca no comando, elevado com bronze e creme. Longe do azul-elétrico cromado genérico; perto de uma marca atemporal. É a base para o logo, as aplicações e tudo o que vem a seguir.</p>
+    <h1>O sistema que veste a Chronos.</h1>
+    <p>Paleta enxuta e intencional, formas suaves e uma família tipográfica <b style="color:var(--ink);font-weight:500;">a escolher com vocês</b>. O azul da marca no comando, elevado por dourado e um toque de terracota. Base para o logo e todas as aplicações.</p>
   </header>
 
   <!-- COR -->
   <section>
     <div class="kick"><span class="n">01</span> Cor</div>
-    <h2>Paleta azul-marinho + bronze</h2>
-    <p class="lead"><b>Azul-marinho profundo</b> como base predominante — o azul da marca, no comando. Elevado por um acento quente em <b>dourado/bronze</b> (no lugar do prateado frio) e neutros <b>creme</b>. Sofisticado e atemporal, longe do azul-elétrico genérico.</p>
+    <h2>Paleta enxuta</h2>
+    <p class="lead"><b>Azul-marinho</b> predominante (dois tons) + <b>azul-assinatura</b> para destaque, com dois acentos quentes — <b>dourado</b> (nobre, metálico) e <b>terracota</b> (elegante, humano) — sobre neutros de areia e creme. Poucas cores, muito controle.</p>
     <div class="swatches">
       <div class="sw"><div class="chip" style="background:#0F1F39"></div><div class="meta"><div class="nm">Marinho</div><div class="hx">#0F1F39</div><div class="role">Base predominante</div></div></div>
-      <div class="sw"><div class="chip" style="background:#18294A"></div><div class="meta"><div class="nm">Marinho surface</div><div class="hx">#18294A</div><div class="role">Superfície</div></div></div>
+      <div class="sw"><div class="chip" style="background:#1A2C4E"></div><div class="meta"><div class="nm">Marinho 2</div><div class="hx">#1A2C4E</div><div class="role">Superfície</div></div></div>
       <div class="sw"><div class="chip" style="background:#3E78B2"></div><div class="meta"><div class="nm">Azul-assinatura</div><div class="hx">#3E78B2</div><div class="role">Destaque / links</div></div></div>
-      <div class="sw"><div class="chip" style="background:#C8A05A"></div><div class="meta"><div class="nm">Dourado</div><div class="hx">#C8A05A</div><div class="role">Acento principal (quente)</div></div></div>
-      <div class="sw"><div class="chip" style="background:#B08D57"></div><div class="meta"><div class="nm">Bronze</div><div class="hx">#B08D57</div><div class="role">Acento secundário</div></div></div>
+      <div class="sw"><div class="chip" style="background:#CBA152"></div><div class="meta"><div class="nm">Dourado</div><div class="hx">#CBA152</div><div class="role">Acento — destaque</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B4623F"></div><div class="meta"><div class="nm">Terracota</div><div class="hx">#B4623F</div><div class="role">Acento — elegante</div></div></div>
       <div class="sw"><div class="chip" style="background:#D9CBB3"></div><div class="meta"><div class="nm">Areia</div><div class="hx">#D9CBB3</div><div class="role">Neutro claro</div></div></div>
       <div class="sw"><div class="chip" style="background:#F4EFE6"></div><div class="meta"><div class="nm">Creme</div><div class="hx">#F4EFE6</div><div class="role">Texto / fundo claro</div></div></div>
       <div class="sw"><div class="chip" style="background:#8A97AC"></div><div class="meta"><div class="nm">Neutro</div><div class="hx">#8A97AC</div><div class="role">Texto terciário</div></div></div>
     </div>
   </section>
 
-  <!-- TIPOGRAFIA -->
+  <!-- FONT LAB -->
   <section>
-    <div class="kick"><span class="n">02</span> Tipografia</div>
-    <h2>Fraunces + Manrope</h2>
-    <p class="lead">Um par que equilibra <b>elegância</b> e <b>clareza</b>: uma serifa quente e atemporal para títulos, uma sans limpa e amigável para o corpo. <span style="color:var(--ink-3);">(proposta — validar com as sócias)</span></p>
-    <div class="fonts">
-      <div class="fontcard"><div class="big" style="font-family:var(--display);font-weight:600;">Aa</div><div class="lbl">Fraunces · Display</div><div class="desc">Serifa com caráter, quente e sofisticada. Títulos, números, momentos de marca.</div></div>
-      <div class="fontcard"><div class="big" style="font-family:var(--body);font-weight:600;">Aa</div><div class="lbl">Manrope · Corpo</div><div class="desc">Sans geométrica-humanista, limpa e legível. Textos, interface, legendas.</div></div>
+    <div class="kick"><span class="n">02</span> Tipografia · Font Lab</div>
+    <h2>Escolha a fonte de headline</h2>
+    <p class="lead">O <b>corpo</b> está definido (<b>Manrope</b>, Google Font). Falta a <b>headline</b> — e você escolhe. Como as sócias buscam <b>sans-serif</b> (vide o wordmark da referência), abaixo 4 candidatas Google, todas mostrando "CHRONOS" + um título. Diz qual fala mais.</p>
+
+    <div class="fl-body">
+      <div class="aa">Manrope</div>
+      <div><div class="tt">Corpo · definido</div><p>Sans geométrica-humanista, limpa e amigável. Ótima legibilidade em texto, interface e legendas. É Google Font.</p></div>
     </div>
-    <div class="type-row"><span class="tag">Display / H1</span><div class="d1">Cuidar do tempo</div></div>
-    <div class="type-row"><span class="tag">Título / H2</span><div class="d2">Movimento com quem entende</div></div>
-    <div class="type-row"><span class="tag">Subtítulo</span><div class="d3">No seu ritmo, com resultado real</div></div>
-    <div class="type-row"><span class="tag">Corpo</span><div class="b1">Uma academia diferenciada, para todas as idades — do adolescente ao idoso — com atendimento próximo e o suporte de fisioterapia e educação física.</div></div>
-    <div class="type-row"><span class="tag">Eyebrow</span><div class="bsm">Fisioterapia + Educação Física</div></div>
+
+    <p class="fl-note">Headline — candidatas (clique mental: qual combina com "elegante, forte, moderno, atemporal"?):</p>
+    <div class="opts">
+      <div class="opt f-sora"><div class="name">Opção A · Sora</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Geométrica, moderna e confiante. Ar tecnológico-premium, muito limpa.</div></div>
+      <div class="opt f-space"><div class="name">Opção B · Space Grotesk</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Grotesca contemporânea com caráter — moderna e com personalidade sutil.</div></div>
+      <div class="opt f-archivo"><div class="name">Opção C · Archivo</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Forte e editorial, ótima em peso alto. Impacto e presença — a mais "atlética".</div></div>
+      <div class="opt f-bric"><div class="name">Opção D · Bricolage Grotesque</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Grotesca editorial com alma — moderna e quente, foge do óbvio.</div></div>
+    </div>
+
+    <p class="fl-note" style="margin-top:26px;">Fonte de afeto — manuscrita/assinatura (uso pontual, para toque humano e personalizado):</p>
+    <div class="scripts">
+      <div class="scriptcard f-eph"><div class="s">marca que marca</div><div class="lbl">Ephesis · assinatura elegante</div></div>
+      <div class="scriptcard f-cav"><div class="s">no seu ritmo</div><div class="lbl">Caveat · manuscrita calorosa</div></div>
+    </div>
   </section>
 
   <!-- FORMA -->
   <section>
     <div class="kick"><span class="n">03</span> Forma</div>
     <h2>Espaço, raio e elevação</h2>
-    <p class="lead">Ritmo em escala de <b>8</b>, cantos <b>suaves</b> (nada anguloso ou agressivo) e sombras <b>quentes e discretas</b> — coerentes com o ar acolhedor da marca.</p>
-    <div style="margin-bottom:30px;">
-      <div class="bsm" style="margin-bottom:12px;">Espaçamento (base 8)</div>
+    <p class="lead">Ritmo em escala de <b>8</b>, cantos <b>suaves</b> e sombras discretas — coerentes com o ar acolhedor da marca.</p>
+    <div style="margin-bottom:28px;"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Espaçamento (base 8)</div>
       <div class="scale">
-        <div class="item"><div class="box" style="width:8px;height:8px;"></div><div class="lab">8</div></div>
-        <div class="item"><div class="box" style="width:16px;height:16px;"></div><div class="lab">16</div></div>
-        <div class="item"><div class="box" style="width:24px;height:24px;"></div><div class="lab">24</div></div>
-        <div class="item"><div class="box" style="width:40px;height:40px;"></div><div class="lab">40</div></div>
-        <div class="item"><div class="box" style="width:64px;height:64px;"></div><div class="lab">64</div></div>
+        <div><div class="box" style="width:8px;height:8px;"></div><div class="lab">8</div></div>
+        <div><div class="box" style="width:16px;height:16px;"></div><div class="lab">16</div></div>
+        <div><div class="box" style="width:24px;height:24px;"></div><div class="lab">24</div></div>
+        <div><div class="box" style="width:40px;height:40px;"></div><div class="lab">40</div></div>
+        <div><div class="box" style="width:64px;height:64px;"></div><div class="lab">64</div></div>
       </div>
     </div>
-    <div style="margin-bottom:30px;">
-      <div class="bsm" style="margin-bottom:12px;">Raio de canto</div>
+    <div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Raio de canto</div>
       <div class="radii">
         <div><div class="r" style="border-radius:6px;"></div><div class="lab">sm · 6</div></div>
         <div><div class="r" style="border-radius:10px;"></div><div class="lab">md · 10</div></div>
@@ -190,47 +212,49 @@ footer i{color:var(--terracota); font-style:normal;}
         <div><div class="r" style="border-radius:100px;"></div><div class="lab">pill</div></div>
       </div>
     </div>
-    <div>
-      <div class="bsm" style="margin-bottom:12px;">Elevação</div>
-      <div class="shadows">
-        <div><div class="s" style="box-shadow:var(--sh-1);"></div><div class="lab">1 · sutil</div></div>
-        <div><div class="s" style="box-shadow:var(--sh-2);"></div><div class="lab">2 · card</div></div>
-        <div><div class="s" style="box-shadow:var(--sh-3);"></div><div class="lab">3 · destaque</div></div>
-      </div>
-    </div>
   </section>
 
   <!-- COMPONENTES -->
   <section>
     <div class="kick"><span class="n">04</span> Componentes</div>
     <h2>Peças base</h2>
-    <p class="lead">Os blocos recorrentes da marca — já vestidos no sistema.</p>
+    <p class="lead">Os blocos recorrentes, já vestidos no sistema.</p>
     <div class="comp">
-      <div class="compbox"><div class="h">Botões</div><div class="row"><button class="btn primary">Agendar avaliação</button><button class="btn ghost">Saiba mais</button><button class="btn solid-cream">Fale conosco</button></div></div>
-      <div class="compbox"><div class="h">Tags / chips</div><div class="tags"><span class="tag2">Todas as idades</span><span class="tag2">Fisioterapia</span><span class="tag2">Educação Física</span><span class="tag2">No seu ritmo</span><span class="tag2">Resultado real</span></div></div>
+      <div class="compbox"><div class="h">Botões</div><div class="row"><button class="btn primary">Agendar avaliação</button><button class="btn terra">Fale conosco</button><button class="btn ghost">Saiba mais</button></div></div>
+      <div class="compbox"><div class="h">Tags / chips</div><div class="tags"><span class="tag2">Todas as idades</span><span class="tag2">Fisioterapia</span><span class="tag2 t">Educação Física</span><span class="tag2 t">No seu ritmo</span><span class="tag2">Resultado real</span></div></div>
       <div class="compbox"><div class="h">Card &amp; input</div><div class="row" style="align-items:flex-start; gap:26px;">
         <div class="card"><div class="top"></div><div class="body"><h4>Avaliação inicial</h4><p>Dois olhares, um só cuidado — fisio e educação física avaliam você por inteiro.</p></div></div>
-        <div style="flex:1; min-width:220px;"><div class="bsm" style="margin-bottom:10px;">Campo de formulário</div><input class="input" placeholder="Seu nome"><br><br><button class="btn primary">Quero começar</button></div>
+        <div style="flex:1; min-width:220px;"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;">Campo de formulário</div><input class="input" placeholder="Seu nome"><br><br><button class="btn primary">Quero começar</button></div>
       </div></div>
     </div>
   </section>
 
-  <!-- LIGHT -->
+  <!-- APLICAÇÃO -->
   <section>
     <div class="kick"><span class="n">05</span> Aplicação</div>
-    <h2>Funciona claro e escuro</h2>
-    <p class="lead">A paleta é dupla: fundos <b>marinho profundos</b> (premium, noturno) e fundos <b>claros de creme/areia</b> (leve, arejado) — mesma alma, o dourado brilhando nos dois.</p>
-    <div class="light">
-      <span class="tag2">Fisioterapia + Educação Física</span>
-      <h3 style="margin-top:14px;">Cuidar do corpo pode ser leve. E seguro.</h3>
-      <p>Uma academia diferenciada em Bela Vista do Paraíso — atenção de perto, no seu ritmo, com resultado real.</p>
-      <div style="margin-top:18px;"><button class="btn primary">Agendar avaliação</button></div>
+    <h2>Escuro e claro — e o toque de afeto</h2>
+    <p class="lead">A paleta é dupla: <b>marinho profundo</b> (premium, noturno) e <b>creme</b> (leve, arejado). A manuscrita entra em momentos pontuais, como uma assinatura.</p>
+    <div class="apps">
+      <div class="app-dark">
+        <span class="tag2">Fisioterapia + Educação Física</span>
+        <h3 style="margin-top:14px;">Cuidar do corpo pode ser leve. E seguro.</h3>
+        <p>Uma academia diferenciada em Bela Vista do Paraíso.</p>
+        <div class="sig">marca que marca</div>
+        <div style="margin-top:14px;"><button class="btn primary">Agendar avaliação</button></div>
+      </div>
+      <div class="app-light">
+        <span class="tag2">Todas as idades</span>
+        <h3 style="margin-top:14px;">Movimento com quem entende.</h3>
+        <p>Atenção de perto, no seu ritmo, com resultado real.</p>
+        <div class="sig">no seu ritmo</div>
+        <div style="margin-top:14px;"><button class="btn primary">Quero começar</button></div>
+      </div>
     </div>
   </section>
 
 </div>
 
-<footer>Chronos · Design System · Terroso-Âmbar v1 &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
+<footer>Chronos · Design System · Azul-Marinho &amp; Dourado v2 &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
 
 </body>
 </html>
