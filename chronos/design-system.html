@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Design System (Terroso-Âmbar)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ——— COR (terroso-âmbar) ——— */
+  --espresso:#2A2320; --wood:#3A322C; --wood-2:#453A32; --wood-3:#524539;
+  --sand:#D9CBB3; --cream:#F4EFE6; --paper:#EDE4D4;
+  --terracota:#C0703C; --terracota-deep:#A85A2C; --bronze:#B08D57;
+  --olive:#6E7A55;
+  --ink:#F4EFE6; --ink-2:#C9BBA3; --ink-3:#9A8E7B; --ink-inv:#2A2320;
+  --line:rgba(244,239,230,.10); --line-2:rgba(244,239,230,.18); --line-terra:rgba(192,112,60,.45);
+  --danger:#B24A34;
+  /* ——— TIPOGRAFIA ——— */
+  --display:'Fraunces',serif; --body:'Manrope',sans-serif;
+  /* ——— RAIO / SOMBRA / EASE ——— */
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-xl:22px; --r-pill:100px;
+  --sh-1:0 1px 2px rgba(0,0,0,.25); --sh-2:0 6px 20px rgba(0,0,0,.30); --sh-3:0 18px 50px rgba(0,0,0,.40);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--espresso); line-height:1.6; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(192,112,60,.13), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(176,141,87,.08), transparent 55%);}
+.wrap{max-width:920px; margin:0 auto; padding:0 26px;}
+.topbar{border-bottom:1px solid var(--line);}
+.topbar .in{max-width:920px; margin:0 auto; padding:16px 26px; display:flex; justify-content:space-between; align-items:baseline; gap:14px;}
+.topbar .b{font-family:var(--display); font-weight:600; font-size:16px; letter-spacing:.02em;}
+.topbar .b i{color:var(--terracota); font-style:normal;}
+.topbar .m{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3);}
+
+.hero{padding:64px 0 40px;}
+.eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--terracota); border:1px solid var(--line-terra); border-radius:var(--r-pill); padding:6px 15px; margin-bottom:24px;}
+.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--terracota);}
+h1{font-family:var(--display); font-weight:600; font-size:clamp(40px,8vw,74px); line-height:1.0; letter-spacing:-.02em;}
+.hero p{margin-top:20px; font-size:clamp(16px,2.1vw,18px); color:var(--ink-2); max-width:60ch;}
+
+section{padding:44px 0; border-top:1px solid var(--line);}
+.kick{display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px;}
+.kick .n{font-family:var(--display); color:var(--terracota); font-weight:600;}
+h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3.6vw,34px); letter-spacing:-.01em; margin-bottom:8px;}
+.lead{color:var(--ink-2); max-width:64ch; margin-bottom:26px;}
+.lead b{color:var(--ink); font-weight:500;}
+
+/* paleta */
+.swatches{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;}
+.sw{border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden; background:var(--wood);}
+.sw .chip{height:82px;}
+.sw .meta{padding:11px 13px;}
+.sw .nm{font-weight:600; font-size:13.5px; color:var(--ink);}
+.sw .hx{font-family:var(--body); font-size:12px; color:var(--ink-3); letter-spacing:.02em; margin-top:2px;}
+.sw .role{font-size:11px; color:var(--ink-3); margin-top:5px;}
+
+/* tipografia */
+.type-row{display:grid; grid-template-columns:110px 1fr; gap:22px; align-items:baseline; padding:16px 0; border-bottom:1px solid var(--line);}
+.type-row:last-child{border-bottom:none;}
+.type-row .tag{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);}
+.d1{font-family:var(--display); font-weight:600; font-size:clamp(34px,6vw,56px); line-height:1.02; letter-spacing:-.02em;}
+.d2{font-family:var(--display); font-weight:600; font-size:clamp(24px,4vw,34px); line-height:1.08; letter-spacing:-.01em;}
+.d3{font-family:var(--display); font-weight:500; font-size:22px;}
+.b1{font-family:var(--body); font-weight:400; font-size:17px; color:var(--ink-2);}
+.bsm{font-family:var(--body); font-weight:500; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3);}
+.fonts{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px;}
+.fontcard{border:1px solid var(--line); border-radius:var(--r-md); padding:20px 22px; background:var(--wood);}
+.fontcard .big{font-size:40px; line-height:1; margin-bottom:10px;}
+.fontcard .lbl{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--terracota);}
+.fontcard .desc{font-size:13.5px; color:var(--ink-3); margin-top:6px;}
+
+/* escala espaço / raio */
+.scale{display:flex; flex-wrap:wrap; gap:14px; align-items:flex-end;}
+.scale .item{text-align:center;}
+.scale .box{background:var(--terracota); border-radius:4px; opacity:.85;}
+.scale .lab{font-size:11px; color:var(--ink-3); margin-top:6px;}
+.radii{display:flex; flex-wrap:wrap; gap:14px;}
+.radii .r{width:74px; height:74px; background:var(--wood-2); border:1px solid var(--line-2);}
+.radii .lab{font-size:11px; color:var(--ink-3); text-align:center; margin-top:6px;}
+.shadows{display:flex; flex-wrap:wrap; gap:20px;}
+.shadows .s{width:120px; height:80px; border-radius:var(--r-md); background:var(--wood-2);}
+.shadows .lab{font-size:11px; color:var(--ink-3); text-align:center; margin-top:8px;}
+
+/* componentes */
+.comp{display:grid; gap:22px;}
+.compbox{border:1px solid var(--line); border-radius:var(--r-lg); padding:24px; background:var(--wood);}
+.compbox .h{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:16px;}
+.row{display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
+.btn{font-family:var(--body); font-weight:600; font-size:14px; border-radius:var(--r-pill); padding:11px 22px; border:1px solid transparent; cursor:pointer; transition:.18s var(--ease);}
+.btn.primary{background:var(--terracota); color:var(--cream);}
+.btn.primary:hover{background:var(--terracota-deep);}
+.btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-2);}
+.btn.ghost:hover{border-color:var(--terracota); color:var(--terracota);}
+.btn.solid-cream{background:var(--cream); color:var(--ink-inv);}
+.tags{display:flex; flex-wrap:wrap; gap:9px;}
+.tag2{font-size:12.5px; padding:6px 13px; border-radius:var(--r-pill); background:rgba(192,112,60,.14); border:1px solid var(--line-terra); color:var(--sand);}
+.card{border:1px solid var(--line-2); border-radius:var(--r-lg); overflow:hidden; background:var(--wood-2); max-width:320px; box-shadow:var(--sh-2);}
+.card .top{height:110px; background:linear-gradient(135deg, var(--terracota), var(--bronze));}
+.card .body{padding:18px 20px;}
+.card .body h4{font-family:var(--display); font-weight:600; font-size:19px; margin-bottom:6px;}
+.card .body p{font-size:14px; color:var(--ink-2);}
+.input{width:100%; max-width:360px; background:var(--espresso); border:1px solid var(--line-2); border-radius:var(--r-md); padding:12px 15px; color:var(--ink); font-family:var(--body); font-size:15px;}
+.input::placeholder{color:var(--ink-3);}
+.input:focus{outline:none; border-color:var(--terracota);}
+
+/* aplicação light (a paleta também funciona clara) */
+.light{background:var(--cream); color:var(--ink-inv); border-radius:var(--r-lg); padding:28px 30px; border:1px solid var(--line-2);}
+.light h3{font-family:var(--display); font-weight:600; font-size:26px; color:var(--espresso);}
+.light p{color:#5B5148; margin-top:8px; font-size:15px;}
+.light .btn.primary{color:#fff;}
+.light .tag2{background:rgba(192,112,60,.12); color:var(--terracota-deep); border-color:var(--line-terra);}
+
+footer{padding:30px 0 56px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:20px;}
+footer i{color:var(--terracota); font-style:normal;}
+@media (max-width:600px){ .fonts,.comp{grid-template-columns:1fr;} .type-row{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="in">
+  <span class="b">Chronos <i>·</i> Design System</span>
+  <span class="m">Terroso-Âmbar · v1</span>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="d"></span>Fase 5 · Território Visual — fundação</span>
+    <h1>O sistema<br>que veste a Chronos.</h1>
+    <p>Cores, tipografia, formas e componentes que traduzem <b style="color:var(--ink);font-weight:500;">natural · elegante · forte · quente</b> — a direção terroso-âmbar que nasceu do ambiente que vocês curtiram, longe do azul-cromado genérico. É a base para o logo, as aplicações e tudo o que vem a seguir.</p>
+  </header>
+
+  <!-- COR -->
+  <section>
+    <div class="kick"><span class="n">01</span> Cor</div>
+    <h2>Paleta terroso-âmbar</h2>
+    <p class="lead">Tons de <b>terra, madeira e pedra</b> com um acento <b>terracota</b> quente e um dourado/bronze fosco. Transmite saúde, natureza e sofisticação sem cair no clínico (azul) nem no genérico (cromado).</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#2A2320"></div><div class="meta"><div class="nm">Espresso</div><div class="hx">#2A2320</div><div class="role">Fundo escuro base</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3A322C"></div><div class="meta"><div class="nm">Madeira</div><div class="hx">#3A322C</div><div class="role">Superfície</div></div></div>
+      <div class="sw"><div class="chip" style="background:#C0703C"></div><div class="meta"><div class="nm">Terracota</div><div class="hx">#C0703C</div><div class="role">Acento principal</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B08D57"></div><div class="meta"><div class="nm">Bronze</div><div class="hx">#B08D57</div><div class="role">Acento secundário</div></div></div>
+      <div class="sw"><div class="chip" style="background:#D9CBB3"></div><div class="meta"><div class="nm">Areia</div><div class="hx">#D9CBB3</div><div class="role">Neutro claro</div></div></div>
+      <div class="sw"><div class="chip" style="background:#F4EFE6"></div><div class="meta"><div class="nm">Creme</div><div class="hx">#F4EFE6</div><div class="role">Texto / fundo claro</div></div></div>
+      <div class="sw"><div class="chip" style="background:#6E7A55"></div><div class="meta"><div class="nm">Oliva</div><div class="hx">#6E7A55</div><div class="role">Verde natural (apoio)</div></div></div>
+      <div class="sw"><div class="chip" style="background:#9A8E7B"></div><div class="meta"><div class="nm">Neutro</div><div class="hx">#9A8E7B</div><div class="role">Texto terciário</div></div></div>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section>
+    <div class="kick"><span class="n">02</span> Tipografia</div>
+    <h2>Fraunces + Manrope</h2>
+    <p class="lead">Um par que equilibra <b>elegância</b> e <b>clareza</b>: uma serifa quente e atemporal para títulos, uma sans limpa e amigável para o corpo. <span style="color:var(--ink-3);">(proposta — validar com as sócias)</span></p>
+    <div class="fonts">
+      <div class="fontcard"><div class="big" style="font-family:var(--display);font-weight:600;">Aa</div><div class="lbl">Fraunces · Display</div><div class="desc">Serifa com caráter, quente e sofisticada. Títulos, números, momentos de marca.</div></div>
+      <div class="fontcard"><div class="big" style="font-family:var(--body);font-weight:600;">Aa</div><div class="lbl">Manrope · Corpo</div><div class="desc">Sans geométrica-humanista, limpa e legível. Textos, interface, legendas.</div></div>
+    </div>
+    <div class="type-row"><span class="tag">Display / H1</span><div class="d1">Cuidar do tempo</div></div>
+    <div class="type-row"><span class="tag">Título / H2</span><div class="d2">Movimento com quem entende</div></div>
+    <div class="type-row"><span class="tag">Subtítulo</span><div class="d3">No seu ritmo, com resultado real</div></div>
+    <div class="type-row"><span class="tag">Corpo</span><div class="b1">Uma academia diferenciada, para todas as idades — do adolescente ao idoso — com atendimento próximo e o suporte de fisioterapia e educação física.</div></div>
+    <div class="type-row"><span class="tag">Eyebrow</span><div class="bsm">Fisioterapia + Educação Física</div></div>
+  </section>
+
+  <!-- FORMA -->
+  <section>
+    <div class="kick"><span class="n">03</span> Forma</div>
+    <h2>Espaço, raio e elevação</h2>
+    <p class="lead">Ritmo em escala de <b>8</b>, cantos <b>suaves</b> (nada anguloso ou agressivo) e sombras <b>quentes e discretas</b> — coerentes com o ar acolhedor da marca.</p>
+    <div style="margin-bottom:30px;">
+      <div class="bsm" style="margin-bottom:12px;">Espaçamento (base 8)</div>
+      <div class="scale">
+        <div class="item"><div class="box" style="width:8px;height:8px;"></div><div class="lab">8</div></div>
+        <div class="item"><div class="box" style="width:16px;height:16px;"></div><div class="lab">16</div></div>
+        <div class="item"><div class="box" style="width:24px;height:24px;"></div><div class="lab">24</div></div>
+        <div class="item"><div class="box" style="width:40px;height:40px;"></div><div class="lab">40</div></div>
+        <div class="item"><div class="box" style="width:64px;height:64px;"></div><div class="lab">64</div></div>
+      </div>
+    </div>
+    <div style="margin-bottom:30px;">
+      <div class="bsm" style="margin-bottom:12px;">Raio de canto</div>
+      <div class="radii">
+        <div><div class="r" style="border-radius:6px;"></div><div class="lab">sm · 6</div></div>
+        <div><div class="r" style="border-radius:10px;"></div><div class="lab">md · 10</div></div>
+        <div><div class="r" style="border-radius:16px;"></div><div class="lab">lg · 16</div></div>
+        <div><div class="r" style="border-radius:22px;"></div><div class="lab">xl · 22</div></div>
+        <div><div class="r" style="border-radius:100px;"></div><div class="lab">pill</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="bsm" style="margin-bottom:12px;">Elevação</div>
+      <div class="shadows">
+        <div><div class="s" style="box-shadow:var(--sh-1);"></div><div class="lab">1 · sutil</div></div>
+        <div><div class="s" style="box-shadow:var(--sh-2);"></div><div class="lab">2 · card</div></div>
+        <div><div class="s" style="box-shadow:var(--sh-3);"></div><div class="lab">3 · destaque</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTES -->
+  <section>
+    <div class="kick"><span class="n">04</span> Componentes</div>
+    <h2>Peças base</h2>
+    <p class="lead">Os blocos recorrentes da marca — já vestidos no sistema.</p>
+    <div class="comp">
+      <div class="compbox"><div class="h">Botões</div><div class="row"><button class="btn primary">Agendar avaliação</button><button class="btn ghost">Saiba mais</button><button class="btn solid-cream">Fale conosco</button></div></div>
+      <div class="compbox"><div class="h">Tags / chips</div><div class="tags"><span class="tag2">Todas as idades</span><span class="tag2">Fisioterapia</span><span class="tag2">Educação Física</span><span class="tag2">No seu ritmo</span><span class="tag2">Resultado real</span></div></div>
+      <div class="compbox"><div class="h">Card &amp; input</div><div class="row" style="align-items:flex-start; gap:26px;">
+        <div class="card"><div class="top"></div><div class="body"><h4>Avaliação inicial</h4><p>Dois olhares, um só cuidado — fisio e educação física avaliam você por inteiro.</p></div></div>
+        <div style="flex:1; min-width:220px;"><div class="bsm" style="margin-bottom:10px;">Campo de formulário</div><input class="input" placeholder="Seu nome"><br><br><button class="btn primary">Quero começar</button></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- LIGHT -->
+  <section>
+    <div class="kick"><span class="n">05</span> Aplicação</div>
+    <h2>Funciona claro e escuro</h2>
+    <p class="lead">A paleta é dupla: fundos <b>escuros e quentes</b> (premium, noturno) e fundos <b>claros de creme/areia</b> (leve, arejado) — mesma alma.</p>
+    <div class="light">
+      <span class="tag2">Fisioterapia + Educação Física</span>
+      <h3 style="margin-top:14px;">Cuidar do corpo pode ser leve. E seguro.</h3>
+      <p>Uma academia diferenciada em Bela Vista do Paraíso — atenção de perto, no seu ritmo, com resultado real.</p>
+      <div style="margin-top:18px;"><button class="btn primary">Agendar avaliação</button></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Chronos · Design System · Terroso-Âmbar v1 &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
+
+</body>
+</html>
