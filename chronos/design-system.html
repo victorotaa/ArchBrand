@@ -6,7 +6,7 @@
 <title>Chronos · Design System (Azul-Marinho + Dourado)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Audiowide&family=Changa+One&family=Michroma&family=Viga&family=Zalando+Sans+Expanded:wght@400;600;700&family=Tilt+Warp&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Audiowide&family=Changa+One&family=Michroma&family=Viga&family=Zalando+Sans+Expanded:wght@400;600;700;800&family=Tilt+Warp&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   /* ——— COR — paleta enxuta (azul-marinho + dourado) ——— */
@@ -15,12 +15,13 @@
   --dourado:#CBA152;         /* destaque (metálico-nobre) */
   --dourado-deep:#B0863F;
   --terracota:#B4623F;       /* acento elegante (quente/humano) */
-  --areia:#D9CBB3; --cream:#F4EFE6; --neutro:#8A97AC;
-  --ink:#F4EFE6; --ink-2:#C3CDDC; --ink-3:#8A97AC; --ink-inv:#0F1F39;
+  --areia:#D9CBB3;           /* único claro — papel/off-white quente (Creme removido) */
+  --neutro:#8A97AC;          /* neutro frio — gradação do azul secundário */
+  --ink:#D9CBB3; --ink-2:#BEB299; --ink-3:#8A97AC; --ink-inv:#0F1F39;
   --line:rgba(244,239,230,.10); --line-2:rgba(244,239,230,.18); --line-gold:rgba(203,161,82,.42);
   --danger:#C15A44;
   /* ——— TIPOGRAFIA ——— */
-  --display:'Manrope',sans-serif;/* headline — neutro provisório (a escolher no Font Lab) */
+  --display:'Zalando Sans Expanded',sans-serif;/* headline — ESCOLHIDA (logo deriva dela) */
   --body:'Manrope',sans-serif;   /* corpo — definido */
   --script:'Caveat',cursive;     /* afeto / assinatura — APROVADA */
   /* ——— RAIO / SOMBRA ——— */
@@ -71,7 +72,9 @@ h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px)
 .opts{display:grid; gap:14px;}
 .opt{border:1px solid var(--line); border-radius:var(--r-lg); padding:20px 24px; background:var(--marinho-2); transition:.18s var(--ease);}
 .opt:hover{border-color:var(--line-gold);}
+.opt.sel{border-color:var(--dourado); background:rgba(203,161,82,.09); box-shadow:0 0 0 1px var(--line-gold) inset;}
 .opt .name{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dourado); margin-bottom:12px;}
+.opt .name .pick{background:var(--dourado); color:var(--ink-inv); border-radius:var(--r-pill); padding:2px 10px; margin-left:8px; font-weight:700;}
 .opt .wm{font-weight:800; font-size:clamp(30px,5vw,46px); letter-spacing:.14em; line-height:1;}
 .opt .ph{font-weight:600; font-size:clamp(20px,3vw,26px); margin-top:8px; letter-spacing:-.01em;}
 .opt .desc{font-size:13px; color:var(--ink-3); margin-top:10px;}
@@ -106,7 +109,7 @@ h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px)
 .btn{font-family:var(--body); font-weight:700; font-size:14px; border-radius:var(--r-pill); padding:11px 22px; border:1px solid transparent; cursor:pointer; transition:.18s var(--ease);}
 .btn.primary{background:var(--dourado); color:var(--ink-inv);}
 .btn.primary:hover{background:var(--dourado-deep);}
-.btn.terra{background:var(--terracota); color:var(--cream);}
+.btn.terra{background:var(--terracota); color:var(--areia);}
 .btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-2); font-weight:600;}
 .btn.ghost:hover{border-color:var(--dourado); color:var(--dourado);}
 .tags{display:flex; flex-wrap:wrap; gap:9px;}
@@ -123,7 +126,7 @@ h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px)
 /* aplicação */
 .apps{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
 .app-dark{background:var(--marinho); border:1px solid var(--line-2); border-radius:var(--r-lg); padding:26px;}
-.app-light{background:var(--cream); color:var(--ink-inv); border-radius:var(--r-lg); padding:26px; border:1px solid var(--line-2);}
+.app-light{background:var(--areia); color:var(--ink-inv); border-radius:var(--r-lg); padding:26px; border:1px solid var(--line-2);}
 .app-dark h3,.app-light h3{font-family:var(--display); font-weight:700; font-size:22px;}
 .app-dark h3{color:var(--ink);} .app-light h3{color:var(--marinho);}
 .app-dark p,.app-light p{font-size:14px; margin-top:8px;} .app-dark p{color:var(--ink-2);} .app-light p{color:#5B5348;}
@@ -141,7 +144,7 @@ footer i{color:var(--dourado); font-style:normal;}
 
 <div class="topbar"><div class="in">
   <span class="b">Chronos <i>·</i> Design System</span>
-  <span class="m">Azul-Marinho &amp; Dourado · v3</span>
+  <span class="m">Azul-Marinho &amp; Dourado · v4</span>
 </div></div>
 
 <div class="wrap">
@@ -149,45 +152,44 @@ footer i{color:var(--dourado); font-style:normal;}
   <header class="hero">
     <span class="eyebrow"><span class="d"></span>Fase 5 · Território Visual — fundação</span>
     <h1>O sistema que veste a Chronos.</h1>
-    <p>Paleta enxuta e intencional, formas suaves e uma família tipográfica <b style="color:var(--ink);font-weight:500;">a escolher com vocês</b>. O azul da marca no comando, elevado por dourado e um toque de terracota. Base para o logo e todas as aplicações.</p>
+    <p>Paleta enxuta e intencional (7 cores travadas), formas suaves e a família tipográfica definida — <b style="color:var(--ink);font-weight:500;">Zalando Sans Expanded</b> no headline, Manrope no corpo, Caveat no afeto. O azul da marca no comando, elevado por dourado e um toque de terracota. Base para o logo e todas as aplicações.</p>
   </header>
 
   <!-- COR -->
   <section>
     <div class="kick"><span class="n">01</span> Cor</div>
     <h2>Paleta enxuta</h2>
-    <p class="lead"><b>Azul-marinho</b> predominante (dois tons) + <b>azul-assinatura</b> para destaque, com dois acentos quentes — <b>dourado</b> (nobre, metálico) e <b>terracota</b> (elegante, humano) — sobre neutros de areia e creme. Poucas cores, muito controle.</p>
+    <p class="lead"><b>Azul-marinho</b> predominante (dois tons) + <b>azul-assinatura</b> para destaque, com dois acentos quentes — <b>dourado</b> (nobre, metálico) e <b>terracota</b> (elegante, humano) — sobre <b>areia</b> (único claro/papel) e um neutro frio. <b>7 cores, travadas</b> — sem redundância, muito controle.</p>
     <div class="swatches">
-      <div class="sw"><div class="chip" style="background:#0F1F39"></div><div class="meta"><div class="nm">Marinho</div><div class="hx">#0F1F39</div><div class="cmyk">C74 M46 Y0 K78</div><br><span class="pant">Pantone 539 C</span><div class="role">Base predominante</div></div></div>
-      <div class="sw"><div class="chip" style="background:#1A2C4E"></div><div class="meta"><div class="nm">Marinho 2</div><div class="hx">#1A2C4E</div><div class="cmyk">C67 M43 Y0 K69</div><br><span class="pant">Pantone 534 C</span><div class="role">Superfície</div></div></div>
-      <div class="sw"><div class="chip" style="background:#3E78B2"></div><div class="meta"><div class="nm">Azul-assinatura</div><div class="hx">#3E78B2</div><div class="cmyk">C65 M33 Y0 K30</div><br><span class="pant">Pantone 646 C</span><div class="role">Destaque / links</div></div></div>
-      <div class="sw"><div class="chip" style="background:#CBA152"></div><div class="meta"><div class="nm">Dourado</div><div class="hx">#CBA152</div><div class="cmyk">C0 M21 Y60 K20</div><br><span class="pant">Pantone 7407 C</span><div class="role">Acento — destaque</div></div></div>
-      <div class="sw"><div class="chip" style="background:#B4623F"></div><div class="meta"><div class="nm">Terracota</div><div class="hx">#B4623F</div><div class="cmyk">C0 M46 Y65 K29</div><br><span class="pant">Pantone 7522 C</span><div class="role">Acento — elegante</div></div></div>
-      <div class="sw"><div class="chip" style="background:#D9CBB3"></div><div class="meta"><div class="nm">Areia</div><div class="hx">#D9CBB3</div><div class="cmyk">C0 M6 Y18 K15</div><br><span class="pant">Pantone 468 C</span><div class="role">Neutro claro</div></div></div>
-      <div class="sw"><div class="chip" style="background:#F4EFE6"></div><div class="meta"><div class="nm">Creme</div><div class="hx">#F4EFE6</div><div class="cmyk">C0 M2 Y6 K4</div><br><span class="pant">Pantone 7499 C</span><div class="role">Texto / fundo claro</div></div></div>
-      <div class="sw"><div class="chip" style="background:#8A97AC"></div><div class="meta"><div class="nm">Neutro</div><div class="hx">#8A97AC</div><div class="cmyk">C20 M12 Y0 K33</div><br><span class="pant">Pantone 7543 C</span><div class="role">Texto terciário</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0F1F39"></div><div class="meta"><div class="nm">Marinho</div><div class="hx">#0F1F39</div><div class="cmyk">C75 M45 Y0 K80</div><br><span class="pant">Pantone 539 C</span><div class="role">Base predominante</div></div></div>
+      <div class="sw"><div class="chip" style="background:#1A2C4E"></div><div class="meta"><div class="nm">Marinho 2</div><div class="hx">#1A2C4E</div><div class="cmyk">C65 M45 Y0 K70</div><br><span class="pant">Pantone 534 C</span><div class="role">Superfície</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3E78B2"></div><div class="meta"><div class="nm">Azul-assinatura</div><div class="hx">#3E78B2</div><div class="cmyk">C65 M35 Y0 K30</div><br><span class="pant">Pantone 646 C</span><div class="role">Destaque / links</div></div></div>
+      <div class="sw"><div class="chip" style="background:#CBA152"></div><div class="meta"><div class="nm">Dourado</div><div class="hx">#CBA152</div><div class="cmyk">C0 M20 Y60 K20</div><br><span class="pant">Pantone 7407 C</span><div class="role">Acento — destaque</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B4623F"></div><div class="meta"><div class="nm">Terracota</div><div class="hx">#B4623F</div><div class="cmyk">C0 M45 Y65 K30</div><br><span class="pant">Pantone 7522 C</span><div class="role">Acento — elegante</div></div></div>
+      <div class="sw"><div class="chip" style="background:#D9CBB3"></div><div class="meta"><div class="nm">Areia</div><div class="hx">#D9CBB3</div><div class="cmyk">C0 M5 Y20 K15</div><br><span class="pant">Pantone 468 C</span><div class="role">Único claro · papel</div></div></div>
+      <div class="sw"><div class="chip" style="background:#8A97AC"></div><div class="meta"><div class="nm">Neutro</div><div class="hx">#8A97AC</div><div class="cmyk">C20 M10 Y0 K35</div><br><span class="pant">Pantone 7543 C</span><div class="role">Neutro frio · gradação do azul</div></div></div>
     </div>
-    <p class="lead" style="margin-top:18px;font-size:13px;color:var(--ink-3);max-width:70ch;">CMYK e Pantone são <b style="color:var(--ink-2);font-weight:500;">conversões de tela → tinta</b> (aproximação fiel para impressão). Antes de fechar qualquer material impresso, confirmar o Pantone no <b style="color:var(--ink-2);font-weight:500;">guia físico</b> (Solid Coated) — a percepção muda do monitor para o papel.</p>
+    <p class="lead" style="margin-top:18px;font-size:13px;color:var(--ink-3);max-width:74ch;">CMYK e Pantone são <b style="color:var(--ink-2);font-weight:500;">conversões de tela → tinta</b> (aproximação fiel para impressão). Regras da casa: valores <b style="color:var(--ink-2);font-weight:500;">arredondados a 5%</b> (o olho não distingue nuances menores) e compostos em <b style="color:var(--ink-2);font-weight:500;">no máximo 3 dos 4 canais</b> (um sempre em 0) para maior pureza. Antes de fechar impressão, confirmar o Pantone no <b style="color:var(--ink-2);font-weight:500;">guia físico</b> (Solid Coated) — a percepção muda do monitor para o papel.</p>
   </section>
 
   <!-- FONT LAB -->
   <section>
     <div class="kick"><span class="n">02</span> Tipografia · Font Lab</div>
-    <h2>Escolha a fonte de headline</h2>
-    <p class="lead">O <b>corpo</b> está definido (<b>Manrope</b>, Google Font). Falta a <b>headline</b> — e você escolhe. A direção é <b>larga, moderna e techy</b> (vide as referências de logo que você mandou). Abaixo as <b>6 candidatas</b> que você pediu, todas Google Fonts, cada uma vestindo "CHRONOS" + a linha "Cuidar do tempo". Diz qual fala mais.</p>
+    <h2>Headline definida — Zalando Sans Expanded</h2>
+    <p class="lead">A <b>headline</b> está fechada: <b>Zalando Sans Expanded</b> (o logotipo deriva dela). O <b>corpo</b> é <b>Manrope</b> e o <b>afeto</b> é <b>Caveat</b>. Abaixo o comparativo das <b>6 candidatas</b> testadas — todas Google Fonts, vestindo "CHRONOS" + "Cuidar do tempo" — com a escolhida em destaque.</p>
 
     <div class="fl-body">
       <div class="aa">Manrope</div>
       <div><div class="tt">Corpo · definido</div><p>Sans geométrica-humanista, limpa e amigável. Ótima legibilidade em texto, interface e legendas. É Google Font.</p></div>
     </div>
 
-    <p class="fl-note">Headline — 6 candidatas (direção: <b style="color:var(--ink-2);font-weight:500;">wide · geométrica · moderna</b>). Qual carrega melhor o wordmark?</p>
+    <p class="fl-note">Headline — 6 candidatas testadas (direção: <b style="color:var(--ink-2);font-weight:500;">wide · geométrica · moderna</b>). Escolhida: <b style="color:var(--dourado);font-weight:600;">Zalando Sans Expanded</b>.</p>
     <div class="opts">
       <div class="opt f-audiowide"><div class="name">Opção A · Audiowide</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Techy e futurista, cantos arredondados. Muito "cronômetro/tempo", energia esportiva.</div></div>
       <div class="opt f-changa"><div class="name">Opção B · Changa One</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Condensada, pesada e atlética. Impacto forte — a mais "brava" e cheia de presença.</div></div>
       <div class="opt f-michroma"><div class="name">Opção C · Michroma</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Ultra-larga, técnica e precisa. Ar premium-tecnológico, a mais próxima das referências.</div></div>
       <div class="opt f-viga"><div class="name">Opção D · Viga</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Sans robusta e amigável, peso só num grau. Moderna sem ser fria — mais acolhedora.</div></div>
-      <div class="opt f-zalando"><div class="name">Opção E · Zalando Sans Expanded</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Grotesca expandida contemporânea. Larga e elegante, com toque editorial premium.</div></div>
+      <div class="opt f-zalando sel"><div class="name">Opção E · Zalando Sans Expanded <span class="pick">✓ escolhida</span></div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Grotesca expandida contemporânea. Larga e elegante, com toque editorial premium — <b style="color:var(--ink-2);font-weight:500;">peso + modernidade do wide</b>. O logotipo deriva dela.</div></div>
       <div class="opt f-tilt"><div class="name">Opção F · Tilt Warp</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Larga com leve distorção viva. Moderna e lúdica — personalidade forte, foge do óbvio.</div></div>
     </div>
 
@@ -241,7 +243,7 @@ footer i{color:var(--dourado); font-style:normal;}
   <section>
     <div class="kick"><span class="n">05</span> Aplicação</div>
     <h2>Escuro e claro — e o toque de afeto</h2>
-    <p class="lead">A paleta é dupla: <b>marinho profundo</b> (premium, noturno) e <b>creme</b> (leve, arejado). A manuscrita entra em momentos pontuais, como uma assinatura.</p>
+    <p class="lead">A paleta é dupla: <b>marinho profundo</b> (premium, noturno) e <b>areia</b> (leve, arejado — nosso único claro). A manuscrita entra em momentos pontuais, como uma assinatura.</p>
     <div class="apps">
       <div class="app-dark">
         <span class="tag2">Fisioterapia + Educação Física</span>
@@ -262,7 +264,7 @@ footer i{color:var(--dourado); font-style:normal;}
 
 </div>
 
-<footer>Chronos · Design System · Azul-Marinho &amp; Dourado v3 &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
+<footer>Chronos · Design System · Azul-Marinho &amp; Dourado v4 &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
 
 </body>
 </html>
