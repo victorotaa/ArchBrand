@@ -8,14 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* ——— COR (terroso-âmbar) ——— */
-  --espresso:#2A2320; --wood:#3A322C; --wood-2:#453A32; --wood-3:#524539;
+  /* ——— COR (azul-marinho + bronze) — azul predominante, elevado ——— */
+  --espresso:#0F1F39; --wood:#18294A; --wood-2:#213458; --wood-3:#2C4570;
   --sand:#D9CBB3; --cream:#F4EFE6; --paper:#EDE4D4;
-  --terracota:#C0703C; --terracota-deep:#A85A2C; --bronze:#B08D57;
-  --olive:#6E7A55;
-  --ink:#F4EFE6; --ink-2:#C9BBA3; --ink-3:#9A8E7B; --ink-inv:#2A2320;
-  --line:rgba(244,239,230,.10); --line-2:rgba(244,239,230,.18); --line-terra:rgba(192,112,60,.45);
-  --danger:#B24A34;
+  --terracota:#C8A05A; --terracota-deep:#AE8641; --bronze:#B08D57; /* acento quente = dourado/bronze */
+  --olive:#3E78B2; /* azul-assinatura (destaque) */
+  --ink:#F4EFE6; --ink-2:#C3CDDC; --ink-3:#8A97AC; --ink-inv:#0F1F39;
+  --line:rgba(244,239,230,.10); --line-2:rgba(244,239,230,.18); --line-terra:rgba(200,160,90,.45);
+  --danger:#C15A44;
   /* ——— TIPOGRAFIA ——— */
   --display:'Fraunces',serif; --body:'Manrope',sans-serif;
   /* ——— RAIO / SOMBRA / EASE ——— */
@@ -26,7 +26,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(--espresso); line-height:1.6; -webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(192,112,60,.13), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(176,141,87,.08), transparent 55%);}
+  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(200,160,90,.12), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(62,120,178,.14), transparent 55%);}
 .wrap{max-width:920px; margin:0 auto; padding:0 26px;}
 .topbar{border-bottom:1px solid var(--line);}
 .topbar .in{max-width:920px; margin:0 auto; padding:16px 26px; display:flex; justify-content:space-between; align-items:baseline; gap:14px;}
@@ -89,7 +89,7 @@ h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3.6vw,34px)
 .compbox .h{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:16px;}
 .row{display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
 .btn{font-family:var(--body); font-weight:600; font-size:14px; border-radius:var(--r-pill); padding:11px 22px; border:1px solid transparent; cursor:pointer; transition:.18s var(--ease);}
-.btn.primary{background:var(--terracota); color:var(--cream);}
+.btn.primary{background:var(--terracota); color:var(--ink-inv); font-weight:700;}
 .btn.primary:hover{background:var(--terracota-deep);}
 .btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-2);}
 .btn.ghost:hover{border-color:var(--terracota); color:var(--terracota);}
@@ -97,7 +97,7 @@ h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3.6vw,34px)
 .tags{display:flex; flex-wrap:wrap; gap:9px;}
 .tag2{font-size:12.5px; padding:6px 13px; border-radius:var(--r-pill); background:rgba(192,112,60,.14); border:1px solid var(--line-terra); color:var(--sand);}
 .card{border:1px solid var(--line-2); border-radius:var(--r-lg); overflow:hidden; background:var(--wood-2); max-width:320px; box-shadow:var(--sh-2);}
-.card .top{height:110px; background:linear-gradient(135deg, var(--terracota), var(--bronze));}
+.card .top{height:110px; background:linear-gradient(135deg, var(--olive), var(--terracota));}
 .card .body{padding:18px 20px;}
 .card .body h4{font-family:var(--display); font-weight:600; font-size:19px; margin-bottom:6px;}
 .card .body p{font-size:14px; color:var(--ink-2);}
@@ -109,7 +109,7 @@ h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3.6vw,34px)
 .light{background:var(--cream); color:var(--ink-inv); border-radius:var(--r-lg); padding:28px 30px; border:1px solid var(--line-2);}
 .light h3{font-family:var(--display); font-weight:600; font-size:26px; color:var(--espresso);}
 .light p{color:#5B5148; margin-top:8px; font-size:15px;}
-.light .btn.primary{color:#fff;}
+.light .btn.primary{color:var(--ink-inv);}
 .light .tag2{background:rgba(192,112,60,.12); color:var(--terracota-deep); border-color:var(--line-terra);}
 
 footer{padding:30px 0 56px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:20px;}
@@ -121,7 +121,7 @@ footer i{color:var(--terracota); font-style:normal;}
 
 <div class="topbar"><div class="in">
   <span class="b">Chronos <i>·</i> Design System</span>
-  <span class="m">Terroso-Âmbar · v1</span>
+  <span class="m">Azul-Marinho &amp; Bronze · v1</span>
 </div></div>
 
 <div class="wrap">
@@ -129,23 +129,23 @@ footer i{color:var(--terracota); font-style:normal;}
   <header class="hero">
     <span class="eyebrow"><span class="d"></span>Fase 5 · Território Visual — fundação</span>
     <h1>O sistema<br>que veste a Chronos.</h1>
-    <p>Cores, tipografia, formas e componentes que traduzem <b style="color:var(--ink);font-weight:500;">natural · elegante · forte · quente</b> — a direção terroso-âmbar que nasceu do ambiente que vocês curtiram, longe do azul-cromado genérico. É a base para o logo, as aplicações e tudo o que vem a seguir.</p>
+    <p>Cores, tipografia, formas e componentes que traduzem <b style="color:var(--ink);font-weight:500;">azul profundo · elegante · forte · quente</b> — o azul da marca no comando, elevado com bronze e creme. Longe do azul-elétrico cromado genérico; perto de uma marca atemporal. É a base para o logo, as aplicações e tudo o que vem a seguir.</p>
   </header>
 
   <!-- COR -->
   <section>
     <div class="kick"><span class="n">01</span> Cor</div>
-    <h2>Paleta terroso-âmbar</h2>
-    <p class="lead">Tons de <b>terra, madeira e pedra</b> com um acento <b>terracota</b> quente e um dourado/bronze fosco. Transmite saúde, natureza e sofisticação sem cair no clínico (azul) nem no genérico (cromado).</p>
+    <h2>Paleta azul-marinho + bronze</h2>
+    <p class="lead"><b>Azul-marinho profundo</b> como base predominante — o azul da marca, no comando. Elevado por um acento quente em <b>dourado/bronze</b> (no lugar do prateado frio) e neutros <b>creme</b>. Sofisticado e atemporal, longe do azul-elétrico genérico.</p>
     <div class="swatches">
-      <div class="sw"><div class="chip" style="background:#2A2320"></div><div class="meta"><div class="nm">Espresso</div><div class="hx">#2A2320</div><div class="role">Fundo escuro base</div></div></div>
-      <div class="sw"><div class="chip" style="background:#3A322C"></div><div class="meta"><div class="nm">Madeira</div><div class="hx">#3A322C</div><div class="role">Superfície</div></div></div>
-      <div class="sw"><div class="chip" style="background:#C0703C"></div><div class="meta"><div class="nm">Terracota</div><div class="hx">#C0703C</div><div class="role">Acento principal</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0F1F39"></div><div class="meta"><div class="nm">Marinho</div><div class="hx">#0F1F39</div><div class="role">Base predominante</div></div></div>
+      <div class="sw"><div class="chip" style="background:#18294A"></div><div class="meta"><div class="nm">Marinho surface</div><div class="hx">#18294A</div><div class="role">Superfície</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3E78B2"></div><div class="meta"><div class="nm">Azul-assinatura</div><div class="hx">#3E78B2</div><div class="role">Destaque / links</div></div></div>
+      <div class="sw"><div class="chip" style="background:#C8A05A"></div><div class="meta"><div class="nm">Dourado</div><div class="hx">#C8A05A</div><div class="role">Acento principal (quente)</div></div></div>
       <div class="sw"><div class="chip" style="background:#B08D57"></div><div class="meta"><div class="nm">Bronze</div><div class="hx">#B08D57</div><div class="role">Acento secundário</div></div></div>
       <div class="sw"><div class="chip" style="background:#D9CBB3"></div><div class="meta"><div class="nm">Areia</div><div class="hx">#D9CBB3</div><div class="role">Neutro claro</div></div></div>
       <div class="sw"><div class="chip" style="background:#F4EFE6"></div><div class="meta"><div class="nm">Creme</div><div class="hx">#F4EFE6</div><div class="role">Texto / fundo claro</div></div></div>
-      <div class="sw"><div class="chip" style="background:#6E7A55"></div><div class="meta"><div class="nm">Oliva</div><div class="hx">#6E7A55</div><div class="role">Verde natural (apoio)</div></div></div>
-      <div class="sw"><div class="chip" style="background:#9A8E7B"></div><div class="meta"><div class="nm">Neutro</div><div class="hx">#9A8E7B</div><div class="role">Texto terciário</div></div></div>
+      <div class="sw"><div class="chip" style="background:#8A97AC"></div><div class="meta"><div class="nm">Neutro</div><div class="hx">#8A97AC</div><div class="role">Texto terciário</div></div></div>
     </div>
   </section>
 
@@ -219,7 +219,7 @@ footer i{color:var(--terracota); font-style:normal;}
   <section>
     <div class="kick"><span class="n">05</span> Aplicação</div>
     <h2>Funciona claro e escuro</h2>
-    <p class="lead">A paleta é dupla: fundos <b>escuros e quentes</b> (premium, noturno) e fundos <b>claros de creme/areia</b> (leve, arejado) — mesma alma.</p>
+    <p class="lead">A paleta é dupla: fundos <b>marinho profundos</b> (premium, noturno) e fundos <b>claros de creme/areia</b> (leve, arejado) — mesma alma, o dourado brilhando nos dois.</p>
     <div class="light">
       <span class="tag2">Fisioterapia + Educação Física</span>
       <h3 style="margin-top:14px;">Cuidar do corpo pode ser leve. E seguro.</h3>
