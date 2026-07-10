@@ -118,6 +118,11 @@ arquétipo e reduzir viés de resposta.
    sempre carregam **todas as respostas** (`state.answers` inteiro), não só o
    arquétipo/resultado. O `briefing_completo_json` no envio nunca pode ser
    resumido ou podado — o cruzamento posterior depende do dado total.
+6. **Fonte de afeto (tipografia).** Todo sistema tipográfico pode incluir uma
+   **fonte manuscrita/assinatura opcional** — a "fonte de afeto" — para toques
+   personalizados e humanos (frases-assinatura, detalhes carinhosos). Dá
+   flexibilidade à marca sem quebrar a hierarquia display/corpo. Preferir Google
+   Fonts (portabilidade). Aplicar sempre com parcimônia, em momentos pontuais.
 
 ## Testar antes de entregar (obrigatório)
 
