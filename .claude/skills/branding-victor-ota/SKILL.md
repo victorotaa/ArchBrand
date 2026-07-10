@@ -123,6 +123,15 @@ arquétipo e reduzir viés de resposta.
    personalizados e humanos (frases-assinatura, detalhes carinhosos). Dá
    flexibilidade à marca sem quebrar a hierarquia display/corpo. Preferir Google
    Fonts (portabilidade). Aplicar sempre com parcimônia, em momentos pontuais.
+7. **CMYK + Pantone por cor (sempre incluir e validar).** Toda paleta de design
+   system carrega, para **cada cor**, além do HEX: a **composição CMYK** e uma
+   **cor Pantone compatível** (Solid Coated como referência). São conversões de
+   tela → tinta — servem para impressão e garantem consistência on/offline.
+   Regras: (a) derivar o CMYK do RGB/HEX e escolher o Pantone mais próximo;
+   (b) **rotular como aproximação** e instruir a **confirmar no guia físico**
+   antes de fechar material impresso (a percepção muda do monitor para o papel);
+   (c) exibir os três valores juntos no swatch (HEX · CMYK · Pantone). Nunca
+   entregar uma paleta só em HEX.
 
 ## Testar antes de entregar (obrigatório)
 
