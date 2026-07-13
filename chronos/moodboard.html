@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Moodboard (Território Visual)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Zalando+Sans+Expanded:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marinho:#0F1F39; --marinho-2:#1A2C4E; --marinho-3:#243a63; --marinho-4:#2C4570;
+  --azul:#3E78B2; --dourado:#CBA152; --dourado-deep:#B0863F; --terracota:#B4623F;
+  --areia:#D9CBB3; --neutro:#8A97AC;
+  --ink:#D9CBB3; --ink-2:#BEB299; --ink-3:#8A97AC; --ink-inv:#0F1F39;
+  --line:rgba(217,203,179,.12); --line-2:rgba(217,203,179,.20); --line-gold:rgba(203,161,82,.42);
+  --display:'Zalando Sans Expanded',sans-serif; --body:'Manrope',sans-serif;
+  --mono:'JetBrains Mono',monospace; --script:'Caveat',cursive;
+  --r-md:10px; --r-lg:16px; --r-xl:22px; --r-pill:100px; --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);font-weight:400;color:var(--ink);background:var(--marinho);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(203,161,82,.12), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(62,120,178,.16), transparent 55%);}
+.wrap{max-width:1000px;margin:0 auto;padding:0 26px;}
+.topbar{border-bottom:1px solid var(--line);}
+.topbar .in{max-width:1000px;margin:0 auto;padding:16px 26px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+.topbar .b{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.04em;}
+.topbar .b i{color:var(--dourado);font-style:normal;}
+.topbar .m{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);}
+
+.hero{padding:60px 0 34px;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--line-gold);border-radius:var(--r-pill);padding:6px 15px;margin-bottom:24px;}
+.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--dourado);}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6.4vw,58px);line-height:1.03;letter-spacing:-.01em;}
+.hero p{margin-top:18px;font-size:clamp(15px,2vw,17px);color:var(--ink-2);max-width:64ch;}
+
+section{padding:46px 0;border-top:1px solid var(--line);}
+.kick{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;}
+.kick .n{font-family:var(--display);color:var(--dourado);font-weight:700;}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.01em;margin-bottom:8px;}
+.lead{color:var(--ink-2);max-width:66ch;margin-bottom:26px;} .lead b{color:var(--ink);font-weight:600;}
+.note{font-size:13px;color:var(--ink-3);margin-top:16px;}
+
+/* palavras-clima */
+.words{display:flex;flex-wrap:wrap;gap:10px;}
+.word{font-size:14px;padding:8px 16px;border-radius:var(--r-pill);border:1px solid var(--line-gold);background:rgba(203,161,82,.08);color:var(--areia);}
+.word.b{background:rgba(62,120,178,.12);border-color:rgba(62,120,178,.4);color:#B9CBE0;}
+.word.t{background:rgba(180,98,63,.14);border-color:rgba(180,98,63,.4);color:#E6B79E;}
+
+/* atmosferas — tiles de clima (gradientes) */
+.atmos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.atile{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:230px;border:1px solid var(--line-2);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;}
+.atile .grain{position:absolute;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+  background:radial-gradient(circle at 20% 30%,#fff 0 1px,transparent 1px),radial-gradient(circle at 70% 60%,#fff 0 1px,transparent 1px);background-size:3px 3px,4px 4px;}
+.atile .lab{position:relative;z-index:2;}
+.atile .lab .t{font-family:var(--display);font-weight:700;font-size:19px;color:#F4EFE6;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.atile .lab .s{font-size:12.5px;color:rgba(244,239,230,.82);margin-top:3px;text-shadow:0 1px 8px rgba(0,0,0,.5);}
+.a-noite{background:linear-gradient(160deg,#0B1730 0%,#0F1F39 45%,#1A2C4E 100%);}
+.a-ouro{background:radial-gradient(120% 130% at 20% 10%,#E7C578 0%,#CBA152 30%,#8f6a2f 78%,#3a2c14 100%);}
+.a-aurora{background:linear-gradient(155deg,#0F1F39 0%,#243a63 40%,#3E78B2 78%,#7FA8CF 100%);}
+.a-areia{background:linear-gradient(155deg,#EDE4D2 0%,#D9CBB3 55%,#C0AE8F 100%);}
+.a-areia .lab .t,.a-areia .lab .s{color:#3a2f22;text-shadow:none;}
+.a-terra{background:radial-gradient(120% 120% at 80% 15%,#C87A52 0%,#B4623F 40%,#6f3a25 90%);}
+.a-mov{background:linear-gradient(110deg,#0F1F39 0%,#0F1F39 35%,#3E78B2 50%,#0F1F39 65%,#0F1F39 100%);position:relative;}
+.a-mov::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(110deg,transparent 0 22px,rgba(203,161,82,.10) 22px 24px);}
+
+/* luz & textura studies */
+.studies{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.study{height:120px;border-radius:var(--r-md);border:1px solid var(--line);position:relative;overflow:hidden;}
+.study .cap{position:absolute;bottom:8px;left:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,230,.85);z-index:2;text-shadow:0 1px 6px rgba(0,0,0,.6);}
+.s-grain{background:var(--marinho-2);}
+.s-grain::before{content:"";position:absolute;inset:0;opacity:.10;background:radial-gradient(circle at 30% 40%,#fff 0 1px,transparent 1px);background-size:3px 3px;}
+.s-leak{background:radial-gradient(90% 120% at 100% 0%,rgba(203,161,82,.55),transparent 55%),var(--marinho);}
+.s-vig{background:var(--marinho-3);}
+.s-vig::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 90% at 50% 40%,transparent 50%,rgba(0,0,0,.6));}
+.s-grad{background:linear-gradient(135deg,var(--azul),var(--dourado));}
+
+/* tipografia no clima */
+.typ{position:relative;border-radius:var(--r-lg);overflow:hidden;padding:52px 34px;border:1px solid var(--line-2);
+  background:linear-gradient(160deg,#0B1730,#1A2C4E 70%,#243a63);}
+.typ .grain{position:absolute;inset:0;opacity:.06;background:radial-gradient(circle at 40% 30%,#fff 0 1px,transparent 1px);background-size:3px 3px;}
+.typ h3{position:relative;font-family:var(--display);font-weight:800;font-size:clamp(32px,6vw,58px);color:#F4EFE6;line-height:1.02;letter-spacing:-.01em;}
+.typ .sub{position:relative;font-size:16px;color:var(--ink-2);margin-top:12px;max-width:48ch;}
+.typ .sig{position:relative;font-family:var(--script);color:var(--dourado);font-size:34px;margin-top:14px;}
+
+/* iconografia */
+.icons{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.ic{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:22px 16px;text-align:center;}
+.ic svg{width:44px;height:44px;color:var(--dourado);}
+.ic .l{font-size:12px;color:var(--ink-3);margin-top:12px;letter-spacing:.02em;}
+
+/* direção fotográfica + slots */
+.brief{border:1px solid var(--line-gold);border-radius:var(--r-lg);background:rgba(203,161,82,.05);padding:24px 26px;margin-bottom:24px;}
+.brief h4{font-family:var(--display);font-weight:700;font-size:16px;color:var(--dourado);margin-bottom:12px;}
+.brief ul{list-style:none;display:grid;gap:9px;}
+.brief li{font-size:14px;color:var(--ink-2);padding-left:20px;position:relative;}
+.brief li::before{content:"—";position:absolute;left:0;color:var(--dourado);}
+.brief li b{color:var(--ink);font-weight:600;}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.slot{position:relative;border:1px dashed var(--line-gold);border-radius:var(--r-lg);min-height:200px;background:
+  repeating-linear-gradient(135deg,rgba(203,161,82,.04) 0 10px,transparent 10px 20px),var(--marinho-2);
+  display:flex;flex-direction:column;justify-content:space-between;padding:18px;}
+.slot .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);}
+.slot .brf{font-size:13px;color:var(--ink-2);} .slot .brf b{color:var(--ink);font-weight:600;}
+.slot .ph{align-self:flex-end;font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.1em;}
+
+/* referências (descritas — não embutidas) */
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.refbox{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:22px 24px;}
+.refbox .h{font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink);}
+.refbox .u{font-family:var(--mono);font-size:11px;color:var(--azul);margin-top:4px;word-break:break-all;}
+.refbox p{font-size:13.5px;color:var(--ink-3);margin-top:10px;}
+
+footer{padding:30px 0 56px;text-align:center;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);margin-top:20px;}
+footer i{color:var(--dourado);font-style:normal;}
+@media (max-width:720px){.atmos,.studies,.icons,.slots{grid-template-columns:1fr 1fr;} .refs{grid-template-columns:1fr;}}
+@media (max-width:460px){.atmos,.studies,.icons,.slots{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-tempo" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="26" r="15"/><path d="M24 26V16M24 26l8 5M24 8h0M20 6h8"/></g></symbol>
+  <symbol id="i-mov" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30h9l4-9 5 15 4-9h10"/></g></symbol>
+  <symbol id="i-cuidado" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 39s-13-8-13-18a8 8 0 0 1 13-6 8 8 0 0 1 13 6c0 10-13 18-13 18z"/></g></symbol>
+  <symbol id="i-idades" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="15" r="5"/><circle cx="33" cy="17" r="4"/><path d="M8 38c0-6 4-10 8-10s8 4 8 10M27 38c0-5 3-8 6-8s6 3 6 8"/></g></symbol>
+</defs></svg>
+
+<div class="topbar"><div class="in">
+  <span class="b">Chronos <i>·</i> Moodboard</span>
+  <span class="m">Fase 5 · Território Visual · v1</span>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="d"></span>Fase 5 · Território Visual — clima</span>
+    <h1>O clima da Chronos.</h1>
+    <p>O moodboard traduz o <b>sentimento</b> da marca antes da foto: a luz, a cor, a textura, o ritmo. Um território <b>premium e humano</b> — marinho profundo iluminado por dourado, calor de areia e o azul da confiança. Base para dirigir toda imagem, vídeo e ambiente. As fotografias entram nos slots (direção ao fim).</p>
+  </header>
+
+  <!-- PALAVRAS -->
+  <section>
+    <div class="kick"><span class="n">01</span> Palavras-clima</div>
+    <h2>O que a marca sente</h2>
+    <p class="lead">O vocabulário emocional que filtra cada escolha visual.</p>
+    <div class="words">
+      <span class="word">Constância</span><span class="word">Tempo</span><span class="word b">Confiança</span>
+      <span class="word">Cuidado de perto</span><span class="word t">Calor humano</span><span class="word">No seu ritmo</span>
+      <span class="word b">Movimento</span><span class="word">Estabilidade</span><span class="word">Todas as idades</span>
+      <span class="word t">Real, não genérico</span><span class="word">Premium sereno</span>
+    </div>
+  </section>
+
+  <!-- ATMOSFERAS -->
+  <section>
+    <div class="kick"><span class="n">02</span> Atmosferas</div>
+    <h2>A luz e a cor da marca</h2>
+    <p class="lead">Seis climas que a imagem deve habitar — a base cromática do sistema traduzida em <b>ambiente</b>. É por aqui que a fotografia (e o vídeo) devem ser tratados.</p>
+    <div class="atmos">
+      <div class="atile a-noite"><div class="grain"></div><div class="lab"><div class="t">Noite premium</div><div class="s">Marinho profundo · silêncio e foco</div></div></div>
+      <div class="atile a-ouro"><div class="grain"></div><div class="lab"><div class="t">Luz dourada</div><div class="s">Fim de tarde · calor nobre na pele</div></div></div>
+      <div class="atile a-aurora"><div class="grain"></div><div class="lab"><div class="t">Azul confiança</div><div class="s">Amanhecer · clareza e constância</div></div></div>
+      <div class="atile a-areia"><div class="grain"></div><div class="lab"><div class="t">Areia / pele</div><div class="s">Neutro quente · humano e acolhedor</div></div></div>
+      <div class="atile a-terra"><div class="grain"></div><div class="lab"><div class="t">Terracota</div><div class="s">Acento quente · vida e proximidade</div></div></div>
+      <div class="atile a-mov"><div class="grain"></div><div class="lab"><div class="t">Movimento</div><div class="s">Ritmo · corpo em constância</div></div></div>
+    </div>
+  </section>
+
+  <!-- LUZ & TEXTURA -->
+  <section>
+    <div class="kick"><span class="n">03</span> Luz & textura</div>
+    <h2>O acabamento</h2>
+    <p class="lead">Grão sutil, vinheta suave, um leve <i>light-leak</i> dourado e o gradiente azul→ouro. Nada de neon, glassmorphism ou saturação — <b>sobriedade quente</b>.</p>
+    <div class="studies">
+      <div class="study s-grain"><span class="cap">Grão fino</span></div>
+      <div class="study s-leak"><span class="cap">Light-leak ouro</span></div>
+      <div class="study s-vig"><span class="cap">Vinheta</span></div>
+      <div class="study s-grad"><span class="cap">Gradiente azul→ouro</span></div>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFIA NO CLIMA -->
+  <section>
+    <div class="kick"><span class="n">04</span> Tipografia no clima</div>
+    <h2>A voz sobre a imagem</h2>
+    <p class="lead">Zalando no comando, Manrope no apoio, Caveat no toque humano — sempre com respiro.</p>
+    <div class="typ">
+      <div class="grain"></div>
+      <h3>Cuidar do tempo.</h3>
+      <div class="sub">O corpo tem o seu ritmo — e a constância é o que transforma. Fisioterapia e educação física, lado a lado, para todas as idades.</div>
+      <div class="sig">no seu ritmo</div>
+    </div>
+  </section>
+
+  <!-- ICONOGRAFIA -->
+  <section>
+    <div class="kick"><span class="n">05</span> Iconografia</div>
+    <h2>Sinais da marca</h2>
+    <p class="lead">Linha geométrica, cantos suaves, mesma família do símbolo — legível e calorosa.</p>
+    <div class="icons">
+      <div class="ic"><svg><use href="#i-tempo"/></svg><div class="l">Tempo</div></div>
+      <div class="ic"><svg><use href="#i-mov"/></svg><div class="l">Movimento</div></div>
+      <div class="ic"><svg><use href="#i-cuidado"/></svg><div class="l">Cuidado</div></div>
+      <div class="ic"><svg><use href="#i-idades"/></svg><div class="l">Todas as idades</div></div>
+    </div>
+  </section>
+
+  <!-- DIREÇÃO FOTOGRÁFICA + SLOTS -->
+  <section>
+    <div class="kick"><span class="n">06</span> Direção fotográfica</div>
+    <h2>Como as fotos entram</h2>
+    <div class="brief">
+      <h4>Briefing — toda foto da Chronos</h4>
+      <ul>
+        <li><b>Sujeito:</b> pessoas reais treinando — <b>de criança a idoso</b>, foco em quem tem constância; fisioterapeuta/educador <b>de perto</b>, mão no cuidado. Nada de banco de imagem genérico.</li>
+        <li><b>Luz:</b> natural e quente (<b>golden hour</b> ou luz de janela); sombra suave, nunca dura.</li>
+        <li><b>Cor/tratamento:</b> grade puxando <b>marinho nas sombras</b> e <b>dourado nas altas</b>; pele quente; saturação contida.</li>
+        <li><b>Enquadramento:</b> próximo e humano — gesto, esforço, alívio, sorriso contido. Espaço negativo para a tipografia.</li>
+        <li><b>Evitar:</b> neon, HDR, poses de catálogo, academia fria/metálica, "cara de IA".</li>
+      </ul>
+    </div>
+    <p class="note" style="margin-top:0;margin-bottom:18px;">Slots prontos — quando você subir as fotos (pasta do Drive), eu troco cada bloco pontilhado pela imagem, já tratada no clima acima:</p>
+    <div class="slots">
+      <div class="slot"><span class="tag">Slot 01 · herói</span><div class="brf"><b>Treino em constância</b> — adulto/sênior, golden hour, corte próximo.</div><span class="ph">[ foto ]</span></div>
+      <div class="slot"><span class="tag">Slot 02 · cuidado</span><div class="brf"><b>Mão que cuida</b> — fisio orientando, detalhe do gesto.</div><span class="ph">[ foto ]</span></div>
+      <div class="slot"><span class="tag">Slot 03 · idades</span><div class="brf"><b>Criança e idoso</b> em movimento — a amplitude do público.</div><span class="ph">[ foto ]</span></div>
+      <div class="slot"><span class="tag">Slot 04 · movimento</span><div class="brf"><b>Corpo em ação</b> — leve motion, energia serena.</div><span class="ph">[ foto ]</span></div>
+      <div class="slot"><span class="tag">Slot 05 · ambiente</span><div class="brf"><b>O espaço</b> — academia acolhedora, luz quente, sem frieza.</div><span class="ph">[ foto ]</span></div>
+      <div class="slot"><span class="tag">Slot 06 · detalhe</span><div class="brf"><b>Textura</b> — pele, madeira, areia, tecido — o tátil da marca.</div><span class="ph">[ foto ]</span></div>
+    </div>
+  </section>
+
+  <!-- REFERÊNCIAS -->
+  <section>
+    <div class="kick"><span class="n">07</span> Referências de direção</div>
+    <h2>De onde parte o olhar</h2>
+    <p class="lead">Não consigo <b>embutir</b> imagens de terceiros daqui (rede + licença), mas registro as referências que guiam o eixo — abra e cruze com o clima acima.</p>
+    <div class="refs">
+      <div class="refbox">
+        <div class="h">Wordmark wide / techy</div>
+        <div class="u">behance.net — "Home-hub"</div>
+        <p>Direção do logotipo largo/geométrico que já viramos na Zalando. Referência de tracking e presença do wordmark.</p>
+      </div>
+      <div class="refbox">
+        <div class="h">Tempo / esporte-evento</div>
+        <div class="u">behance.net — "Tempo Run Event Brand"</div>
+        <p>Energia de tempo + movimento aplicada a marca. Guia o símbolo cronômetro e o ritmo das peças.</p>
+      </div>
+    </div>
+    <p class="note">Fotografia de referência (Pinterest/Unsplash/Behance): junte numa <b>pasta do Drive</b> — eu leio pela integração e encaixo nos slots, tratadas no clima.</p>
+  </section>
+
+</div>
+
+<footer>Chronos · Moodboard / Território Visual v1 &nbsp;·&nbsp; clima design-led, slots para fotografia &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
+
+</body>
+</html>
