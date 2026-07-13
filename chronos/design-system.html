@@ -109,7 +109,8 @@ h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px)
 .btn{font-family:var(--body); font-weight:700; font-size:14px; border-radius:var(--r-pill); padding:11px 22px; border:1px solid transparent; cursor:pointer; transition:.18s var(--ease);}
 .btn.primary{background:var(--dourado); color:var(--ink-inv);}
 .btn.primary:hover{background:var(--dourado-deep);}
-.btn.terra{background:var(--terracota); color:var(--areia);}
+.btn.terra{background:transparent; color:var(--areia); border-color:var(--terracota);}
+.btn.terra:hover{background:rgba(180,98,63,.16); border-color:var(--terracota);}
 .btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-2); font-weight:600;}
 .btn.ghost:hover{border-color:var(--dourado); color:var(--dourado);}
 .tags{display:flex; flex-wrap:wrap; gap:9px;}
@@ -135,9 +136,27 @@ h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px)
 .sig{font-family:var(--script); color:var(--dourado); font-size:34px; line-height:1; margin-top:14px;}
 .app-light .sig{color:var(--terracota);}
 
+/* acessibilidade cromática */
+.contrast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.contrast{min-height:148px;border:1px solid var(--line-2);border-radius:var(--r-lg);padding:18px;display:flex;flex-direction:column;justify-content:space-between;}
+.contrast .sample{font-family:var(--display);font-weight:700;font-size:20px;line-height:1.15;}
+.contrast .ratio{font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:18px;opacity:.82;}
+.contrast.dark{background:var(--marinho);color:var(--areia);}
+.contrast.surface{background:var(--marinho-2);color:var(--dourado);}
+.contrast.paper{background:var(--areia);color:var(--marinho);}
+.contrast.gold{background:var(--dourado);color:var(--marinho);}
+.contrast.neutral{background:var(--marinho-2);color:var(--neutro);}
+.contrast.inverse{background:var(--marinho);color:var(--dourado);}
+.a11y-rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;}
+.a11y-box{border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 22px;background:var(--marinho-2);}
+.a11y-box h3{font-family:var(--display);font-size:15px;color:var(--dourado);margin-bottom:9px;}
+.a11y-box ul{padding-left:18px;color:var(--ink-2);font-size:13.5px;display:grid;gap:7px;}
+.a11y-box strong{color:var(--ink);font-weight:600;}
+
 footer{padding:30px 0 56px; text-align:center; font-size:12px; color:var(--ink-3); border-top:1px solid var(--line); margin-top:20px;}
 footer i{color:var(--dourado); font-style:normal;}
-@media (max-width:600px){ .comp,.scripts,.apps{grid-template-columns:1fr;} .fl-body{grid-template-columns:1fr; text-align:center;} }
+@media (max-width:720px){.contrast-grid{grid-template-columns:1fr 1fr;}.a11y-rules{grid-template-columns:1fr;}}
+@media (max-width:600px){ .comp,.scripts,.apps,.contrast-grid{grid-template-columns:1fr;} .fl-body{grid-template-columns:1fr; text-align:center;} }
 </style>
 </head>
 <body>
@@ -152,7 +171,7 @@ footer i{color:var(--dourado); font-style:normal;}
   <header class="hero">
     <span class="eyebrow"><span class="d"></span>Fase 5 · Território Visual — fundação</span>
     <h1>O sistema que veste a Chronos.</h1>
-    <p>Paleta enxuta e intencional (7 cores travadas), formas suaves e a família tipográfica definida — <b style="color:var(--ink);font-weight:500;">Zalando Sans Expanded</b> no headline, Manrope no corpo, Caveat no afeto. O azul da marca no comando, elevado por dourado e um toque de terracota. Base para o logo e todas as aplicações.</p>
+    <p>Paleta enxuta e intencional (7 cores travadas), formas suaves e a família tipográfica definida — <b style="color:var(--ink);font-weight:500;">Zalando Sans Expanded</b> no headline, Manrope no corpo, Caveat no afeto. O azul da marca no comando, elevado por dourado e um toque de terracota. Base para as aplicações; o logotipo permanece em exploração interna e será validado separadamente.</p>
   </header>
 
   <!-- COR -->
@@ -163,7 +182,7 @@ footer i{color:var(--dourado); font-style:normal;}
     <div class="swatches">
       <div class="sw"><div class="chip" style="background:#0F1F39"></div><div class="meta"><div class="nm">Marinho</div><div class="hx">#0F1F39</div><div class="cmyk">C75 M45 Y0 K80</div><br><span class="pant">Pantone 539 C</span><div class="role">Base predominante</div></div></div>
       <div class="sw"><div class="chip" style="background:#1A2C4E"></div><div class="meta"><div class="nm">Marinho 2</div><div class="hx">#1A2C4E</div><div class="cmyk">C65 M45 Y0 K70</div><br><span class="pant">Pantone 534 C</span><div class="role">Superfície</div></div></div>
-      <div class="sw"><div class="chip" style="background:#3E78B2"></div><div class="meta"><div class="nm">Azul-assinatura</div><div class="hx">#3E78B2</div><div class="cmyk">C65 M35 Y0 K30</div><br><span class="pant">Pantone 646 C</span><div class="role">Destaque / links</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3E78B2"></div><div class="meta"><div class="nm">Azul-assinatura</div><div class="hx">#3E78B2</div><div class="cmyk">C65 M35 Y0 K30</div><br><span class="pant">Pantone 646 C</span><div class="role">Acento gráfico</div></div></div>
       <div class="sw"><div class="chip" style="background:#CBA152"></div><div class="meta"><div class="nm">Dourado</div><div class="hx">#CBA152</div><div class="cmyk">C0 M20 Y60 K20</div><br><span class="pant">Pantone 7407 C</span><div class="role">Acento — destaque</div></div></div>
       <div class="sw"><div class="chip" style="background:#B4623F"></div><div class="meta"><div class="nm">Terracota</div><div class="hx">#B4623F</div><div class="cmyk">C0 M45 Y65 K30</div><br><span class="pant">Pantone 7522 C</span><div class="role">Acento — elegante</div></div></div>
       <div class="sw"><div class="chip" style="background:#D9CBB3"></div><div class="meta"><div class="nm">Areia</div><div class="hx">#D9CBB3</div><div class="cmyk">C0 M5 Y20 K15</div><br><span class="pant">Pantone 468 C</span><div class="role">Único claro · papel</div></div></div>
@@ -172,11 +191,30 @@ footer i{color:var(--dourado); font-style:normal;}
     <p class="lead" style="margin-top:18px;font-size:13px;color:var(--ink-3);max-width:74ch;">CMYK e Pantone são <b style="color:var(--ink-2);font-weight:500;">conversões de tela → tinta</b> (aproximação fiel para impressão). Regras da casa: valores <b style="color:var(--ink-2);font-weight:500;">arredondados a 5%</b> (o olho não distingue nuances menores) e compostos em <b style="color:var(--ink-2);font-weight:500;">no máximo 3 dos 4 canais</b> (um sempre em 0) para maior pureza. Antes de fechar impressão, confirmar o Pantone no <b style="color:var(--ink-2);font-weight:500;">guia físico</b> (Solid Coated) — a percepção muda do monitor para o papel.</p>
   </section>
 
+  <!-- ACESSIBILIDADE -->
+  <section>
+    <div class="kick"><span class="n">01A</span> Acessibilidade cromática</div>
+    <h2>Todas as cores ficam. Nem toda combinação entra.</h2>
+    <p class="lead">A paleta permanece integral. O controle acontece por <b>função de uso</b>: texto corrente exige contraste mínimo <b>4,5:1</b>; texto grande e elementos gráficos essenciais exigem <b>3:1</b>. Abaixo estão as combinações aprovadas para texto normal.</p>
+    <div class="contrast-grid">
+      <div class="contrast dark"><div class="sample">Areia sobre Marinho</div><div class="ratio">10,31:1 · AAA</div></div>
+      <div class="contrast surface"><div class="sample">Dourado sobre Marinho 2</div><div class="ratio">5,78:1 · AA</div></div>
+      <div class="contrast paper"><div class="sample">Marinho sobre Areia</div><div class="ratio">10,31:1 · AAA</div></div>
+      <div class="contrast gold"><div class="sample">Marinho sobre Dourado</div><div class="ratio">6,87:1 · AA</div></div>
+      <div class="contrast neutral"><div class="sample">Neutro sobre Marinho 2</div><div class="ratio">4,69:1 · AA</div></div>
+      <div class="contrast inverse"><div class="sample">Dourado sobre Marinho</div><div class="ratio">6,87:1 · AA</div></div>
+    </div>
+    <div class="a11y-rules">
+      <div class="a11y-box"><h3>Uso aprovado</h3><ul><li><strong>Marinho e Marinho 2</strong> como superfícies principais.</li><li><strong>Areia, Dourado e Neutro</strong> como texto nos fundos escuros, conforme a matriz.</li><li><strong>Marinho e Marinho 2</strong> como texto sobre Areia.</li><li><strong>Marinho</strong> como texto sobre Dourado em botões e destaques.</li></ul></div>
+      <div class="a11y-box"><h3>Uso restrito</h3><ul><li><strong>Azul e Terracota</strong> funcionam como acentos gráficos, bordas, ícones e grandes massas — não como fundo de texto corrente.</li><li><strong>Terracota sobre Marinho</strong> serve a ícones e texto grande; não a parágrafos.</li><li><strong>Azul sobre Marinho</strong> não deve ser usado em links pequenos; usar Dourado ou Areia sublinhado.</li><li><strong>Acento sobre acento</strong> é proibido para informação essencial.</li></ul></div>
+    </div>
+  </section>
+
   <!-- FONT LAB -->
   <section>
     <div class="kick"><span class="n">02</span> Tipografia · Font Lab</div>
     <h2>Headline definida — Zalando Sans Expanded</h2>
-    <p class="lead">A <b>headline</b> está fechada: <b>Zalando Sans Expanded</b> (o logotipo deriva dela). O <b>corpo</b> é <b>Manrope</b> e o <b>afeto</b> é <b>Caveat</b>. Abaixo o comparativo das <b>6 candidatas</b> testadas — todas Google Fonts, vestindo "CHRONOS" + "Cuidar do tempo" — com a escolhida em destaque.</p>
+    <p class="lead">A <b>headline do sistema</b> está definida: <b>Zalando Sans Expanded</b>. O <b>corpo</b> é <b>Manrope</b> e o <b>afeto</b> é <b>Caveat</b>. Abaixo o comparativo das <b>6 candidatas</b> testadas — todas Google Fonts, vestindo "CHRONOS" + "Cuidar do tempo" — com a direção tipográfica em destaque. Isso não constitui aprovação do desenho de logotipo.</p>
 
     <div class="fl-body">
       <div class="aa">Manrope</div>
@@ -189,7 +227,7 @@ footer i{color:var(--dourado); font-style:normal;}
       <div class="opt f-changa"><div class="name">Opção B · Changa One</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Condensada, pesada e atlética. Impacto forte — a mais "brava" e cheia de presença.</div></div>
       <div class="opt f-michroma"><div class="name">Opção C · Michroma</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Ultra-larga, técnica e precisa. Ar premium-tecnológico, a mais próxima das referências.</div></div>
       <div class="opt f-viga"><div class="name">Opção D · Viga</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Sans robusta e amigável, peso só num grau. Moderna sem ser fria — mais acolhedora.</div></div>
-      <div class="opt f-zalando sel"><div class="name">Opção E · Zalando Sans Expanded <span class="pick">✓ escolhida</span></div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Grotesca expandida contemporânea. Larga e elegante, com toque editorial premium — <b style="color:var(--ink-2);font-weight:500;">peso + modernidade do wide</b>. O logotipo deriva dela.</div></div>
+      <div class="opt f-zalando sel"><div class="name">Opção E · Zalando Sans Expanded <span class="pick">✓ direção do sistema</span></div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Grotesca expandida contemporânea. Larga e elegante, com toque editorial premium — <b style="color:var(--ink-2);font-weight:500;">peso + modernidade do wide</b>. O desenho do logotipo será validado em etapa própria.</div></div>
       <div class="opt f-tilt"><div class="name">Opção F · Tilt Warp</div><div class="wm">CHRONOS</div><div class="ph">Cuidar do tempo</div><div class="desc">Larga com leve distorção viva. Moderna e lúdica — personalidade forte, foge do óbvio.</div></div>
     </div>
 
@@ -248,7 +286,7 @@ footer i{color:var(--dourado); font-style:normal;}
       <div class="app-dark">
         <span class="tag2">Fisioterapia + Educação Física</span>
         <h3 style="margin-top:14px;">Cuidar do corpo pode ser leve. E seguro.</h3>
-        <p>Uma academia diferenciada em Bela Vista do Paraíso.</p>
+        <p>Academia com acompanhamento integrado em Bela Vista do Paraíso.</p>
         <div class="sig">marca que marca</div>
         <div style="margin-top:14px;"><button class="btn primary">Agendar avaliação</button></div>
       </div>
