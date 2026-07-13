@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Marca (exploração de logo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Zalando+Sans+Expanded:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marinho:#0F1F39; --marinho-2:#1A2C4E; --marinho-3:#243a63;
+  --azul:#3E78B2; --dourado:#CBA152; --dourado-deep:#B0863F; --terracota:#B4623F;
+  --areia:#D9CBB3; --neutro:#8A97AC;
+  --ink:#D9CBB3; --ink-2:#BEB299; --ink-3:#8A97AC; --ink-inv:#0F1F39;
+  --line:rgba(217,203,179,.12); --line-2:rgba(217,203,179,.20); --line-gold:rgba(203,161,82,.42);
+  --display:'Zalando Sans Expanded',sans-serif; --body:'Manrope',sans-serif;
+  --mono:'JetBrains Mono',monospace; --script:'Caveat',cursive;
+  --r-md:10px; --r-lg:16px; --r-pill:100px; --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);font-weight:400;color:var(--ink);background:var(--marinho);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(203,161,82,.12), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(62,120,178,.16), transparent 55%);}
+.wrap{max-width:960px;margin:0 auto;padding:0 26px;}
+.topbar{border-bottom:1px solid var(--line);}
+.topbar .in{max-width:960px;margin:0 auto;padding:16px 26px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+.topbar .b{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.04em;}
+.topbar .b i{color:var(--dourado);font-style:normal;}
+.topbar .m{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);}
+
+.hero{padding:60px 0 34px;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--line-gold);border-radius:var(--r-pill);padding:6px 15px;margin-bottom:24px;}
+.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--dourado);}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6.4vw,60px);line-height:1.02;letter-spacing:-.01em;}
+.hero p{margin-top:18px;font-size:clamp(15px,2vw,17px);color:var(--ink-2);max-width:62ch;}
+
+section{padding:46px 0;border-top:1px solid var(--line);}
+.kick{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;}
+.kick .n{font-family:var(--display);color:var(--dourado);font-weight:700;}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.01em;margin-bottom:8px;}
+.lead{color:var(--ink-2);max-width:66ch;margin-bottom:28px;} .lead b{color:var(--ink);font-weight:600;}
+.note{font-size:13px;color:var(--ink-3);margin-top:14px;}
+.rec{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-inv);background:var(--dourado);border-radius:var(--r-pill);padding:3px 11px;font-weight:700;font-family:var(--body);}
+
+/* ——— WORDMARK ——— */
+.stage{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:54px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;}
+.stage.tall{padding:70px 40px;}
+.wm{font-family:var(--display);font-weight:800;color:var(--ink);line-height:1;white-space:nowrap;}
+.wm.big{font-size:clamp(40px,8.5vw,92px);letter-spacing:.01em;}
+.wm.gold{color:var(--dourado);}
+.cap{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);margin-top:22px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+
+/* wordmark com "O" mostrador (letra-símbolo) */
+.wm .odial{display:inline-flex;vertical-align:baseline;position:relative;width:.86em;height:.86em;transform:translateY(.06em);margin:0 .01em;}
+.wm .odial svg{width:100%;height:100%;}
+
+/* descritor mono */
+.descr{font-family:var(--mono);font-weight:500;font-size:clamp(9px,1.4vw,13px);letter-spacing:.42em;text-transform:uppercase;color:var(--ink-2);padding-left:.42em;}
+.descr.gold{color:var(--dourado);}
+
+/* ——— SÍMBOLO ——— */
+.mark{width:120px;height:120px;color:var(--dourado);}
+.markrow{display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:center;}
+.symcard{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:34px 28px;text-align:center;}
+.symcard .mark{margin:0 auto 6px;}
+.symcard h4{font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);margin-top:14px;}
+.symcard p{font-size:13px;color:var(--ink-3);margin-top:6px;}
+
+/* ——— LOCKUPS ——— */
+.lock-h{display:inline-flex;align-items:center;gap:22px;}
+.lock-h .mark{width:78px;height:78px;flex:none;}
+.lock-h .txt{display:flex;flex-direction:column;align-items:flex-start;gap:7px;}
+.lock-h .txt .wm{font-size:clamp(28px,5vw,50px);letter-spacing:.02em;}
+.lock-v{display:inline-flex;flex-direction:column;align-items:center;gap:16px;}
+.lock-v .mark{width:96px;height:96px;}
+.lock-v .wm{font-size:clamp(30px,6vw,56px);letter-spacing:.03em;}
+
+/* ——— APLICAÇÕES ——— */
+.apps{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.app{border-radius:var(--r-lg);padding:40px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:200px;border:1px solid var(--line-2);text-align:center;}
+.app .wm{font-size:clamp(26px,4.4vw,40px);letter-spacing:.02em;}
+.app .cap{margin-top:8px;}
+.app.on-marinho{background:var(--marinho);}
+.app.on-marinho2{background:var(--marinho-2);}
+.app.on-areia{background:var(--areia);}
+.app.on-areia .wm{color:var(--ink-inv);} .app.on-areia .mark{color:var(--dourado-deep);} .app.on-areia .cap{color:#6b6353;}
+.app.on-gold{background:linear-gradient(140deg,var(--dourado),var(--dourado-deep));}
+.app.on-gold .wm{color:var(--ink-inv);} .app.on-gold .mark{color:var(--ink-inv);} .app.on-gold .cap{color:rgba(15,31,57,.6);}
+.app.mono-ink .wm,.app.mono-ink .mark{color:var(--ink);}
+.avatars{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:6px;}
+.av{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.av .badge{width:96px;height:96px;border-radius:26px;display:flex;align-items:center;justify-content:center;}
+.av .badge.circ{border-radius:50%;}
+.av .badge .mark{width:56px;height:56px;}
+.av .badge.b-marinho{background:var(--marinho-2);border:1px solid var(--line-gold);}
+.av .badge.b-gold{background:linear-gradient(140deg,var(--dourado),var(--dourado-deep));} .av .badge.b-gold .mark{color:var(--ink-inv);}
+.av .badge.b-areia{background:var(--areia);} .av .badge.b-areia .mark{color:var(--marinho);}
+.av .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);}
+
+/* proteção / mínimo */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.rulebox{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:26px;}
+.rulebox .h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;}
+.clearbox{position:relative;display:inline-flex;padding:34px;border:1px dashed var(--line-gold);border-radius:8px;}
+.clearbox .wm{font-size:34px;letter-spacing:.02em;}
+.minsizes{display:flex;gap:26px;align-items:flex-end;flex-wrap:wrap;}
+.minsizes .wm{color:var(--ink);}
+
+.sig{font-family:var(--script);color:var(--dourado);font-size:30px;line-height:1;}
+footer{padding:30px 0 56px;text-align:center;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);margin-top:20px;}
+footer i{color:var(--dourado);font-style:normal;}
+@media (max-width:640px){.grid2,.grid3,.apps,.rules{grid-template-columns:1fr;} .lock-h{flex-direction:column;text-align:center;} .lock-h .txt{align-items:center;}}
+</style>
+</head>
+<body>
+
+<!-- ===== biblioteca de símbolos SVG (reutilizados via <use>) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <!-- A · Cronômetro-ritmo: anel (relógio/pista) + ponteiro ascendente -->
+  <symbol id="mk-crono" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 12 v-6"/>                 <!-- coroa do cronômetro -->
+      <path d="M43 6 h14"/>
+      <circle cx="50" cy="54" r="34"/>       <!-- anel -->
+      <path d="M50 54 L69 39"/>              <!-- ponteiro ~2h (progresso) -->
+    </g>
+    <circle cx="50" cy="54" r="5" fill="currentColor"/>
+    <circle cx="50" cy="24" r="2.4" fill="currentColor"/>  <!-- marca 12h -->
+  </symbol>
+
+  <!-- B · Monograma C-tempo: "C" aberto que também é mostrador -->
+  <symbol id="mk-c" viewBox="0 0 100 100">
+    <path d="M74 28 A34 34 0 1 0 74 72" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+    <path d="M50 50 V26" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/>
+    <circle cx="50" cy="50" r="4.6" fill="currentColor"/>
+  </symbol>
+
+  <!-- C · Pista-anel minimalista (favicon): anel + tick 12h -->
+  <symbol id="mk-ring" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="7"/>
+    <path d="M50 24 v10" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  </symbol>
+</defs></svg>
+
+<div class="topbar"><div class="in">
+  <span class="b">Chronos <i>·</i> Marca</span>
+  <span class="m">Exploração de Logo · v1</span>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="d"></span>Fase 7 · Identidade — logotipo</span>
+    <h1>A marca CHRONOS.</h1>
+    <p>Logotipo derivado da tipografia do sistema — <b style="color:var(--ink);font-weight:600;">Zalando Sans Expanded</b> —, no eixo <b style="color:var(--ink);font-weight:600;">largo, geométrico e moderno</b> das referências. O tema é <b style="color:var(--ink);font-weight:600;">tempo + movimento</b>: cuidar do tempo, no seu ritmo, com constância. Abaixo o wordmark, o símbolo e os lockups para você escolher a rota.</p>
+  </header>
+
+  <!-- 01 · WORDMARK -->
+  <section>
+    <div class="kick"><span class="n">01</span> Wordmark</div>
+    <h2>O logotipo</h2>
+    <p class="lead">A base é a <b>Zalando Sans Expanded 800</b>. O nome já é forte sozinho — largo, técnico, atemporal. Duas afinações de <b>tracking</b> e uma variação com o <b>"O" mostrador</b> (a letra vira relógio, sutil).</p>
+
+    <div class="stage tall" style="margin-bottom:18px;">
+      <div class="wm big">CHRONOS</div>
+      <div class="cap">Zalando Sans Expanded 800 · tracking +.01em</div>
+    </div>
+
+    <div class="grid2">
+      <div class="stage">
+        <div class="wm" style="font-size:clamp(30px,5.4vw,52px);letter-spacing:.14em;">CHRONOS</div>
+        <div class="cap">Variação "aberta" · tracking +.14em (mais premium/arejada)</div>
+      </div>
+      <div class="stage">
+        <div class="wm" style="font-size:clamp(30px,5.4vw,52px);letter-spacing:.02em;">CHR<span class="odial"><svg><use href="#mk-ring"/></svg></span>NOS</div>
+        <div class="cap">Variação "O mostrador" · o 4º caractere vira relógio</div>
+      </div>
+    </div>
+    <p class="note">Recomendação: <span class="rec">wordmark puro</span> como assinatura principal (mais atemporal e flexível), com o <b style="color:var(--ink-2);">símbolo separado</b> (abaixo) para usos compactos. A variação "O mostrador" fica como versão especial (capa, brinde, selo).</p>
+  </section>
+
+  <!-- 02 · SÍMBOLO -->
+  <section>
+    <div class="kick"><span class="n">02</span> Símbolo</div>
+    <h2>O sinal de tempo</h2>
+    <p class="lead">Uma marca gráfica que carrega <b>tempo</b> e <b>progresso</b> — funciona sozinha (avatar, favicon, selo) e ao lado do wordmark. Três rotas geométricas:</p>
+    <div class="grid3">
+      <div class="symcard">
+        <svg class="mark"><use href="#mk-crono"/></svg>
+        <h4>A · Cronômetro</h4>
+        <p>Anel (relógio/pista) + ponteiro ascendente. Tempo que avança — movimento e resultado.</p>
+      </div>
+      <div class="symcard">
+        <svg class="mark"><use href="#mk-c"/></svg>
+        <h4>B · Monograma C</h4>
+        <p>O "C" de Chronos que também é mostrador. Direto, ownable, vira ícone com facilidade.</p>
+      </div>
+      <div class="symcard">
+        <svg class="mark"><use href="#mk-ring"/></svg>
+        <h4>C · Anel-pista</h4>
+        <p>Redução mínima: anel + marca das 12h. Ideal para favicon e usos muito pequenos.</p>
+      </div>
+    </div>
+    <p class="note">Minha aposta: <span class="rec">A · Cronômetro</span> para o símbolo cheio e <span class="rec" style="background:var(--marinho-3);color:var(--areia);">C · Anel</span> como redução (favicon). O monograma B entra se você quiser algo mais "letra".</p>
+  </section>
+
+  <!-- 03 · LOCKUPS -->
+  <section>
+    <div class="kick"><span class="n">03</span> Lockups</div>
+    <h2>Símbolo + nome</h2>
+    <p class="lead">As travas oficiais. Horizontal para assinaturas largas (site, rodapé); empilhada para praças quadradas; com <b>descritor</b> quando o contexto pedir clareza do serviço.</p>
+
+    <div class="stage" style="margin-bottom:18px;">
+      <div class="lock-h">
+        <svg class="mark"><use href="#mk-crono"/></svg>
+        <div class="txt">
+          <div class="wm gold" style="color:var(--ink);">CHRONOS</div>
+          <div class="descr">Fisioterapia · Educação Física</div>
+        </div>
+      </div>
+      <div class="cap">Lockup horizontal — assinatura principal</div>
+    </div>
+
+    <div class="grid2">
+      <div class="stage tall">
+        <div class="lock-v">
+          <svg class="mark"><use href="#mk-crono"/></svg>
+          <div class="wm">CHRONOS</div>
+          <div class="descr" style="letter-spacing:.34em;">Bela Vista do Paraíso · PR</div>
+        </div>
+        <div class="cap">Lockup empilhado — praças quadradas</div>
+      </div>
+      <div class="stage tall">
+        <div class="lock-v">
+          <svg class="mark" style="color:var(--areia)"><use href="#mk-c"/></svg>
+          <div class="wm" style="color:var(--areia)">CHRONOS</div>
+          <div class="sig" style="margin-top:4px;">no seu ritmo</div>
+        </div>
+        <div class="cap">Empilhado + afeto (Caveat) — usos calorosos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · APLICAÇÕES -->
+  <section>
+    <div class="kick"><span class="n">04</span> Aplicações & versões</div>
+    <h2>Como a marca se veste</h2>
+    <p class="lead">Positiva, negativa e monocromática — a marca tem que segurar em qualquer fundo do sistema.</p>
+    <div class="apps">
+      <div class="app on-marinho">
+        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;color:var(--dourado)"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
+        <div class="cap">Principal · ouro sobre marinho</div>
+      </div>
+      <div class="app on-areia">
+        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
+        <div class="cap">Claro · sobre areia</div>
+      </div>
+      <div class="app on-gold">
+        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
+        <div class="cap">Selo · sobre dourado</div>
+      </div>
+      <div class="app on-marinho2 mono-ink">
+        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
+        <div class="cap">Mono · areia (1 cor)</div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:26px;margin-bottom:14px;">Avatar / favicon / selo — o símbolo em recorte:</p>
+    <div class="avatars">
+      <div class="av"><div class="badge circ b-marinho"><svg class="mark"><use href="#mk-crono"/></svg></div><div class="lbl">Avatar · círculo</div></div>
+      <div class="av"><div class="badge b-marinho"><svg class="mark"><use href="#mk-crono"/></svg></div><div class="lbl">App · quadrado</div></div>
+      <div class="av"><div class="badge b-gold"><svg class="mark"><use href="#mk-c"/></svg></div><div class="lbl">Selo ouro</div></div>
+      <div class="av"><div class="badge circ b-areia"><svg class="mark"><use href="#mk-ring"/></svg></div><div class="lbl">Favicon · redução</div></div>
+    </div>
+  </section>
+
+  <!-- 05 · REGRAS -->
+  <section>
+    <div class="kick"><span class="n">05</span> Uso correto</div>
+    <h2>Área de proteção & tamanho mínimo</h2>
+    <p class="lead">Duas regras que preservam a marca: respiro ao redor e legibilidade em escala pequena.</p>
+    <div class="rules">
+      <div class="rulebox">
+        <div class="h">Área de proteção</div>
+        <div class="clearbox"><div class="wm">CHRONOS</div></div>
+        <p class="note">Respiro mínimo = altura do "C" em todos os lados. Nada invade essa margem.</p>
+      </div>
+      <div class="rulebox">
+        <div class="h">Tamanho mínimo</div>
+        <div class="minsizes">
+          <div><div class="wm" style="font-size:30px;">CHRONOS</div><div class="cap">digital · 22px alt.</div></div>
+          <div><div class="wm" style="font-size:18px;">CHRONOS</div><div class="cap">mínimo · 14px alt.</div></div>
+        </div>
+        <p class="note">Abaixo do mínimo, usar só o símbolo (anel-pista).</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Chronos · Exploração de Marca v1 &nbsp;·&nbsp; derivada de Zalando Sans Expanded &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
+
+</body>
+</html>

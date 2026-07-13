@@ -123,6 +123,30 @@ arquétipo e reduzir viés de resposta.
    personalizados e humanos (frases-assinatura, detalhes carinhosos). Dá
    flexibilidade à marca sem quebrar a hierarquia display/corpo. Preferir Google
    Fonts (portabilidade). Aplicar sempre com parcimônia, em momentos pontuais.
+7. **CMYK + Pantone por cor (sempre incluir e validar).** Toda paleta de design
+   system carrega, para **cada cor**, além do HEX: a **composição CMYK** e uma
+   **cor Pantone compatível** (Solid Coated como referência). São conversões de
+   tela → tinta — servem para impressão e garantem consistência on/offline.
+   Regras: (a) derivar o CMYK do RGB/HEX e escolher o Pantone mais próximo;
+   (b) **rotular como aproximação** e instruir a **confirmar no guia físico**
+   antes de fechar material impresso (a percepção muda do monitor para o papel);
+   (c) exibir os três valores juntos no swatch (HEX · CMYK · Pantone). Nunca
+   entregar uma paleta só em HEX.
+   **Regras pessoais do Victor para o CMYK (aplicar sempre):**
+   - **Arredondar a 5%.** O olho só percebe nuances de ~5% em CMYK — todo valor
+     sai arredondado ao múltiplo de 5 mais próximo (ex.: C74→C75, M46→M45).
+   - **Até 3 dos 4 canais.** Compor a cor com **no máximo 3 canais** (deixar um
+     sempre em 0) para maior pureza; usar os 4 apenas quando for realmente
+     necessário para atingir a cor-alvo. Ao montar/ajustar a paleta, preferir
+     alvos que zerem um canal.
+8. **Paleta enxuta e travada (teto de cores).** O sistema de cor tem um **teto
+   fixo** (~7 cores) e é **travado** — sem cores redundantes (duas vizinhas que
+   fazem o mesmo papel; ex.: não manter dois claros quentes como areia + creme,
+   fica só um). Composição de referência: **2 bases** (marinho + superfície) +
+   **1 cor-assinatura** + **2 acentos quentes** (ouro + terracota) + **1 claro/
+   papel** + **1 neutro frio**. Um neutro pode ser **gradação** de outra cor da
+   paleta (ex.: neutro frio como gradação do azul-secundário) — isso é
+   intencional, não conta como redundância. Poucas cores, muito controle.
 
 ## Testar antes de entregar (obrigatório)
 
