@@ -18,6 +18,13 @@ espetáculo e premium sem ostentação.
 - Conceito revelado por hover e foco; sempre visível em touch.
 - Sem referências ou créditos no artefato apresentado ao cliente.
 
+## Consistência documental
+
+- Moldura visual alinhada às fases 1–4: fundo preto, dourado, Syne e Red Hat Display.
+- Largura, topbar, hero, chips, kickers, cards e footer seguem o documento de marca.
+- Marinho, azul, terracota e areia aparecem como conteúdo da identidade estudada,
+  não como uma interface paralela à apresentação.
+
 ## Teste de categoria
 
 **Leitura pretendida:** espaço de longevidade ativa com avaliação, orientação e
