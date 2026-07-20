@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Chronos — símbolo Órbita habitada</title>
+  <desc id="desc">Dois percursos abertos formam um C e acompanham um ponto central.</desc>
+  <g fill="none" stroke="#0F1F39" stroke-linecap="square">
+    <path d="M181 50A88 88 0 1 0 187 182" stroke-width="22"/>
+    <path d="M161 78A54 54 0 1 0 166 159" stroke-width="18"/>
+  </g>
+  <circle cx="173" cy="121" r="10" fill="#CBA152"/>
+</svg>

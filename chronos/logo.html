@@ -3,305 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chronos · Marca (exploração de logo)</title>
+<meta name="description" content="Três direções autorais de logotipo para a marca Chronos.">
+<title>Chronos · Logotipo — três direções</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Zalando+Sans+Expanded:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&amp;family=Red+Hat+Display:wght@300;400;500;600;700&amp;family=Syne:wght@600;700;800&amp;family=Zalando+Sans+Expanded:wght@600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 :root{
-  --marinho:#0F1F39; --marinho-2:#1A2C4E; --marinho-3:#243a63;
-  --azul:#3E78B2; --dourado:#CBA152; --dourado-deep:#B0863F; --terracota:#B4623F;
-  --areia:#D9CBB3; --neutro:#8A97AC;
-  --ink:#D9CBB3; --ink-2:#BEB299; --ink-3:#8A97AC; --ink-inv:#0F1F39;
-  --line:rgba(217,203,179,.12); --line-2:rgba(217,203,179,.20); --line-gold:rgba(203,161,82,.42);
-  --display:'Zalando Sans Expanded',sans-serif; --body:'Manrope',sans-serif;
-  --mono:'JetBrains Mono',monospace; --script:'Caveat',cursive;
-  --r-md:10px; --r-lg:16px; --r-pill:100px; --ease:cubic-bezier(.22,1,.36,1);
+  --bg:#0F0F10;--surface:#1C1C1D;--overlay:#2C2C2C;--elevated:#232324;
+  --gold:#C3A262;--gold-soft:#DAC5A5;--ink:#F7F4E8;--ink-2:#DAC5A5;--ink-3:#8C877D;
+  --line:rgba(247,244,232,.10);--line-2:rgba(247,244,232,.16);--line-gold:rgba(195,162,98,.38);
+  --brand-navy:#0F1F39;--brand-navy-2:#1A2C4E;--brand-blue:#3E78B2;--brand-gold:#CBA152;
+  --brand-terra:#B4623F;--brand-sand:#D9CBB3;--brand-neutral:#8A97AC;
+  --display:'Syne',sans-serif;--body:'Red Hat Display',sans-serif;--brand-display:'Zalando Sans Expanded',sans-serif;--affect:'Caveat',cursive;
+  --ease:cubic-bezier(.22,1,.36,1);--radius:14px;--pill:100px
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--body);font-weight:400;color:var(--ink);background:var(--marinho);line-height:1.6;-webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(1100px 620px at 84% -8%, rgba(203,161,82,.12), transparent 60%), radial-gradient(820px 480px at -10% 12%, rgba(62,120,178,.16), transparent 55%);}
-.wrap{max-width:960px;margin:0 auto;padding:0 26px;}
-.topbar{border-bottom:1px solid var(--line);}
-.topbar .in{max-width:960px;margin:0 auto;padding:16px 26px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
-.topbar .b{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.04em;}
-.topbar .b i{color:var(--dourado);font-style:normal;}
-.topbar .m{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);}
-
-.hero{padding:60px 0 34px;}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--line-gold);border-radius:var(--r-pill);padding:6px 15px;margin-bottom:24px;}
-.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--dourado);}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6.4vw,60px);line-height:1.02;letter-spacing:-.01em;}
-.hero p{margin-top:18px;font-size:clamp(15px,2vw,17px);color:var(--ink-2);max-width:62ch;}
-
-section{padding:46px 0;border-top:1px solid var(--line);}
-.kick{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;}
-.kick .n{font-family:var(--display);color:var(--dourado);font-weight:700;}
-h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.01em;margin-bottom:8px;}
-.lead{color:var(--ink-2);max-width:66ch;margin-bottom:28px;} .lead b{color:var(--ink);font-weight:600;}
-.note{font-size:13px;color:var(--ink-3);margin-top:14px;}
-.rec{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-inv);background:var(--dourado);border-radius:var(--r-pill);padding:3px 11px;font-weight:700;font-family:var(--body);}
-
-/* ——— WORDMARK ——— */
-.stage{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:54px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;}
-.stage.tall{padding:70px 40px;}
-.wm{font-family:var(--display);font-weight:800;color:var(--ink);line-height:1;white-space:nowrap;}
-.wm.big{font-size:clamp(40px,8.5vw,92px);letter-spacing:.01em;}
-.wm.gold{color:var(--dourado);}
-.cap{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);margin-top:22px;}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-
-/* wordmark com "O" mostrador (letra-símbolo) */
-.wm .odial{display:inline-flex;vertical-align:baseline;position:relative;width:.86em;height:.86em;transform:translateY(.06em);margin:0 .01em;}
-.wm .odial svg{width:100%;height:100%;}
-
-/* descritor mono */
-.descr{font-family:var(--mono);font-weight:500;font-size:clamp(9px,1.4vw,13px);letter-spacing:.42em;text-transform:uppercase;color:var(--ink-2);padding-left:.42em;}
-.descr.gold{color:var(--dourado);}
-
-/* ——— SÍMBOLO ——— */
-.mark{width:120px;height:120px;color:var(--dourado);}
-.markrow{display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:center;}
-.symcard{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:34px 28px;text-align:center;}
-.symcard .mark{margin:0 auto 6px;}
-.symcard h4{font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);margin-top:14px;}
-.symcard p{font-size:13px;color:var(--ink-3);margin-top:6px;}
-
-/* ——— LOCKUPS ——— */
-.lock-h{display:inline-flex;align-items:center;gap:22px;}
-.lock-h .mark{width:78px;height:78px;flex:none;}
-.lock-h .txt{display:flex;flex-direction:column;align-items:flex-start;gap:7px;}
-.lock-h .txt .wm{font-size:clamp(28px,5vw,50px);letter-spacing:.02em;}
-.lock-v{display:inline-flex;flex-direction:column;align-items:center;gap:16px;}
-.lock-v .mark{width:96px;height:96px;}
-.lock-v .wm{font-size:clamp(30px,6vw,56px);letter-spacing:.03em;}
-
-/* ——— APLICAÇÕES ——— */
-.apps{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.app{border-radius:var(--r-lg);padding:40px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:200px;border:1px solid var(--line-2);text-align:center;}
-.app .wm{font-size:clamp(26px,4.4vw,40px);letter-spacing:.02em;}
-.app .cap{margin-top:8px;}
-.app.on-marinho{background:var(--marinho);}
-.app.on-marinho2{background:var(--marinho-2);}
-.app.on-areia{background:var(--areia);}
-.app.on-areia .wm{color:var(--ink-inv);} .app.on-areia .mark{color:var(--dourado-deep);} .app.on-areia .cap{color:#6b6353;}
-.app.on-gold{background:linear-gradient(140deg,var(--dourado),var(--dourado-deep));}
-.app.on-gold .wm{color:var(--ink-inv);} .app.on-gold .mark{color:var(--ink-inv);} .app.on-gold .cap{color:rgba(15,31,57,.6);}
-.app.mono-ink .wm,.app.mono-ink .mark{color:var(--ink);}
-.avatars{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:6px;}
-.av{display:flex;flex-direction:column;align-items:center;gap:10px;}
-.av .badge{width:96px;height:96px;border-radius:26px;display:flex;align-items:center;justify-content:center;}
-.av .badge.circ{border-radius:50%;}
-.av .badge .mark{width:56px;height:56px;}
-.av .badge.b-marinho{background:var(--marinho-2);border:1px solid var(--line-gold);}
-.av .badge.b-gold{background:linear-gradient(140deg,var(--dourado),var(--dourado-deep));} .av .badge.b-gold .mark{color:var(--ink-inv);}
-.av .badge.b-areia{background:var(--areia);} .av .badge.b-areia .mark{color:var(--marinho);}
-.av .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);}
-
-/* proteção / mínimo */
-.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.rulebox{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:26px;}
-.rulebox .h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;}
-.clearbox{position:relative;display:inline-flex;padding:34px;border:1px dashed var(--line-gold);border-radius:8px;}
-.clearbox .wm{font-size:34px;letter-spacing:.02em;}
-.minsizes{display:flex;gap:26px;align-items:flex-end;flex-wrap:wrap;}
-.minsizes .wm{color:var(--ink);}
-
-.sig{font-family:var(--script);color:var(--dourado);font-size:30px;line-height:1;}
-footer{padding:30px 0 56px;text-align:center;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);margin-top:20px;}
-footer i{color:var(--dourado);font-style:normal;}
-@media (max-width:640px){.grid2,.grid3,.apps,.rules{grid-template-columns:1fr;} .lock-h{flex-direction:column;text-align:center;} .lock-h .txt{align-items:center;}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-weight:300;color:var(--ink);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;background-image:radial-gradient(1200px 620px at 82% -10%,rgba(195,162,98,.09),transparent 60%),radial-gradient(900px 500px at -12% 18%,rgba(218,197,165,.05),transparent 55%)}
+a{color:inherit}.wrap{max-width:960px;margin:0 auto;padding:0 26px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(15,15,16,.74);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar__in{max-width:960px;margin:auto;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.otalogo{display:flex;align-items:center;text-decoration:none}.otalogo svg{height:22px;width:auto;display:block}.doc{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);text-align:right}.doc b{color:var(--gold);font-weight:600}
+.hero{padding:62px 0 38px}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line-gold);border-radius:var(--pill);padding:6px 15px;margin-bottom:24px}.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+h1,h2,h3,h4{font-family:var(--display)}h1{font-size:clamp(36px,6.2vw,62px);font-weight:800;line-height:1.02;letter-spacing:-.02em}.hero h1 .thin{color:var(--gold-soft);font-weight:700}
+.lede{font-size:clamp(16px,2.1vw,19px);color:var(--ink-2);max-width:66ch;margin-top:20px}.lede b,.lead b{color:var(--ink);font-weight:500}
+.metabar{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}.chip{font-size:12px;color:var(--ink-2);background:rgba(35,35,36,.6);border:1px solid var(--line);border-radius:var(--pill);padding:6px 13px}.chip b{color:var(--ink);font-weight:500}.chip.status{color:var(--bg);background:var(--gold);border-color:var(--gold);font-weight:600}
+.signature{font-family:var(--affect);font-size:28px;color:var(--gold);margin-top:13px}
+section{padding:44px 0;border-top:1px solid var(--line)}.kick{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:20px}.kick b{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:10px;color:var(--gold);border:1px solid var(--line-gold);background:rgba(195,162,98,.08)}
+h2{font-size:clamp(24px,3.8vw,34px);font-weight:700;line-height:1.12;letter-spacing:-.01em;max-width:25ch}.lead{color:var(--ink-2);max-width:68ch;margin-top:12px;margin-bottom:28px}
+.foundation{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.foundation article{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:rgba(28,28,29,.45);min-height:164px}.foundation small{font-family:var(--display);font-size:10px;color:var(--gold);letter-spacing:.12em}.foundation h3{font-size:15px;margin-top:19px}.foundation p{font-size:12.5px;line-height:1.46;color:var(--ink-3);margin-top:7px}
+.routes{display:grid;gap:54px}.route{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(28,28,29,.45);box-shadow:0 20px 60px rgba(0,0,0,.16)}
+.route__head{display:grid;grid-template-columns:82px 1fr auto;gap:18px;align-items:start;padding:24px 26px;border-bottom:1px solid var(--line)}.route__no{font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--gold);padding-top:5px}.route h3{font-size:clamp(22px,3vw,29px);line-height:1.12}.route__tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-navy);background:var(--brand-gold);padding:5px 10px;border-radius:var(--pill);font-weight:700;white-space:nowrap}.route__tag.alt{color:var(--ink-2);background:transparent;border:1px solid var(--line)}
+.route__stage{position:relative;min-height:410px;background:var(--brand-sand);color:var(--brand-navy);display:grid;place-items:center;padding:54px 30px;overflow:hidden;transition:background .35s ease,color .35s ease}
+.route__stage::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.24),transparent 52%);pointer-events:none}.route__stage[data-theme="dark"]{background:var(--brand-navy);color:var(--brand-sand)}.route__stage[data-theme="gold"]{background:var(--brand-gold);color:var(--brand-navy)}
+.lockup{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:28px;max-width:760px;width:100%}.lockup.stack{flex-direction:column;gap:18px}.mark{width:142px;height:142px;object-fit:contain}.route__stage[data-theme="dark"] .mark{filter:brightness(0) invert(88%) sepia(12%) saturate(556%) hue-rotate(355deg) brightness(94%)}.route__stage[data-theme="gold"] .mark{filter:none}.wordmark{font-family:var(--brand-display);font-size:clamp(34px,6.3vw,66px);font-weight:800;letter-spacing:.08em;line-height:1;white-space:nowrap}.wordmark small{display:block;font-family:var(--body);font-size:10px;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin-top:14px;font-weight:600;opacity:.68}
+.cadence{width:min(100%,760px);height:auto}.route__stage[data-theme="dark"] .cadence{filter:brightness(0) invert(88%) sepia(12%) saturate(556%) hue-rotate(355deg) brightness(94%)}.route__stage[data-theme="gold"] .cadence{filter:none}
+.themebar{position:absolute;z-index:3;right:16px;bottom:16px;display:flex;gap:5px;padding:5px;border-radius:var(--pill);background:rgba(15,15,16,.74);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}.themebar button{width:30px;height:30px;border:0;border-radius:50%;cursor:pointer;box-shadow:0 0 0 1px rgba(255,255,255,.18) inset}.themebar button[aria-pressed="true"]{outline:2px solid #fff;outline-offset:2px}.theme--light{background:var(--brand-sand)}.theme--dark{background:var(--brand-navy)}.theme--gold{background:var(--brand-gold)}
+.route__body{display:grid;grid-template-columns:1.2fr .8fr;gap:0}.route__copy{padding:27px 28px;border-right:1px solid var(--line)}.route__copy p{font-size:14px;color:var(--ink-2);max-width:60ch}.route__copy p+p{margin-top:12px}.route__copy b{color:var(--ink);font-weight:600}.route__analysis{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;gap:10px}.mini{border:1px solid var(--line);border-radius:12px;padding:15px}.mini h4{font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}.mini p{font-size:12px;line-height:1.42;color:var(--ink-3);margin-top:7px}
+.route__score{padding:27px 24px}.route__score h4{font-size:12px;color:var(--ink-2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:17px}.metric{display:grid;grid-template-columns:1fr 72px;align-items:center;gap:12px;margin-top:12px;font-size:11.5px;color:var(--ink-3)}.meter{height:5px;border-radius:10px;background:var(--overlay);overflow:hidden}.meter i{display:block;height:100%;background:var(--gold);border-radius:inherit}.route__note{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:11.5px;color:var(--ink-3)}.route__note b{color:var(--ink-2)}
+.matrix{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}table{width:100%;border-collapse:collapse;min-width:680px;background:rgba(28,28,29,.4)}th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-size:12.5px}th{font-family:var(--display);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}td{color:var(--ink-2)}td:first-child{color:var(--ink);font-weight:600}.matrix tr:last-child td{border-bottom:0}.rating{letter-spacing:.15em;color:var(--gold);white-space:nowrap}
+.reco{border:1px solid var(--line-gold);border-radius:18px;padding:28px;background:radial-gradient(520px 260px at 10% -30%,rgba(195,162,98,.14),transparent 70%),rgba(28,28,29,.52);display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}.reco h3{font-size:clamp(20px,3vw,28px)}.reco p{font-size:14px;color:var(--ink-2);max-width:62ch;margin-top:10px}.reco .stamp{width:100px;height:100px;border-radius:50%;border:1px solid var(--line-gold);display:grid;place-items:center;text-align:center;font-family:var(--display);font-size:10px;line-height:1.25;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);transform:rotate(-6deg)}
+.guardrail{margin-top:18px;border:1px dashed var(--line-gold);border-radius:var(--radius);padding:17px 19px;font-size:12.5px;color:var(--ink-2)}.guardrail b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:34px 26px 58px;text-align:center;font-size:12px;color:var(--ink-3)}footer i{color:var(--gold);font-style:normal}
+@media(max-width:760px){.foundation{grid-template-columns:1fr}.route__body{grid-template-columns:1fr}.route__copy{border-right:0;border-bottom:1px solid var(--line)}.route__head{grid-template-columns:58px 1fr}.route__tag{grid-column:2;justify-self:start}.reco{grid-template-columns:1fr}.reco .stamp{display:none}.route__stage{min-height:350px}.lockup{gap:18px}.mark{width:110px;height:110px}}
+@media(max-width:560px){.wrap{padding:0 19px}.topbar__in{padding:14px 19px}.doc{font-size:9px}.hero{padding:48px 0 32px}.route__head{grid-template-columns:1fr;gap:8px}.route__tag{grid-column:1}.route__stage{min-height:330px;padding:48px 18px}.lockup{flex-direction:column}.wordmark{font-size:clamp(29px,10vw,44px)}.route__analysis{grid-template-columns:1fr}.route__copy,.route__score{padding:22px 20px}.themebar{right:10px;bottom:10px}.mark{width:104px;height:104px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.route__stage{transition:none}}
 </style>
 </head>
 <body>
-
-<!-- ===== biblioteca de símbolos SVG (reutilizados via <use>) ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <!-- A · Cronômetro-ritmo: anel (relógio/pista) + ponteiro ascendente -->
-  <symbol id="mk-crono" viewBox="0 0 100 100">
-    <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M50 12 v-6"/>                 <!-- coroa do cronômetro -->
-      <path d="M43 6 h14"/>
-      <circle cx="50" cy="54" r="34"/>       <!-- anel -->
-      <path d="M50 54 L69 39"/>              <!-- ponteiro ~2h (progresso) -->
-    </g>
-    <circle cx="50" cy="54" r="5" fill="currentColor"/>
-    <circle cx="50" cy="24" r="2.4" fill="currentColor"/>  <!-- marca 12h -->
-  </symbol>
-
-  <!-- B · Monograma C-tempo: "C" aberto que também é mostrador -->
-  <symbol id="mk-c" viewBox="0 0 100 100">
-    <path d="M74 28 A34 34 0 1 0 74 72" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-    <path d="M50 50 V26" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/>
-    <circle cx="50" cy="50" r="4.6" fill="currentColor"/>
-  </symbol>
-
-  <!-- C · Pista-anel minimalista (favicon): anel + tick 12h -->
-  <symbol id="mk-ring" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="7"/>
-    <path d="M50 24 v10" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-  </symbol>
-</defs></svg>
-
-<div class="topbar"><div class="in">
-  <span class="b">Chronos <i>·</i> Marca</span>
-  <span class="m">Exploração de Logo · v1</span>
+<div class="topbar"><div class="topbar__in">
+  <a class="otalogo" href="index.html" aria-label="Voltar ao portal Chronos"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></a>
+  <span class="doc">Documento de Marca · <b>Chronos</b><br>Fase 7 de 8 · Exploração interna</span>
 </div></div>
-
-<div class="wrap">
-
+<main class="wrap">
   <header class="hero">
-    <span class="eyebrow"><span class="d"></span>Fase 7 · Identidade — logotipo</span>
-    <h1>A marca CHRONOS.</h1>
-    <p>Logotipo derivado da tipografia do sistema — <b style="color:var(--ink);font-weight:600;">Zalando Sans Expanded</b> —, no eixo <b style="color:var(--ink);font-weight:600;">largo, geométrico e moderno</b> das referências. O tema é <b style="color:var(--ink);font-weight:600;">tempo + movimento</b>: cuidar do tempo, no seu ritmo, com constância. Abaixo o wordmark, o símbolo e os lockups para você escolher a rota.</p>
+    <span class="eyebrow"><span class="dot"></span>Fase 7 · Identidade — logotipo</span>
+    <h1>Três maneiras de<br><span class="thin">dar forma ao tempo.</span></h1>
+    <p class="lede">As direções partem da estratégia — <b>acompanhamento integrado, constância e tempo bem vivido</b> — e não de símbolos genéricos de academia. São estudos para decisão interna, ainda sem status de aprovação.</p>
+    <div class="metabar"><span class="chip"><b>Marca:</b> Chronos</span><span class="chip">3 direções autorais</span><span class="chip"><b>Vetores editáveis</b></span><span class="chip status">Em background</span></div>
+    <div class="signature">no seu ritmo</div>
   </header>
 
-  <!-- 01 · WORDMARK -->
   <section>
-    <div class="kick"><span class="n">01</span> Wordmark</div>
-    <h2>O logotipo</h2>
-    <p class="lead">A base é a <b>Zalando Sans Expanded 800</b>. O nome já é forte sozinho — largo, técnico, atemporal. Duas afinações de <b>tracking</b> e uma variação com o <b>"O" mostrador</b> (a letra vira relógio, sutil).</p>
-
-    <div class="stage tall" style="margin-bottom:18px;">
-      <div class="wm big">CHRONOS</div>
-      <div class="cap">Zalando Sans Expanded 800 · tracking +.01em</div>
+    <div class="kick"><b>01</b> Síntese antes da forma</div>
+    <h2>O símbolo precisa sustentar uma tensão rara.</h2>
+    <p class="lead">A Chronos não é clínica, academia de performance ou wellness genérico. Ela precisa parecer <b>precisa sem ser fria, ativa sem ser agressiva e premium sem ostentação</b>.</p>
+    <div class="foundation">
+      <article><small>PROMESSA</small><h3>Da avaliação à constância</h3><p>O resultado não é o pico. É o percurso acompanhado que se torna hábito.</p></article>
+      <article><small>DIFERENCIAL</small><h3>Dois olhares, um cuidado</h3><p>Fisioterapia e educação física mantêm papéis próprios, mas enxergam a pessoa por inteiro.</p></article>
+      <article><small>FILTRO VISUAL</small><h3>Tempo sem relógio</h3><p>Evitar cronômetro, halter, corpo atlético, cruz médica e qualquer atalho literal da categoria.</p></article>
     </div>
-
-    <div class="grid2">
-      <div class="stage">
-        <div class="wm" style="font-size:clamp(30px,5.4vw,52px);letter-spacing:.14em;">CHRONOS</div>
-        <div class="cap">Variação "aberta" · tracking +.14em (mais premium/arejada)</div>
-      </div>
-      <div class="stage">
-        <div class="wm" style="font-size:clamp(30px,5.4vw,52px);letter-spacing:.02em;">CHR<span class="odial"><svg><use href="#mk-ring"/></svg></span>NOS</div>
-        <div class="cap">Variação "O mostrador" · o 4º caractere vira relógio</div>
-      </div>
-    </div>
-    <p class="note">Recomendação: <span class="rec">wordmark puro</span> como assinatura principal (mais atemporal e flexível), com o <b style="color:var(--ink-2);">símbolo separado</b> (abaixo) para usos compactos. A variação "O mostrador" fica como versão especial (capa, brinde, selo).</p>
   </section>
 
-  <!-- 02 · SÍMBOLO -->
   <section>
-    <div class="kick"><span class="n">02</span> Símbolo</div>
-    <h2>O sinal de tempo</h2>
-    <p class="lead">Uma marca gráfica que carrega <b>tempo</b> e <b>progresso</b> — funciona sozinha (avatar, favicon, selo) e ao lado do wordmark. Três rotas geométricas:</p>
-    <div class="grid3">
-      <div class="symcard">
-        <svg class="mark"><use href="#mk-crono"/></svg>
-        <h4>A · Cronômetro</h4>
-        <p>Anel (relógio/pista) + ponteiro ascendente. Tempo que avança — movimento e resultado.</p>
-      </div>
-      <div class="symcard">
-        <svg class="mark"><use href="#mk-c"/></svg>
-        <h4>B · Monograma C</h4>
-        <p>O "C" de Chronos que também é mostrador. Direto, ownable, vira ícone com facilidade.</p>
-      </div>
-      <div class="symcard">
-        <svg class="mark"><use href="#mk-ring"/></svg>
-        <h4>C · Anel-pista</h4>
-        <p>Redução mínima: anel + marca das 12h. Ideal para favicon e usos muito pequenos.</p>
-      </div>
-    </div>
-    <p class="note">Minha aposta: <span class="rec">A · Cronômetro</span> para o símbolo cheio e <span class="rec" style="background:var(--marinho-3);color:var(--areia);">C · Anel</span> como redução (favicon). O monograma B entra se você quiser algo mais "letra".</p>
-  </section>
+    <div class="kick"><b>02</b> Direções criativas</div>
+    <h2>Alternativas que competem por ideias, não por acabamento.</h2>
+    <p class="lead">Use os controles de cor para testar cada assinatura nos três fundos principais. As métricas são uma avaliação estratégica provisória — não pesquisa de preferência.</p>
 
-  <!-- 03 · LOCKUPS -->
-  <section>
-    <div class="kick"><span class="n">03</span> Lockups</div>
-    <h2>Símbolo + nome</h2>
-    <p class="lead">As travas oficiais. Horizontal para assinaturas largas (site, rodapé); empilhada para praças quadradas; com <b>descritor</b> quando o contexto pedir clareza do serviço.</p>
-
-    <div class="stage" style="margin-bottom:18px;">
-      <div class="lock-h">
-        <svg class="mark"><use href="#mk-crono"/></svg>
-        <div class="txt">
-          <div class="wm gold" style="color:var(--ink);">CHRONOS</div>
-          <div class="descr">Fisioterapia · Educação Física</div>
+    <div class="routes">
+      <article class="route" id="orbita">
+        <header class="route__head"><span class="route__no">01 / 03</span><div><h3>Órbita habitada</h3></div><span class="route__tag alt">símbolo proprietário</span></header>
+        <div class="route__stage" data-theme="light">
+          <div class="lockup"><img class="mark" src="assets/logo-concepts/01-orbita-habitada.svg" alt="Símbolo Órbita habitada"><div class="wordmark">CHRONOS<small>movimento com quem entende</small></div></div>
+          <div class="themebar" aria-label="Testar fundos da rota Órbita"><button class="theme--light" data-theme="light" aria-label="Fundo areia" aria-pressed="true"></button><button class="theme--dark" data-theme="dark" aria-label="Fundo marinho" aria-pressed="false"></button><button class="theme--gold" data-theme="gold" aria-label="Fundo dourado" aria-pressed="false"></button></div>
         </div>
-      </div>
-      <div class="cap">Lockup horizontal — assinatura principal</div>
-    </div>
+        <div class="route__body">
+          <div class="route__copy">
+            <p>Dois percursos abertos formam um <b>C sem desenhá-lo literalmente</b>. O ponto dourado é a pessoa: não está no centro de uma mira, mas no campo de atenção dos dois saberes.</p>
+            <p>É a direção mais próxima do nome Chronos e da ideia de continuidade. Substitui o relógio por um sistema orbital mais calmo.</p>
+            <div class="route__analysis"><div class="mini"><h4>Força</h4><p>Leitura rápida, ótima redução e ligação imediata com constância.</p></div><div class="mini"><h4>Risco</h4><p>Pode lembrar sinal de conectividade se as aberturas e o ponto não forem refinados.</p></div></div>
+          </div>
+          <aside class="route__score"><h4>Avaliação preliminar</h4><div class="metric"><span>Aderência estratégica</span><span class="meter"><i style="width:84%"></i></span></div><div class="metric"><span>Diferenciação</span><span class="meter"><i style="width:62%"></i></span></div><div class="metric"><span>Redução</span><span class="meter"><i style="width:90%"></i></span></div><div class="metric"><span>Fachada</span><span class="meter"><i style="width:82%"></i></span></div><p class="route__note"><b>Refino necessário:</b> modular a relação entre arcos para afastar a leitura de Wi-Fi/RSS.</p></aside>
+        </div>
+      </article>
 
-    <div class="grid2">
-      <div class="stage tall">
-        <div class="lock-v">
-          <svg class="mark"><use href="#mk-crono"/></svg>
-          <div class="wm">CHRONOS</div>
-          <div class="descr" style="letter-spacing:.34em;">Bela Vista do Paraíso · PR</div>
+      <article class="route" id="cadencia">
+        <header class="route__head"><span class="route__no">02 / 03</span><div><h3>Cadência</h3></div><span class="route__tag">direção recomendada</span></header>
+        <div class="route__stage" data-theme="light">
+          <div class="lockup stack"><img class="cadence" src="assets/logo-concepts/02-cadencia-wordmark.svg" alt="Wordmark customizado Chronos, direção Cadência"><div class="signature" style="color:currentColor">no seu ritmo</div></div>
+          <div class="themebar" aria-label="Testar fundos da rota Cadência"><button class="theme--light" data-theme="light" aria-label="Fundo areia" aria-pressed="true"></button><button class="theme--dark" data-theme="dark" aria-label="Fundo marinho" aria-pressed="false"></button><button class="theme--gold" data-theme="gold" aria-label="Fundo dourado" aria-pressed="false"></button></div>
         </div>
-        <div class="cap">Lockup empilhado — praças quadradas</div>
-      </div>
-      <div class="stage tall">
-        <div class="lock-v">
-          <svg class="mark" style="color:var(--areia)"><use href="#mk-c"/></svg>
-          <div class="wm" style="color:var(--areia)">CHRONOS</div>
-          <div class="sig" style="margin-top:4px;">no seu ritmo</div>
+        <div class="route__body">
+          <div class="route__copy">
+            <p>A própria palavra é o símbolo. Um <b>intervalo horizontal recorrente</b> atravessa as sete letras como medida, pausa e repetição. O nome permanece dominante — vantagem decisiva para fachada e reconhecimento local.</p>
+            <p>É a rota menos dependente de um ícone explicativo e, por isso, a mais atemporal. A assinatura compacta poderá nascer depois do C, sem competir com o nome.</p>
+            <div class="route__analysis"><div class="mini"><h4>Força</h4><p>Alta presença de marca, excelente fachada e menor risco de cair em clichê de academia ou clínica.</p></div><div class="mini"><h4>Risco</h4><p>O corte não pode parecer “glitch”; sua espessura precisa ser óptica e desaparecer na redução mínima.</p></div></div>
+          </div>
+          <aside class="route__score"><h4>Avaliação preliminar</h4><div class="metric"><span>Aderência estratégica</span><span class="meter"><i style="width:88%"></i></span></div><div class="metric"><span>Diferenciação</span><span class="meter"><i style="width:82%"></i></span></div><div class="metric"><span>Redução</span><span class="meter"><i style="width:72%"></i></span></div><div class="metric"><span>Fachada</span><span class="meter"><i style="width:96%"></i></span></div><p class="route__note"><b>Refino necessário:</b> correção óptica do R, do S e dos intervalos; criação posterior da redução compacta.</p></aside>
         </div>
-        <div class="cap">Empilhado + afeto (Caveat) — usos calorosos</div>
-      </div>
+      </article>
+
+      <article class="route" id="olhares">
+        <header class="route__head"><span class="route__no">03 / 03</span><div><h3>Dois olhares</h3></div><span class="route__tag alt">símbolo conceitual</span></header>
+        <div class="route__stage" data-theme="light">
+          <div class="lockup"><img class="mark" src="assets/logo-concepts/03-dois-olhares.svg" alt="Símbolo Dois olhares"><div class="wordmark">CHRONOS<small>fisioterapia · educação física</small></div></div>
+          <div class="themebar" aria-label="Testar fundos da rota Dois olhares"><button class="theme--light" data-theme="light" aria-label="Fundo areia" aria-pressed="true"></button><button class="theme--dark" data-theme="dark" aria-label="Fundo marinho" aria-pressed="false"></button><button class="theme--gold" data-theme="gold" aria-label="Fundo dourado" aria-pressed="false"></button></div>
+        </div>
+        <div class="route__body">
+          <div class="route__copy">
+            <p>Duas estruturas complementares enquadram um ponto central. O desenho fala de <b>avaliação, apoio e alinhamento</b>; no conjunto, sugere discretamente um H — segunda letra do nome — sem usar corpo, olho ou cruz.</p>
+            <p>É a rota que melhor transforma o diferencial operacional em símbolo: duas competências preservadas, uma pessoa vista por inteiro.</p>
+            <div class="route__analysis"><div class="mini"><h4>Força</h4><p>Maior densidade estratégica e bom potencial para padrões, sinalização e arquitetura.</p></div><div class="mini"><h4>Risco</h4><p>Pode sugerir ampulheta ou software técnico se o eixo for rígido demais.</p></div></div>
+          </div>
+          <aside class="route__score"><h4>Avaliação preliminar</h4><div class="metric"><span>Aderência estratégica</span><span class="meter"><i style="width:96%"></i></span></div><div class="metric"><span>Diferenciação</span><span class="meter"><i style="width:90%"></i></span></div><div class="metric"><span>Redução</span><span class="meter"><i style="width:80%"></i></span></div><div class="metric"><span>Fachada</span><span class="meter"><i style="width:84%"></i></span></div><p class="route__note"><b>Refino necessário:</b> suavizar a verticalidade e eliminar qualquer leitura involuntária de ampulheta.</p></aside>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- 04 · APLICAÇÕES -->
   <section>
-    <div class="kick"><span class="n">04</span> Aplicações & versões</div>
-    <h2>Como a marca se veste</h2>
-    <p class="lead">Positiva, negativa e monocromática — a marca tem que segurar em qualquer fundo do sistema.</p>
-    <div class="apps">
-      <div class="app on-marinho">
-        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;color:var(--dourado)"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
-        <div class="cap">Principal · ouro sobre marinho</div>
-      </div>
-      <div class="app on-areia">
-        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
-        <div class="cap">Claro · sobre areia</div>
-      </div>
-      <div class="app on-gold">
-        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
-        <div class="cap">Selo · sobre dourado</div>
-      </div>
-      <div class="app on-marinho2 mono-ink">
-        <div class="lock-h"><svg class="mark" style="width:60px;height:60px;"><use href="#mk-crono"/></svg><div class="wm">CHRONOS</div></div>
-        <div class="cap">Mono · areia (1 cor)</div>
-      </div>
-    </div>
-
-    <p class="note" style="margin-top:26px;margin-bottom:14px;">Avatar / favicon / selo — o símbolo em recorte:</p>
-    <div class="avatars">
-      <div class="av"><div class="badge circ b-marinho"><svg class="mark"><use href="#mk-crono"/></svg></div><div class="lbl">Avatar · círculo</div></div>
-      <div class="av"><div class="badge b-marinho"><svg class="mark"><use href="#mk-crono"/></svg></div><div class="lbl">App · quadrado</div></div>
-      <div class="av"><div class="badge b-gold"><svg class="mark"><use href="#mk-c"/></svg></div><div class="lbl">Selo ouro</div></div>
-      <div class="av"><div class="badge circ b-areia"><svg class="mark"><use href="#mk-ring"/></svg></div><div class="lbl">Favicon · redução</div></div>
-    </div>
+    <div class="kick"><b>03</b> Leitura comparada</div>
+    <h2>O melhor caminho depende do que deve liderar.</h2>
+    <p class="lead">A escolha não é “qual desenho é mais bonito”, mas <b>qual ativo queremos que a Chronos possua por anos</b>.</p>
+    <div class="matrix"><table>
+      <thead><tr><th>Direção</th><th>Ideia que lidera</th><th>Melhor uso</th><th>Distinção</th><th>Risco principal</th></tr></thead>
+      <tbody>
+        <tr><td>Órbita habitada</td><td>Tempo + continuidade</td><td>Avatar, selo, uniforme</td><td><span class="rating">★★★☆☆</span></td><td>Conectividade / radar</td></tr>
+        <tr><td>Cadência</td><td>Nome + repetição</td><td>Fachada, digital, editorial</td><td><span class="rating">★★★★☆</span></td><td>Corte parecer tecnológico</td></tr>
+        <tr><td>Dois olhares</td><td>Integração + cuidado</td><td>Sistema, ambiente, sinalização</td><td><span class="rating">★★★★★</span></td><td>Ampulheta / rigidez</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
-  <!-- 05 · REGRAS -->
   <section>
-    <div class="kick"><span class="n">05</span> Uso correto</div>
-    <h2>Área de proteção & tamanho mínimo</h2>
-    <p class="lead">Duas regras que preservam a marca: respiro ao redor e legibilidade em escala pequena.</p>
-    <div class="rules">
-      <div class="rulebox">
-        <div class="h">Área de proteção</div>
-        <div class="clearbox"><div class="wm">CHRONOS</div></div>
-        <p class="note">Respiro mínimo = altura do "C" em todos os lados. Nada invade essa margem.</p>
-      </div>
-      <div class="rulebox">
-        <div class="h">Tamanho mínimo</div>
-        <div class="minsizes">
-          <div><div class="wm" style="font-size:30px;">CHRONOS</div><div class="cap">digital · 22px alt.</div></div>
-          <div><div class="wm" style="font-size:18px;">CHRONOS</div><div class="cap">mínimo · 14px alt.</div></div>
-        </div>
-        <p class="note">Abaixo do mínimo, usar só o símbolo (anel-pista).</p>
-      </div>
-    </div>
+    <div class="kick"><b>04</b> Parecer de direção</div>
+    <div class="reco"><div><h3>Eu avançaria com Cadência.</h3><p>Para uma marca local que precisa ser lembrada pelo nome, o wordmark tem a melhor combinação de <b>presença, longevidade e baixa dependência de explicação</b>. “Dois olhares” fica muito perto e oferece o conceito mais rico; pode superar Cadência se a próxima rodada resolver a leitura de ampulheta sem perder integração.</p></div><div class="stamp">direção<br>provisória<br>02</div></div>
+    <div class="guardrail"><b>Limite desta rodada:</b> estes vetores são estudos de direção, não originais finais. A rota escolhida deve passar por redesenho de curvas, compensação óptica, kerning, teste de 16–24 px, uma-cor, bordado, recorte e busca de anterioridade antes de aprovação.</div>
   </section>
-
-</div>
-
-<footer>Chronos · Exploração de Marca v1 &nbsp;·&nbsp; derivada de Zalando Sans Expanded &nbsp;·&nbsp; feito por Victor <i>Ota</i> · marca que marca</footer>
-
+</main>
+<footer>Chronos · Documento de Marca · Fase 7 de 8 — exploração interna &nbsp;·&nbsp; Victor <i>Ota</i></footer>
+<script>
+document.querySelectorAll('.themebar').forEach(function(bar){
+  bar.addEventListener('click',function(event){
+    var button=event.target.closest('button[data-theme]');
+    if(!button)return;
+    var stage=bar.closest('.route__stage');
+    stage.dataset.theme=button.dataset.theme;
+    bar.querySelectorAll('button').forEach(function(item){item.setAttribute('aria-pressed',String(item===button));});
+  });
+});
+</script>
 </body>
 </html>

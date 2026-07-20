@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+  <title id="title">Chronos — wordmark Cadência</title>
+  <desc id="desc">Wordmark geométrico customizado com um intervalo horizontal recorrente.</desc>
+  <defs>
+    <mask id="cadence-cut">
+      <rect width="760" height="180" fill="white"/>
+      <rect x="20" y="84" width="720" height="12" fill="black"/>
+    </mask>
+  </defs>
+  <g mask="url(#cadence-cut)" fill="none" stroke="#0F1F39" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M91 41A55 55 0 1 0 91 139"/>
+    <path d="M126 35V145M126 90H190M190 35V145"/>
+    <path d="M230 145V35H274A36 36 0 0 1 274 107H230M270 107L309 145"/>
+    <circle cx="374" cy="90" r="55"/>
+    <path d="M464 145V35L535 145V35"/>
+    <circle cx="620" cy="90" r="55"/>
+    <path d="M734 49C718 37 701 34 685 40C666 47 664 70 683 79L718 95C741 106 738 134 716 142C696 149 676 144 660 132"/>
+  </g>
+</svg>
