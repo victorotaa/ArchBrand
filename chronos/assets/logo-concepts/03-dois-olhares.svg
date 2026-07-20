@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Chronos — símbolo Dois olhares</title>
+  <desc id="desc">Duas estruturas complementares enquadram um eixo central de cuidado.</desc>
+  <path fill="#0F1F39" d="M32 32h46c29 0 48 18 48 46v20c0 9-5 17-13 22 8 5 13 13 13 22v20c0 28-19 46-48 46H32l28-21c12-9 18-20 18-34v-21c0-10 4-19 12-26-8-7-12-16-12-26V59L32 32Z"/>
+  <path fill="#0F1F39" d="M208 32h-46c-29 0-48 18-48 46v20c0 9 5 17 13 22-8 5-13 13-13 22v20c0 28 19 46 48 46h46l-28-21c-12-9-18-20-18-34v-21c0-10-4-19-12-26 8-7 12-16 12-26V59l46-27Z"/>
+  <circle cx="120" cy="120" r="11" fill="#B4623F"/>
+</svg>
