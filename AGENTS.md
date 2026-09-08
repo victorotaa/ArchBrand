@@ -1,6 +1,8 @@
 # AGENTS.md — ArchBrand (Codex + Claude Code)
 
-Repositório de branding de **Victor Ota** (método autoral ArchBrand). Entregáveis de cliente em `<cliente>/` (ex.: `chronos/`), HTML single-file autocontido, deploy estático na Netlify. Doutrina de marca: skill **`branding-victor-ota`** em `.claude/skills/`.
+Repositório de branding de **Victor Ota** (método autoral ArchBrand). Entregáveis de cliente em `<cliente>/` (ex.: `chronos/`), HTML single-file autocontido. Deploy estático: **Netlify** (produção atual, a partir do `main`); o `.nojekyll` na raiz deixa o repositório pronto para **GitHub Pages** caso a publicação migre. Doutrina de marca: skill **`branding-victor-ota`** em `.claude/skills/`.
+
+> **Exceção de autocontenção — páginas com download.** Um manual de marca precisa servir arquivos reais (SVG, PNG, PDF, ZIP). Nesses casos a página continua **autocontida para renderizar** (pré-visualizações embutidas inline, abre e funciona offline) e os arquivos ficam em `<cliente>/assets/`, existindo apenas para download. Ver `chronos/design-system.html`.
 
 ## Regra — Coprodução OpenAI Codex × Claude Code
 
