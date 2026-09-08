@@ -1,8 +1,10 @@
 # AGENTS.md — ArchBrand (Codex + Claude Code)
 
-Repositório de branding de **Victor Ota** (método autoral ArchBrand). Entregáveis de cliente em `<cliente>/` (ex.: `chronos/`), HTML single-file autocontido. Deploy estático: **Netlify** (produção atual, a partir do `main`); o `.nojekyll` na raiz deixa o repositório pronto para **GitHub Pages** caso a publicação migre. Doutrina de marca: skill **`branding-victor-ota`** em `.claude/skills/`.
+Repositório de branding de **Victor Ota** (método autoral ArchBrand). Entregáveis de cliente em `<cliente>/` (ex.: `chronos/`), HTML single-file autocontido. Deploy estático: **Vercel** (produção e previews de PR, a partir do `main`) — decisão do Victor; Netlify foi descartado. Doutrina de marca: skill **`branding-victor-ota`** em `.claude/skills/`.
 
-> **Exceção de autocontenção — páginas com download.** Um manual de marca precisa servir arquivos reais (SVG, PNG, PDF, ZIP). Nesses casos a página continua **autocontida para renderizar** (pré-visualizações embutidas inline, abre e funciona offline) e os arquivos ficam em `<cliente>/assets/`, existindo apenas para download. Ver `chronos/design-system.html`.
+> **Exceção de autocontenção — páginas com download.** Um manual de marca precisa servir arquivos reais (SVG, PNG, PDF, ZIP). Nesses casos a página continua **autocontida para renderizar** (pré-visualizações embutidas inline, abre e funciona offline) e os arquivos ficam em `<cliente>/assets/`, existindo apenas para download. Ver `chronos/manual.html`.
+
+> **Duas portas por cliente.** Cada entregável se resume a duas páginas: `index.html` — a **apresentação** da estratégia e da identidade, de ponta a ponta, com bastante movimento — e `manual.html` — o **manual + pacote de marca**, a ferramenta de trabalho com sumário, tabelas e downloads. A apresentação carrega um header fixo *liquid glass* com o link permanente para o manual. Nada de páginas soltas por fase.
 
 ## Regra — Coprodução OpenAI Codex × Claude Code
 
