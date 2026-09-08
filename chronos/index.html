@@ -54,6 +54,17 @@ body{font-family:var(--body); font-weight:300; color:var(--ink); background:var(
 .ph.soon .st{color:var(--ink-3); border:1px solid var(--line);}
 .ph .arrow{color:var(--gold); font-size:18px; margin-left:2px;}
 
+.feat{display:block;margin-top:26px;text-decoration:none;color:inherit;border:1px solid var(--line-gold);
+  border-radius:18px;padding:clamp(24px,4vw,34px) clamp(22px,4vw,36px);text-align:center;
+  background:radial-gradient(120% 140% at 50% 0%,rgba(195,162,98,.16) 0%,rgba(28,28,29,.45) 62%);
+  transition:.2s var(--ease);}
+.feat:hover{border-color:var(--gold);transform:translateY(-1px);}
+.feat .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+.feat h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,4.6vw,36px);line-height:1.06;
+  letter-spacing:-.02em;margin-top:12px;}
+.feat p{font-size:14.5px;color:var(--ink-2);max-width:52ch;margin:12px auto 0;}
+.feat .go{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:18px;padding:0 22px;
+  border-radius:100px;background:var(--gold);color:var(--bg);font-weight:700;font-size:13.5px;}
 .note{margin-top:26px; border:1px dashed var(--line-gold); border-radius:14px; padding:20px 24px; text-align:center;}
 .note p{font-size:14px; color:var(--ink-2); max-width:56ch; margin:0 auto;}
 .note p b{color:var(--ink);}
@@ -90,6 +101,13 @@ footer .o{color:var(--gold);}
     <p>Este é o <b>documento vivo</b> da marca. Cada fase é desenvolvida, apresentada e validada com vocês — e vira um capítulo aqui. Ao final, todas se reúnem no <b>brandbook completo</b> da Chronos.</p>
   </section>
 
+  <a class="feat" href="marca.html">
+    <span class="k">Apresentação da marca</span>
+    <h2>A marca Chronos</h2>
+    <p>O nome, o símbolo, a paleta, a tipografia e a voz — a identidade inteira em uma leitura só.</p>
+    <span class="go">Ver a apresentação →</span>
+  </a>
+
   <section class="phases">
     <a class="ph live" href="fase-1-essencia-mvv.html">
       <span class="no">Fase 1</span>
@@ -106,7 +124,7 @@ footer .o{color:var(--gold);}
   </section>
 
   <div class="note">
-    <p><b>Status desta rodada:</b> a marca foi entregue. O <a href="design-system.html">manual de marca</a> reúne logotipo, cores, tipografia e as regras de uso, com todos os <b>arquivos oficiais prontos para download</b>. O <a href="moodboard.html">moodboard</a> segue como direção de imagem — as fotos de referência devem dar lugar à produção própria da Chronos.</p>
+    <p><b>Status desta rodada:</b> a marca foi entregue. A <a href="marca.html">apresentação da marca</a> conta a identidade de ponta a ponta; o <a href="design-system.html">manual de marca</a> reúne logotipo, cores, tipografia e as regras de uso, com todos os <b>arquivos oficiais prontos para download</b>. O <a href="moodboard.html">moodboard</a> segue como direção de imagem — as fotos de referência devem dar lugar à produção própria da Chronos.</p>
   </div>
 
 </div>
