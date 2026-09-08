@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos · Handoff de Design</title>
+<meta name="description" content="Handoff de design da marca Chronos: estratégia aprovada, sistema visual, briefing do logotipo e pendências.">
+<meta name="theme-color" content="#0F1F39">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230F1F39'/%3E%3Ctext%20x='16'%20y='23'%20font-size='21'%20font-weight='700'%20font-family='sans-serif'%20fill='%23CBA152'%20text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chronos · Documento de Marca">
+<meta property="og:title" content="Chronos · Handoff de Design">
+<meta property="og:description" content="Tudo que a designer precisa para continuar a marca Chronos: estratégia, tokens, briefing do logotipo e pendências.">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Zalando+Sans+Expanded:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marinho:#0F1F39; --marinho-2:#1A2C4E; --marinho-3:#243a63;
+  --azul:#3E78B2; --dourado:#CBA152; --dourado-deep:#B0863F; --terracota:#B4623F;
+  --areia:#D9CBB3; --neutro:#8A97AC;
+  --ink:#D9CBB3; --ink-2:#BEB299; --ink-3:#8A97AC; --ink-inv:#0F1F39;
+  --line:rgba(217,203,179,.11); --line-2:rgba(217,203,179,.18); --line-gold:rgba(203,161,82,.42);
+  --display:'Zalando Sans Expanded',sans-serif; --body:'Manrope',sans-serif;
+  --mono:'JetBrains Mono',monospace; --script:'Caveat',cursive;
+  --r-md:10px; --r-lg:16px; --r-pill:100px; --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-weight:400;color:var(--ink);background:var(--marinho);line-height:1.62;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 620px at 84% -8%,rgba(203,161,82,.12),transparent 60%),radial-gradient(820px 480px at -10% 12%,rgba(62,120,178,.16),transparent 55%)}
+a{color:var(--dourado)}
+.wrap{max-width:920px;margin:0 auto;padding:0 26px}
+.topbar{border-bottom:1px solid var(--line)}
+.topbar .inner{max-width:920px;margin:0 auto;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.otalogo svg{height:22px;width:auto;display:block}
+.topbar .doc{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);text-align:right;line-height:1.5}
+.topbar .doc b{color:var(--dourado);font-weight:600}
+
+.hero{padding:60px 0 32px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);border:1px solid var(--line-gold);border-radius:var(--r-pill);padding:6px 15px;margin-bottom:22px}
+.eyebrow .d{width:6px;height:6px;border-radius:50%;background:var(--dourado)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6.2vw,58px);line-height:1.02;letter-spacing:-.01em}
+.hero p{margin-top:18px;font-size:clamp(15px,2vw,17.5px);color:var(--ink-2);max-width:64ch}
+.hero p b{color:var(--ink);font-weight:600}
+
+section{padding:44px 0;border-top:1px solid var(--line)}
+.kick{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.kick .n{font-family:var(--display);color:var(--dourado);font-weight:700}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.01em;margin-bottom:10px}
+h3{font-family:var(--display);font-weight:700;font-size:17px;margin-bottom:8px}
+.lead{color:var(--ink-2);max-width:68ch;margin-bottom:24px}
+.lead b,p b{color:var(--ink);font-weight:600}
+p+p{margin-top:12px}
+
+/* tl;dr */
+.tldr{border:1px solid var(--line-gold);border-radius:var(--r-lg);background:rgba(203,161,82,.06);padding:24px 26px}
+.tldr h3{color:var(--dourado)}
+.tldr ol{margin:10px 0 0 20px;display:grid;gap:9px;color:var(--ink-2);font-size:14.5px}
+.tldr ol b{color:var(--ink)}
+
+/* cards genéricos */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:22px 24px}
+.card p{font-size:14px;color:var(--ink-3);margin-top:6px}
+.card ul{margin:10px 0 0 18px;font-size:14px;color:var(--ink-2);display:grid;gap:7px}
+
+/* tabela */
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+td{color:var(--ink-2)} td b{color:var(--ink)}
+td.mono,.mono{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.sw-dot{display:inline-block;width:15px;height:15px;border-radius:4px;vertical-align:-3px;margin-right:9px;border:1px solid rgba(255,255,255,.16)}
+.scroll{overflow-x:auto}
+
+/* status */
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border-radius:var(--r-pill);padding:3px 10px;font-weight:700;font-family:var(--body)}
+.tag.ok{background:rgba(203,161,82,.16);color:var(--dourado);border:1px solid var(--line-gold)}
+.tag.open{background:rgba(180,98,63,.18);color:#E6B79E;border:1px solid rgba(180,98,63,.42)}
+.tag.wait{background:rgba(62,120,178,.16);color:#A8C6E4;border:1px solid rgba(62,120,178,.4)}
+
+/* decisão */
+.decision{border:1px solid rgba(180,98,63,.4);border-left:3px solid var(--terracota);border-radius:var(--r-md);background:rgba(180,98,63,.07);padding:18px 20px;margin-bottom:14px}
+.decision .q{font-family:var(--display);font-weight:700;font-size:15.5px;color:var(--ink)}
+.decision p{font-size:14px;color:var(--ink-2);margin-top:7px}
+.decision .rec{font-size:13.5px;color:var(--dourado);margin-top:9px}
+
+/* rotas do símbolo */
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.route{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:24px 18px;text-align:center}
+.route svg{width:62px;height:62px;color:var(--dourado)}
+.route h4{font-family:var(--display);font-weight:700;font-size:15px;margin-top:12px}
+.route p{font-size:12.5px;color:var(--ink-3);margin-top:6px}
+
+/* checklist entregáveis */
+.deliv{display:grid;gap:9px;margin-top:10px;list-style:none}
+.deliv li{font-size:14.5px;color:var(--ink-2);padding-left:26px;position:relative}
+.deliv li::before{content:"";position:absolute;left:0;top:5px;width:13px;height:13px;border:1px solid var(--line-gold);border-radius:3px}
+.deliv li b{color:var(--ink)}
+
+/* links */
+.links{display:grid;gap:8px;margin-top:4px}
+.linkrow{display:flex;justify-content:space-between;align-items:center;gap:14px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--marinho-2);padding:12px 16px;text-decoration:none;transition:.16s var(--ease)}
+.linkrow:hover{border-color:var(--line-gold)}
+.linkrow .t{font-weight:600;color:var(--ink);font-size:14.5px}
+.linkrow .u{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);text-align:right;word-break:break-all}
+
+.note{font-size:13px;color:var(--ink-3);margin-top:14px}
+.sig{font-family:var(--script);color:var(--dourado);font-size:30px;line-height:1;margin-top:6px}
+footer{padding:32px 0 60px;text-align:center;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);margin-top:18px}
+footer i{color:var(--dourado);font-style:normal}
+@media(max-width:760px){.grid2,.grid3,.routes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="mk-crono" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 12 v-6"/><path d="M43 6 h14"/><circle cx="50" cy="54" r="34"/><path d="M50 54 L69 39"/></g><circle cx="50" cy="54" r="5" fill="currentColor"/><circle cx="50" cy="24" r="2.4" fill="currentColor"/></symbol>
+  <symbol id="mk-c" viewBox="0 0 100 100"><path d="M74 28 A34 34 0 1 0 74 72" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><path d="M50 50 V26" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/><circle cx="50" cy="50" r="4.6" fill="currentColor"/></symbol>
+  <symbol id="mk-ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="7"/><path d="M50 24 v10" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<div class="topbar"><div class="inner">
+  <span class="otalogo"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></span>
+  <span class="doc">Documento de Marca · <b>Chronos</b><br>Handoff de design · Interno</span>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow"><span class="d"></span>Handoff · para a designer que assume</span>
+    <h1>Tudo que você precisa para continuar a Chronos.</h1>
+    <p>Este documento entrega o projeto: a <b>estratégia já aprovada</b> pelas sócias, o <b>sistema visual travado</b>, o <b>briefing do logotipo</b> (a peça que falta) e as <b>decisões em aberto</b>. Tudo o que está marcado como travado já foi validado — construa por cima, não recomece.</p>
+    <div class="sig">no seu ritmo</div>
+  </header>
+
+  <!-- 00 · ESSENCIAL -->
+  <section>
+    <div class="kick"><span class="n">00</span> Comece por aqui</div>
+    <h2>O essencial em 60 segundos</h2>
+    <div class="tldr">
+      <h3>Se você ler só isto</h3>
+      <ol>
+        <li>Cliente: <b>Chronos</b> — academia em Bela Vista do Paraíso/PR das sócias <b>Netanya e Bárbara</b>, unindo <b>fisioterapia + educação física</b>, para <b>todas as idades</b>.</li>
+        <li>O projeto está na <b>Fase 5 de 8</b>. Fases 1–5 entregues e validadas. <b>Seu trabalho principal é o logotipo (Fase 7)</b>.</li>
+        <li>O <b>sistema visual está travado</b>: 7 cores (com CMYK e Pantone) + Zalando Sans Expanded / Manrope / Caveat. <b>Não altere sem falar com o Victor.</b></li>
+        <li>O logotipo tem <b>3 rotas de símbolo já desenhadas</b> e <b>3 decisões pendentes</b> — que são do Victor e das sócias, não suas. Veja a seção 04.</li>
+        <li>O nome está <b>fechado: Chronos</b>, com H. Pode construir o wordmark sem receio. Veja a seção 05.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 01 · ESTRATÉGIA -->
+  <section>
+    <div class="kick"><span class="n">01</span> A marca</div>
+    <h2>Estratégia aprovada</h2>
+    <p class="lead">Resumo do que já foi validado com as sócias. O detalhamento completo está nas fases 1–4 (links na seção 07) — <b>leia-as antes de desenhar</b>.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Posicionamento</h3>
+        <p>Uma <b>academia diferenciada</b> — não um "espaço de saúde", não uma academia comum. Ocupa o espaço entre a clínica e a academia: precisa como cuidado, viva como movimento. Dois olhares (fisio + educação física) sobre a mesma pessoa.</p>
+      </div>
+      <div class="card">
+        <h3>Persona</h3>
+        <p>Mais do que idade, a persona está na <b>estabilidade de vida e na constância em treinar</b>. Atende de criança a idoso — mas o eixo é quem busca continuidade, não performance de vitrine.</p>
+      </div>
+      <div class="card">
+        <h3>Tom &amp; personalidade</h3>
+        <p>Acolhedor e técnico ao mesmo tempo: <b>técnica sem frieza, força sem espetáculo, cuidado sem infantilização</b>. Premium que aparece na atenção e na luz — nunca em ostentação.</p>
+      </div>
+      <div class="card">
+        <h3>Conceito-raiz</h3>
+        <p><b>Tempo · movimento · constância.</b> "Cuidar do tempo", "no seu ritmo", "habitar melhor o tempo". Toda decisão visual deve reforçar isso — inclusive o logotipo.</p>
+      </div>
+    </div>
+    <p class="note">Contexto que evita retrabalho: as sócias já rejeitaram material anterior por parecer <b>"fraco, genérico e com cara de IA"</b>. Fuja de solução de banco/template — o diferencial é ser específico.</p>
+  </section>
+
+  <!-- 02 · SISTEMA -->
+  <section>
+    <div class="kick"><span class="n">02</span> Sistema visual <span class="tag ok">travado</span></div>
+    <h2>Cor e tipografia</h2>
+    <p class="lead">Paleta <b>enxuta e travada em 7 cores</b> — sem redundância. Todas com <b>HEX · CMYK · Pantone</b> (regra do método: nenhuma paleta sai só em HEX). CMYK arredondado a <b>5%</b> e composto em <b>até 3 dos 4 canais</b> (um sempre em 0) para maior pureza de impressão.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Cor</th><th>HEX</th><th>CMYK</th><th>Pantone</th><th>Papel</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sw-dot" style="background:#0F1F39"></span><b>Marinho</b></td><td class="mono">#0F1F39</td><td class="mono">C75 M45 Y0 K80</td><td class="mono">539 C</td><td>Base predominante</td></tr>
+          <tr><td><span class="sw-dot" style="background:#1A2C4E"></span><b>Marinho 2</b></td><td class="mono">#1A2C4E</td><td class="mono">C65 M45 Y0 K70</td><td class="mono">534 C</td><td>Superfície</td></tr>
+          <tr><td><span class="sw-dot" style="background:#3E78B2"></span><b>Azul-assinatura</b></td><td class="mono">#3E78B2</td><td class="mono">C65 M35 Y0 K30</td><td class="mono">646 C</td><td>Destaque / links</td></tr>
+          <tr><td><span class="sw-dot" style="background:#CBA152"></span><b>Dourado</b></td><td class="mono">#CBA152</td><td class="mono">C0 M20 Y60 K20</td><td class="mono">7407 C</td><td>Acento nobre</td></tr>
+          <tr><td><span class="sw-dot" style="background:#B4623F"></span><b>Terracota</b></td><td class="mono">#B4623F</td><td class="mono">C0 M45 Y65 K30</td><td class="mono">7522 C</td><td>Acento quente</td></tr>
+          <tr><td><span class="sw-dot" style="background:#D9CBB3"></span><b>Areia</b></td><td class="mono">#D9CBB3</td><td class="mono">C0 M5 Y20 K15</td><td class="mono">468 C</td><td>Único claro · papel</td></tr>
+          <tr><td><span class="sw-dot" style="background:#8A97AC"></span><b>Neutro</b></td><td class="mono">#8A97AC</td><td class="mono">C20 M10 Y0 K35</td><td class="mono">7543 C</td><td>Neutro frio</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Pantone é aproximação de tela → tinta: <b>confirmar no guia físico</b> (Solid Coated) antes de fechar qualquer impresso.</p>
+
+    <div class="grid3" style="margin-top:26px">
+      <div class="card"><h3 style="font-family:'Zalando Sans Expanded'">Zalando Sans Expanded</h3><p><b>Headline / display.</b> Escolhida pelo Victor entre 6 candidatas. Pesos 600–800. <b>O logotipo deriva dela.</b></p></div>
+      <div class="card"><h3 style="font-family:'Manrope'">Manrope</h3><p><b>Corpo.</b> Textos, interface, legendas. Pesos 300–700.</p></div>
+      <div class="card"><h3 style="font-family:'Caveat';font-size:24px">Caveat</h3><p><b>Fonte de afeto.</b> Manuscrita para toques humanos pontuais ("no seu ritmo"). Uso com parcimônia.</p></div>
+    </div>
+    <p class="note">Todas são Google Fonts (portabilidade é regra do método). Forma: escala base <b>8</b>, raios 6/10/16/22/pill, sombras discretas.</p>
+  </section>
+
+  <!-- 03 · REGRAS -->
+  <section>
+    <div class="kick"><span class="n">03</span> Doutrina</div>
+    <h2>Regras que não se quebram</h2>
+    <p class="lead">São padrões do método autoral do Victor. Valem para qualquer peça que você produzir neste projeto.</p>
+    <div class="grid2">
+      <div class="card"><h3>Cor sempre em 3 sistemas</h3><p>Toda cor apresentada carrega <b>HEX + CMYK + Pantone</b>. CMYK arredondado a 5%, em até 3 canais. Nunca entregar paleta só em HEX.</p></div>
+      <div class="card"><h3>Paleta travada</h3><p>Teto de <b>~7 cores</b>, sem vizinhas redundantes. Um neutro pode ser gradação de outra cor — isso é intencional.</p></div>
+      <div class="card"><h3>Fonte de afeto</h3><p>A manuscrita (Caveat) é permitida e desejada — mas <b>pontual</b>, como assinatura. Nunca em hierarquia de leitura.</p></div>
+      <div class="card"><h3>Entregável autocontido</h3><p>Documentos são <b>HTML single-file</b>, com imagens em base64 e sem dependência que quebre offline (exceto Google Fonts).</p></div>
+      <div class="card"><h3>Validar antes de entregar</h3><p>Toda peça é conferida em <b>desktop e mobile (390px)</b> antes de ir para o cliente. Mobile é onde as sócias abrem.</p></div>
+      <div class="card"><h3>Decisão de marca é do Victor</h3><p>Rota de logo, paleta, posicionamento e nome <b>não se decidem por conta</b> — sinalize e aguarde.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 · LOGO -->
+  <section>
+    <div class="kick"><span class="n">04</span> Sua tarefa principal <span class="tag open">em aberto</span></div>
+    <h2>O logotipo</h2>
+    <p class="lead">Existe uma <b>exploração v1 pronta</b> (arquivo <span class="mono">chronos/logo.html</span> — link na seção 07). Ela não é entrega final: é a base de decisão. Seu trabalho é <b>refinar a rota escolhida e vetorizar de verdade</b>.</p>
+
+    <h3 style="margin-top:24px">Direção criativa</h3>
+    <p>O eixo é <b>largo, geométrico e moderno</b> — definido pelo Victor a partir de duas referências de wordmark no Behance (projetos "Home-hub" e "Tempo Run Event Brand"). O wordmark <b>deriva da Zalando Sans Expanded</b>, com tema de <b>tempo + movimento</b>. As sócias buscam sans-serif: <b>serifada foi descartada</b> por fugir da proposta.</p>
+
+    <h3 style="margin-top:22px">As 3 rotas de símbolo já desenhadas</h3>
+    <div class="routes">
+      <div class="route"><svg><use href="#mk-crono"/></svg><h4>A · Cronômetro</h4><p>Anel + ponteiro ascendente. Tempo que avança — movimento e resultado.</p></div>
+      <div class="route"><svg><use href="#mk-c"/></svg><h4>B · Monograma C</h4><p>O "C" que também é mostrador. Direto e ownable.</p></div>
+      <div class="route"><svg><use href="#mk-ring"/></svg><h4>C · Anel-pista</h4><p>Redução mínima: anel + marca das 12h. Ideal para favicon.</p></div>
+    </div>
+    <p class="note">As três estão desenhadas em <span class="mono">logo.html</span> apenas como ponto de partida — <b>nenhuma está escolhida</b>, e a exploração não precisa se limitar a elas.</p>
+
+    <h3 style="margin-top:26px">As 3 decisões pendentes — <span class="tag wait">aguardam o Victor</span></h3>
+    <div class="decision">
+      <div class="q">1. Qual rota de símbolo?</div>
+      <p>A (Cronômetro), B (Monograma C), ou uma fusão das duas.</p>
+    </div>
+    <div class="decision">
+      <div class="q">2. Qual descritor acompanha o lockup?</div>
+      <p>"Fisioterapia · Educação Física", "Bela Vista do Paraíso · PR", ou nenhum no lockup principal.</p>
+    </div>
+    <div class="decision">
+      <div class="q">3. Mantém a variação "O mostrador"?</div>
+      <p>A versão em que o 4º caractere do wordmark vira um anel-relógio — como versão especial (capa, brinde, selo) — ou o wordmark fica 100% limpo sempre.</p>
+    </div>
+
+    <h3 style="margin-top:26px">Entregáveis esperados</h3>
+    <ul class="deliv">
+      <li><b>Wordmark vetorizado</b> (a partir da Zalando, com o desenho refinado — não apenas a fonte digitada)</li>
+      <li><b>Símbolo vetorizado</b> na rota escolhida, com grade de construção</li>
+      <li><b>Lockups:</b> horizontal (com e sem descritor) e empilhado</li>
+      <li><b>Versões:</b> positiva, negativa, monocromática (1 cor) e sobre dourado</li>
+      <li><b>Reduções:</b> favicon, avatar de redes (círculo e quadrado), tamanho mínimo definido</li>
+      <li><b>Área de proteção</b> e usos proibidos</li>
+      <li><b>Arquivos:</b> SVG, AI/EPS, PNG (transparente, várias escalas) e PDF vetorial</li>
+    </ul>
+    <p class="note">Critério de aceite: o logotipo tem que <b>funcionar em 16px</b> (favicon) e <b>em fachada</b>, sobre marinho, areia, dourado e em uma cor só — sem perder identidade.</p>
+  </section>
+
+  <!-- 05 · NAMING -->
+  <section>
+    <div class="kick"><span class="n">05</span> Nome <span class="tag ok">travado</span></div>
+    <h2>Chronos, com H</h2>
+    <p class="lead">O nome está <b>definido e validado com as sócias: Chronos</b>, sempre com <b>H</b> — a grafia é parte da identidade e não deve ser alterada em nenhuma aplicação.</p>
+    <p><b>O que isso significa para você:</b> o wordmark pode ser construído e vetorizado sem espera. A marca pública é <b>"Chronos" limpo</b> — sem sufixos do tipo "Fit" ou "Academia", que enfraqueceriam o posicionamento diferenciado. Complementos geográficos ou de razão social são assunto de registro, não da marca aplicada.</p>
+    <p class="note">Origem do nome: <i>Chronos</i> é o tempo em grego — a raiz do conceito da marca (tempo, constância, "cuidar do tempo"). O logotipo deve carregar esse sentido.</p>
+  </section>
+
+  <!-- 06 · PENDÊNCIAS -->
+  <section>
+    <div class="kick"><span class="n">06</span> Estado do projeto</div>
+    <h2>O que está pronto e o que falta</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Fase</th><th>Entrega</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Essência &amp; MVV</td><td><span class="tag ok">entregue</span></td></tr>
+          <tr><td>2</td><td>Posicionamento &amp; Narrativa</td><td><span class="tag ok">entregue</span></td></tr>
+          <tr><td>3</td><td>Personalidade &amp; Tom de Voz</td><td><span class="tag ok">entregue</span></td></tr>
+          <tr><td>4</td><td>Persona &amp; Jornada</td><td><span class="tag ok">entregue</span></td></tr>
+          <tr><td>5</td><td>Território Visual — design system</td><td><span class="tag ok">travado</span></td></tr>
+          <tr><td>5</td><td>Território Visual — moodboard (30 imagens, 6 territórios)</td><td><span class="tag wait">em validação</span></td></tr>
+          <tr><td>—</td><td>Naming (nome da marca)</td><td><span class="tag ok">travado · Chronos</span></td></tr>
+          <tr><td>7</td><td><b>Logotipo</b></td><td><span class="tag open">sua tarefa</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">O moodboard usa <b>imagens de referência</b>, não produção própria. A direção só se torna proprietária quando forem substituídas por fotos reais das pessoas, do espaço e da equipe da Chronos — isso está registrado como próximo passo de produção.</p>
+  </section>
+
+  <!-- 07 · LINKS -->
+  <section>
+    <div class="kick"><span class="n">07</span> Material</div>
+    <h2>Onde está tudo</h2>
+    <p class="lead">Todas as páginas são HTML autocontido, publicadas a partir do repositório. Abra na ordem: fases 1–4 (estratégia) → design system → moodboard → logo.</p>
+    <div class="links">
+      <a class="linkrow" href="index.html"><span class="t">Página-mãe · o hub das fases</span><span class="u">chronos/index.html</span></a>
+      <a class="linkrow" href="fase-1-essencia-mvv.html"><span class="t">Fase 1 · Essência &amp; MVV</span><span class="u">chronos/fase-1-essencia-mvv.html</span></a>
+      <a class="linkrow" href="fase-2-posicionamento.html"><span class="t">Fase 2 · Posicionamento &amp; Narrativa</span><span class="u">chronos/fase-2-posicionamento.html</span></a>
+      <a class="linkrow" href="fase-3-tom-de-voz.html"><span class="t">Fase 3 · Personalidade &amp; Tom de Voz</span><span class="u">chronos/fase-3-tom-de-voz.html</span></a>
+      <a class="linkrow" href="fase-4-persona-jornada.html"><span class="t">Fase 4 · Persona &amp; Jornada</span><span class="u">chronos/fase-4-persona-jornada.html</span></a>
+      <a class="linkrow" href="design-system.html"><span class="t">Fase 5 · Design System — tokens, cor, tipografia</span><span class="u">chronos/design-system.html</span></a>
+      <a class="linkrow" href="moodboard.html"><span class="t">Fase 5 · Moodboard — clima e direção fotográfica</span><span class="u">chronos/moodboard.html</span></a>
+      <a class="linkrow" href="logo.html"><span class="t">Exploração de logo v1 — as 3 rotas <b style="color:var(--dourado)">(comece aqui)</b></span><span class="u">chronos/logo.html</span></a>
+    </div>
+    <p class="note">Repositório: <span class="mono">github.com/victorotaa/ArchBrand</span>, pasta <span class="mono">chronos/</span>. O logo e este handoff são <b>internos</b> — não estão linkados no hub que as sócias acessam.</p>
+  </section>
+
+  <!-- 08 · COMO TRABALHAR -->
+  <section>
+    <div class="kick"><span class="n">08</span> Fluxo</div>
+    <h2>Como entregar</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Se você trabalhar fora do repositório</h3>
+        <p>Entregue os vetores (SVG/AI/PDF) + um PDF de apresentação da marca. O Victor integra ao documento HTML da série.</p>
+      </div>
+      <div class="card">
+        <h3>Se você trabalhar no repositório</h3>
+        <ul>
+          <li>Sempre <b>sincronize o <span class="mono">main</span></b> antes de editar</li>
+          <li>Trabalhe em <b>branch própria</b> e abra <b>pull request</b></li>
+          <li>Commits pequenos, com escopo declarado</li>
+          <li>Valide em desktop e mobile antes de pedir revisão</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">O repositório é coproduzido por dois agentes de IA (Claude Code e OpenAI Codex) além de você — por isso a regra de sincronizar antes de tocar e declarar escopo. Está documentado em <span class="mono">CLAUDE.md</span> e <span class="mono">AGENTS.md</span> na raiz.</p>
+  </section>
+
+</div>
+
+<footer>Chronos · Handoff de Design &nbsp;·&nbsp; documento interno &nbsp;·&nbsp; método <i>ArchBrand</i> · Victor <i>Ota</i> · marca que marca</footer>
+
+</body>
+</html>
