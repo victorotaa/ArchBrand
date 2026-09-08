@@ -139,10 +139,10 @@ h2{font-family:var(--display); font-weight:700; font-size:clamp(24px,3.6vw,32px)
 .app-dark h3,.app-light h3{font-family:var(--display); font-weight:700; font-size:22px;}
 .app-dark h3{color:var(--ink);} .app-light h3{color:var(--marinho);}
 .app-dark p,.app-light p{font-size:14px; margin-top:8px;} .app-dark p{color:var(--ink-2);} .app-light p{color:#5B5348;}
-.app-light .tag2{background:rgba(203,161,82,.14); color:var(--dourado-deep); border-color:var(--line-gold);}
+.app-light .tag2{background:rgba(203,161,82,.14); color:var(--marinho); border-color:var(--line-gold);}
 .app-light .btn.primary{color:var(--ink-inv);}
 .sig{font-family:var(--script); color:var(--dourado); font-size:34px; line-height:1; margin-top:14px;}
-.app-light .sig{color:var(--terracota);}
+.app-light .sig{color:var(--marinho);}
 
 /* acessibilidade cromática */
 .contrast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
@@ -230,12 +230,112 @@ footer i{color:var(--dourado); font-style:normal;}
 @media(max-width:820px){.dontgrid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:620px){.dontgrid,.fontgrid{grid-template-columns:1fr;}}
 .dont h4,.dont p{overflow-wrap:anywhere;}
+
+/* ——— sumário / navegação ——— */
+.toc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0 34px;padding:14px 16px;
+  border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);}
+.toc-lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-right:4px;}
+.toc a{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;
+  border:1px solid var(--line-2);border-radius:var(--r-pill);padding:9px 15px;transition:.16s var(--ease);}
+.toc a:hover,.toc a:focus-visible{border-color:var(--dourado);color:var(--dourado);}
+.otalogo{display:inline-flex;align-items:center;min-height:44px;}
+.toc a{min-height:44px;display:inline-flex;align-items:center;}
+html{scroll-padding-top:20px;}
+/* alvos de toque confortáveis (mín. 44px de altura) */
+.dlmini{min-height:44px;display:inline-flex;align-items:center;padding:0 15px;}
+.dlrow{gap:10px;}
+/* contraste */
+.dont .x{background:#C4693F;}
+.lbox.sand .cap,.lbox.light .cap{color:#4A5361;}
+:focus-visible{outline:2px solid var(--dourado);outline-offset:3px;}
+
+/* ——— 00 · Comece por aqui (roteamento por perfil) ——— */
+.guia{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.gcard{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:22px 22px 18px;
+  display:flex;flex-direction:column;gap:9px;}
+.gi{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line-gold);color:var(--dourado);font-size:16px;line-height:1;font-family:var(--body);font-weight:700;}
+.gcard h4{font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);}
+.gcard p{font-size:13.5px;color:var(--ink-2);line-height:1.55;}
+.gcard .dlrow{margin-top:auto;padding-top:6px;}
+@media(max-width:760px){.guia{grid-template-columns:1fr;}}
+
+/* ——— 08 · Identidade verbal ——— */
+.sub3{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.2vw,21px);color:var(--ink);
+  margin:40px 0 12px;padding-top:4px;border-top:1px solid var(--line);}
+.sub3:first-of-type{margin-top:34px;}
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:6px;}
+.traits .tr{border:1px solid var(--line);border-radius:var(--r-md);background:var(--marinho-2);padding:16px 18px;}
+.traits .tr b{display:block;font-family:var(--display);font-weight:700;font-size:14.5px;color:var(--dourado);margin-bottom:5px;}
+.traits .tr span{display:block;font-size:13px;color:var(--ink-2);line-height:1.55;}
+@media(max-width:860px){.traits{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.traits{grid-template-columns:1fr;}}
+
+.dltable.dim td{vertical-align:top;}
+.dltable.dim td:first-child{white-space:nowrap;}
+.dltable .nao{color:#D98A6A;font-weight:600;white-space:nowrap;}
+@media(max-width:620px){
+  .dltable.dim,.dltable.dim tbody,.dltable.dim tr,.dltable.dim td{display:block;}
+  .dltable.dim thead{display:none;}
+  .dltable.dim tr{border:1px solid var(--line);border-radius:var(--r-md);background:var(--marinho-2);
+    padding:15px 17px;margin-bottom:10px;}
+  .dltable.dim td{border:0;padding:0;}
+  .dltable.dim td:first-child{white-space:normal;margin-bottom:6px;}
+  .dltable.dim td:first-child b{font-family:var(--display);font-size:15px;color:var(--dourado);}
+  .dltable.dim td:nth-child(2){margin-bottom:9px;}
+  .dltable.dim .nao{white-space:normal;}
+  .dltable.dim .nao::before{content:"Mas não é — ";color:var(--ink-3);font-weight:400;}
+}
+
+.words{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.wbox{border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;background:var(--marinho-2);}
+.wbox.yes{border-color:var(--line-gold);}
+.wbox.no{border-color:rgba(180,98,63,.40);}
+.wh{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:12px;}
+.wbox.yes .wh{color:var(--dourado);} .wbox.no .wh{color:#D98A6A;}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chips span{font-size:12.5px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--r-pill);
+  padding:6px 12px;line-height:1.3;}
+.wbox.no .chips span{color:var(--ink-3);text-decoration:line-through;text-decoration-color:rgba(217,138,106,.6);}
+@media(max-width:700px){.words{grid-template-columns:1fr;}}
+
+.quotes{display:flex;flex-direction:column;gap:12px;}
+.q{border-left:2px solid var(--dourado);border-radius:0 var(--r-md) var(--r-md) 0;background:rgba(203,161,82,.05);
+  padding:16px 20px;}
+.ql{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);margin-bottom:7px;}
+.q p{font-family:var(--display);font-weight:600;font-size:clamp(14.5px,1.9vw,17px);line-height:1.5;color:var(--ink);}
+
+.prat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
+.pbox{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--marinho-2);padding:18px 20px;}
+.pl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;
+  padding-bottom:8px;border-bottom:1px solid var(--line);}
+.pbox p{font-size:13.5px;line-height:1.62;color:var(--ink-2);}
+@media(max-width:860px){.prat{grid-template-columns:1fr;}}
+
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.vbox{border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;background:var(--marinho-2);}
+.vbox.bad{border-color:rgba(180,98,63,.40);}
+.vbox.good{border-color:var(--line-gold);}
+.vh{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:11px;}
+.vbox.bad .vh{color:#D98A6A;} .vbox.good .vh{color:var(--dourado);}
+.vbox p{font-size:13.5px;line-height:1.62;color:var(--ink-2);}
+.note-v{font-size:13.5px;color:var(--ink-3);margin-top:14px;line-height:1.6;}
+.note-v b{color:var(--ink-2);font-weight:600;}
+@media(max-width:700px){.vs{grid-template-columns:1fr;}}
+
+.check{list-style:none;counter-reset:ck;display:grid;gap:9px;}
+.check li{counter-increment:ck;position:relative;padding:13px 18px 13px 50px;font-size:13.5px;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:var(--r-md);background:var(--marinho-2);line-height:1.5;}
+.check li::before{content:counter(ck);position:absolute;left:16px;top:12px;width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  color:var(--dourado);border:1px solid var(--line-gold);}
+.check li b{color:var(--ink);font-weight:600;}
 </style>
 </head>
 <body>
 
 <div class="topbar"><div class="inner">
-  <span class="otalogo"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></span>
+  <a class="otalogo" href="index.html" aria-label="Voltar ao índice do documento de marca"><svg class="ota-lockup-h" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954.41 96.3"><defs><style>.cls-1{fill:#c4a363;}.cls-2{fill:#fff;}</style></defs><g id="Camada_1"><path class="cls-1" d="M433.68,54.91c4.79-11.9,11.61-21.12,20.45-27.65,8.84-6.53,19.16-9.8,30.95-9.8s22.34,3.27,31.09,9.8c8.75,6.54,15.52,15.75,20.31,27.65,4.73,11.75,7.11,25.55,7.17,41.4h20.17c-.07-18.71-3.42-35.29-10.07-49.72-6.73-14.59-15.99-26-27.78-34.23-11.79-8.23-25.43-12.35-40.9-12.35s-29.12,4.12-40.9,12.35c-11.79,8.23-21.05,19.65-27.78,34.23-6.65,14.43-10,31.01-10.07,49.72h20.17c.06-15.84,2.44-29.64,7.17-41.4Z"/><polygon class="cls-1" points="708.81 19.28 778.73 19.28 778.73 .21 617.6 .21 617.6 19.28 687.52 19.28 687.52 96.3 708.81 96.3 708.81 19.28"/><polygon class="cls-1" points="852.15 89.66 890.29 15.55 928.43 89.66 931.91 96.3 954.41 96.3 903.83 .21 878.13 .21 827.2 96.3 848.67 96.3 852.15 89.66"/><path class="cls-2" d="M19.68,73.25L0,25.25h5.69l17.35,43.07,17.62-43.07h5.35l-19.96,48h-6.38Z"/><path class="cls-2" d="M68.71,73.25V25.25h5.28v48h-5.28Z"/><path class="cls-2" d="M124.33,74c-3.47,0-6.72-.63-9.74-1.89-3.02-1.26-5.67-3.02-7.95-5.28-2.29-2.26-4.06-4.89-5.31-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.03-5.62,5.31-7.89,2.29-2.26,4.94-4.02,7.95-5.28,3.02-1.26,6.26-1.89,9.74-1.89,2.51,0,4.93.31,7.23.93,2.31.62,4.46,1.51,6.45,2.67,1.99,1.17,3.76,2.59,5.31,4.29l-3.5,3.7c-1.88-2.15-4.18-3.81-6.93-4.97-2.74-1.17-5.6-1.75-8.57-1.75-2.79,0-5.37.5-7.75,1.51-2.38,1.01-4.45,2.41-6.21,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.37,4.54,4.15,6.34,1.78,1.81,3.87,3.21,6.27,4.22,2.4,1.01,4.99,1.51,7.78,1.51,2.97,0,5.81-.58,8.5-1.75,2.7-1.17,4.96-2.78,6.79-4.83l3.43,3.57c-1.6,1.65-3.39,3.06-5.38,4.25-1.99,1.19-4.13,2.09-6.41,2.71-2.29.62-4.64.93-7.06.93Z"/><path class="cls-2" d="M182.27,73.25V29.98h-17.35v-4.73h39.98v4.73h-17.35v43.27h-5.28Z"/><path class="cls-2" d="M247.56,74c-3.48,0-6.71-.63-9.7-1.89-2.99-1.26-5.62-3.02-7.89-5.28-2.26-2.26-4.02-4.89-5.28-7.89-1.26-2.99-1.89-6.23-1.89-9.7s.63-6.71,1.89-9.7c1.26-2.99,3.02-5.62,5.28-7.89,2.26-2.26,4.89-4.02,7.89-5.28,2.99-1.26,6.23-1.89,9.7-1.89s6.64.63,9.63,1.89c2.99,1.26,5.62,3.02,7.89,5.28,2.26,2.26,4.02,4.89,5.28,7.89,1.26,2.99,1.89,6.23,1.89,9.7s-.63,6.71-1.89,9.7c-1.26,2.99-3.02,5.62-5.28,7.89-2.26,2.26-4.89,4.02-7.89,5.28-2.99,1.26-6.21,1.89-9.63,1.89ZM247.56,69.14c2.74,0,5.28-.5,7.61-1.51,2.33-1.01,4.38-2.41,6.14-4.22,1.76-1.81,3.13-3.92,4.11-6.34.98-2.42,1.47-5.03,1.47-7.82s-.49-5.45-1.47-7.85c-.98-2.4-2.36-4.5-4.11-6.31-1.76-1.81-3.81-3.21-6.14-4.22-2.33-1-4.87-1.51-7.61-1.51s-5.29.5-7.65,1.51c-2.36,1.01-4.41,2.41-6.17,4.22-1.76,1.81-3.13,3.91-4.11,6.31-.98,2.4-1.47,5.02-1.47,7.85s.49,5.4,1.47,7.82c.98,2.42,2.35,4.54,4.11,6.34,1.76,1.81,3.82,3.21,6.17,4.22,2.35,1.01,4.9,1.51,7.65,1.51Z"/><path class="cls-2" d="M297.69,73.25V25.25h20.57c3.15,0,5.9.57,8.23,1.71,2.33,1.14,4.15,2.74,5.45,4.8,1.3,2.06,1.95,4.48,1.95,7.27,0,3.15-.93,5.86-2.78,8.13-1.85,2.26-4.33,3.85-7.44,4.77l10.77,21.33h-5.83l-10.29-20.64h-15.36v20.64h-5.28ZM302.97,48.15h14.95c3.25,0,5.84-.82,7.78-2.47,1.94-1.65,2.91-3.86,2.91-6.65s-.97-4.94-2.91-6.58c-1.94-1.65-4.54-2.47-7.78-2.47h-14.95v18.17Z"/></g></svg></a>
   <span class="doc">Documento de Marca · <b>Chronos</b><br>Manual de Marca · Fisioterapia e Fitness</span>
 </div></div>
 
@@ -252,9 +352,37 @@ footer i{color:var(--dourado); font-style:normal;}
     </div>
   </header>
 
+  <nav class="toc" aria-label="Sumário do manual">
+    <span class="toc-lbl">Ir para</span>
+    <a href="#comece">Comece por aqui</a><a href="#marca">A marca</a><a href="#restricoes">Restrições</a><a href="#cor">Cor</a>
+    <a href="#tipografia">Tipografia</a><a href="#forma">Forma</a><a href="#componentes">Componentes</a>
+    <a href="#aplicacao">Aplicação</a><a href="#verbal">Identidade verbal</a><a href="#downloads">Downloads</a>
+  </nav>
+
+
+
+  <section id="comece" class="guia-sec">
+    <div class="kick"><span class="n">00</span> Comece por aqui</div>
+    <h2>O que você veio buscar</h2>
+    <p class="lead">Este manual é a referência de quem for produzir qualquer coisa na marca Chronos. Encontre seu caminho:</p>
+    <div class="guia">
+      <div class="gcard"><div class="gi">✎</div><h4>Designer</h4>
+        <p>Logotipo em vetor, versões e o que nunca fazer com ele. Paleta completa e tipografia.</p>
+        <div class="dlrow" style="justify-content:flex-start"><a class="dlmini" href="#marca">A marca</a><a class="dlmini" href="#restricoes">Restrições</a><a class="dlmini" href="#cor">Cor</a></div></div>
+      <div class="gcard"><div class="gi">&lt;/&gt;</div><h4>Programador</h4>
+        <p>Tokens prontos em CSS e JSON, escalas de forma, componentes e as regras de contraste.</p>
+        <div class="dlrow" style="justify-content:flex-start"><a class="dlmini" href="assets/marca/cor/tokens.css" download>tokens.css</a><a class="dlmini" href="#acessibilidade">Contraste</a><a class="dlmini" href="#componentes">Componentes</a></div></div>
+      <div class="gcard"><div class="gi">⎙</div><h4>Fornecedor / gráfica</h4>
+        <p>Cores em CMYK e Pantone, arquivos vetoriais para impressão e área de proteção do logo.</p>
+        <div class="dlrow" style="justify-content:flex-start"><a class="dlmini" href="assets/marca/cor/chronos-cartela-cores.pdf" download>Cartela PDF</a><a class="dlmini" href="#downloads">Arquivos</a></div></div>
+      <div class="gcard"><div class="gi">✍︎</div><h4>Quem escreve</h4>
+        <p>Tom de voz, palavras que usamos e evitamos, e exemplos prontos de post, bio e atendimento.</p>
+        <div class="dlrow" style="justify-content:flex-start"><a class="dlmini" href="#verbal">Identidade verbal</a></div></div>
+    </div>
+  </section>
 
   <!-- A MARCA -->
-  <section>
+  <section id="marca">
     <div class="kick"><span class="n">01</span> A marca</div>
     <h2>O logotipo</h2>
     <p class="lead">O logotipo é composto por <b>dois elementos</b>: o <b>símbolo</b> — um mostrador de cronômetro que forma um "C", com a figura em movimento e a coluna — e o <b>logotipo</b> (CHRONOS + descritor). Eles se combinam em <b>duas orientações</b>: vertical e horizontal.</p>
@@ -618,23 +746,23 @@ footer i{color:var(--dourado); font-style:normal;}
   </section>
 
   <!-- USOS PROIBIDOS -->
-  <section>
+  <section id="restricoes">
     <div class="kick"><span class="n">02</span> Restrições</div>
     <h2>O que não fazer</h2>
     <p class="lead">A marca só se mantém reconhecível se for aplicada como foi desenhada. Estas seis restrições são <b>absolutas</b>.</p>
     <div class="dontgrid">
-      <div class="dont"><div class="x">✕</div><h4>Não esticar</h4><p>Nunca distorcer, comprimir ou alterar a proporção original.</p></div>
-      <div class="dont"><div class="x">✕</div><h4>Não trocar a ordem</h4><p>Símbolo e logotipo têm posição fixa em cada lockup.</p></div>
-      <div class="dont"><div class="x">✕</div><h4>Não trocar a fonte</h4><p>O logotipo é desenho fechado — não é texto digitado.</p></div>
-      <div class="dont"><div class="x">✕</div><h4>Não usar cor fora da paleta</h4><p>Apenas as cores oficiais desta página são permitidas.</p></div>
-      <div class="dont"><div class="x">✕</div><h4>Não desproporcionar</h4><p>Manter a relação de escala entre símbolo e logotipo.</p></div>
-      <div class="dont"><div class="x">✕</div><h4>Não invadir o espaço livre</h4><p>Respeitar a margem definida pela altura do "C".</p></div>
+      <div class="dont"><div class="x" aria-hidden="true">✕</div><h4>Não esticar</h4><p>Nunca distorcer, comprimir ou alterar a proporção original.</p></div>
+      <div class="dont"><div class="x" aria-hidden="true">✕</div><h4>Não trocar a ordem</h4><p>Símbolo e logotipo têm posição fixa em cada lockup.</p></div>
+      <div class="dont"><div class="x" aria-hidden="true">✕</div><h4>Não trocar a fonte</h4><p>O logotipo é desenho fechado — não é texto digitado.</p></div>
+      <div class="dont"><div class="x" aria-hidden="true">✕</div><h4>Não usar cor fora da paleta</h4><p>Apenas as cores oficiais desta página são permitidas.</p></div>
+      <div class="dont"><div class="x" aria-hidden="true">✕</div><h4>Não desproporcionar</h4><p>Manter a relação de escala entre símbolo e logotipo.</p></div>
+      <div class="dont"><div class="x" aria-hidden="true">✕</div><h4>Não invadir o espaço livre</h4><p>Respeitar a margem definida pela altura do "C".</p></div>
     </div>
   </section>
 
 
   <!-- COR -->
-  <section>
+  <section id="cor">
     <div class="kick"><span class="n">03</span> Cor</div>
     <h2>As 12 cores oficiais</h2>
     <p class="lead">O <b>marinho</b> estrutura, o <b>vital</b> é o azul da marca no símbolo, o <b>dourado</b> revela e a <b>areia</b> acolhe. Toda cor vem com <b>HEX, CMYK e Pantone</b> — digital e impressão saem iguais.</p>
@@ -658,7 +786,7 @@ footer i{color:var(--dourado); font-style:normal;}
 
 
   <!-- ACESSIBILIDADE -->
-  <section>
+  <section id="acessibilidade">
     <div class="kick"><span class="n">03A</span> Acessibilidade cromática</div>
     <h2>Todas as cores ficam. Nem toda combinação entra.</h2>
     <p class="lead">A paleta permanece integral. O controle acontece por <b>função de uso</b>: texto corrente exige contraste mínimo <b>4,5:1</b>; texto grande e elementos gráficos essenciais exigem <b>3:1</b>. Abaixo estão as combinações aprovadas para texto normal.</p>
@@ -677,7 +805,7 @@ footer i{color:var(--dourado); font-style:normal;}
   </section>
 
   <!-- TIPOGRAFIA -->
-  <section>
+  <section id="tipografia">
     <div class="kick"><span class="n">04</span> Tipografia</div>
     <h2>Quatro famílias, papéis distintos</h2>
     <p class="lead">A <b>Zalando Sans Expanded</b> comanda os títulos e é a base do logotipo. A <b>Sport Break</b> entra no display esportivo. A <b>Manrope</b> carrega o texto. A <b>Caveat</b> é a fonte de afeto — uso pontual, para o toque humano.</p>
@@ -700,7 +828,7 @@ footer i{color:var(--dourado); font-style:normal;}
 
 
   <!-- FORMA -->
-  <section>
+  <section id="forma">
     <div class="kick"><span class="n">05</span> Forma</div>
     <h2>Espaço, raio e elevação</h2>
     <p class="lead">Ritmo em escala de <b>8</b>, cantos <b>suaves</b> e sombras discretas — coerentes com o ar acolhedor da marca.</p>
@@ -725,7 +853,7 @@ footer i{color:var(--dourado); font-style:normal;}
   </section>
 
   <!-- COMPONENTES -->
-  <section>
+  <section id="componentes">
     <div class="kick"><span class="n">06</span> Componentes</div>
     <h2>Peças base</h2>
     <p class="lead">Os blocos recorrentes, já vestidos no sistema.</p>
@@ -740,7 +868,7 @@ footer i{color:var(--dourado); font-style:normal;}
   </section>
 
   <!-- APLICAÇÃO -->
-  <section>
+  <section id="aplicacao">
     <div class="kick"><span class="n">07</span> Aplicação</div>
     <h2>Escuro e claro — e o toque de afeto</h2>
     <p class="lead">A paleta é dupla: <b>marinho profundo</b> (premium, noturno) e <b>areia</b> (leve, arejado — nosso único claro). A manuscrita entra em momentos pontuais, como uma assinatura.</p>
@@ -762,9 +890,78 @@ footer i{color:var(--dourado); font-style:normal;}
     </div>
   </section>
 
+
+  <!-- IDENTIDADE VERBAL -->
+  <section id="verbal">
+    <div class="kick"><span class="n">08</span> Identidade verbal</div>
+    <h2>Como a Chronos fala</h2>
+    <p class="lead">A marca não é só o que se vê. Se a Chronos fosse uma pessoa, seria <b>a profissional experiente que te recebe pelo nome, explica com calma e te faz sentir em boas mãos</b>. Seis traços definem esse jeito de ser.</p>
+
+    <div class="traits">
+      <div class="tr"><b>Acolhedora</b><span>Recebe, escuta e tranquiliza antes de qualquer coisa.</span></div>
+      <div class="tr"><b>Especialista</b><span>Sabe do que fala e orienta com clareza — sem intimidar.</span></div>
+      <div class="tr"><b>Serena &amp; confiável</b><span>Passa segurança sem alarde, sem pressa, sem hype.</span></div>
+      <div class="tr"><b>Elegante</b><span>Cuidada nos detalhes e nas palavras, sem exageros.</span></div>
+      <div class="tr"><b>Próxima</b><span>Fala com você, pelo nome — nunca massificada ou fria.</span></div>
+      <div class="tr"><b>Inspiradora na medida</b><span>Motiva pelo cuidado real, nunca por promessa de milagre.</span></div>
+    </div>
+
+    <h3 class="sub3">O equilíbrio do tom</h3>
+    <p class="lead">Todo bom tom vive de equilíbrios — o que a marca <b>é</b>, sem cair no que ela <b>não é</b>.</p>
+    <div class="scrollx"><table class="dltable dim">
+      <thead><tr><th>É</th><th>Como se traduz</th><th>Mas não é</th></tr></thead>
+      <tbody>
+        <tr><td><b>Acolhedora</b></td><td>Calor humano com a firmeza de quem entende. Recebe bem, mas fala com propriedade.</td><td class="nao">Meiga demais</td></tr>
+        <tr><td><b>Especialista</b></td><td>Traduz o técnico em linguagem simples. Ensina sem fazer ninguém se sentir pequeno.</td><td class="nao">Arrogante</td></tr>
+        <tr><td><b>Clara</b></td><td>Objetiva e organizada, sempre com humanidade. Direta, nunca robótica.</td><td class="nao">Fria</td></tr>
+        <tr><td><b>Inspiradora</b></td><td>Convida ao cuidado com verdade. Sem "transformação relâmpago" nem promessa impossível.</td><td class="nao">Exagerada</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub3">As palavras</h3>
+    <div class="words">
+      <div class="wbox yes"><div class="wh">✓ Falamos assim</div>
+        <div class="chips"><span>cuidar</span><span>treinar bem</span><span>movimento</span><span>resultado real</span><span>no seu ritmo</span><span>no seu objetivo</span><span>seguro</span><span>acolhedor</span><span>todas as idades</span><span>acompanhamento</span><span>bem-estar</span><span>com você</span></div></div>
+      <div class="wbox no"><div class="wh">✕ Evitamos</div>
+        <div class="chips"><span>malhar / bombar</span><span>sarar</span><span>no pain no gain</span><span>milagre</span><span>corpo dos sonhos</span><span>transformação relâmpago</span><span>secar</span><span>projeto verão</span><span>pressa</span><span>jargão sem tradução</span></div></div>
+    </div>
+
+    <h3 class="sub3">Frases oficiais</h3>
+    <p class="lead">Estas frases são da marca — use como estão, sem reescrever.</p>
+    <div class="quotes">
+      <div class="q"><div class="ql">Trueline</div><p>"Da avaliação à constância, você é acompanhado por quem entende o corpo por inteiro."</p></div>
+      <div class="q"><div class="ql">Assinatura</div><p>"Dois olhares, um só cuidado."</p></div>
+      <div class="q"><div class="ql">Posicionamento</div><p>"Para quem precisa começar, retomar ou continuar treinando com segurança, a Chronos é a academia com acompanhamento integrado que une fisioterapia e educação física para conduzir cada pessoa da avaliação à constância, no seu objetivo e no seu ritmo."</p></div>
+    </div>
+
+    <h3 class="sub3">A voz na prática</h3>
+    <div class="prat">
+      <div class="pbox"><div class="pl">Bio de Instagram</div><p>Chronos · movimento com quem entende de corpo<br>Fisioterapia + Educação Física · Bela Vista do Paraíso/PR<br>Cuidar de você, no seu ritmo — para viver mais e melhor.</p></div>
+      <div class="pbox"><div class="pl">Legenda de post</div><p>Sentir o corpo cobrar o tempo é normal — travar por causa disso, não precisa ser.<br><br>Na Chronos, fisioterapia e educação física caminham juntas para que você se movimente com segurança e no seu ritmo. Sem pressa. Sem treino no escuro.<br><br>Aqui, cuidar de você é o plano.</p></div>
+      <div class="pbox"><div class="pl">Chamada / headline</div><p>"Cuidar do corpo pode ser leve. E, acima de tudo, seguro."</p></div>
+    </div>
+
+    <h3 class="sub3">Primeiro contato no WhatsApp</h3>
+    <div class="vs">
+      <div class="vbox bad"><div class="vh">✕ Genérico — não é Chronos</div><p>"Temos planos a partir de R$X! Matrícula grátis essa semana. Vem treinar com a gente! 💪🔥"</p></div>
+      <div class="vbox good"><div class="vh">✓ Chronos</div><p>"Oi, [nome]! Que bom te ver por aqui 💛<br><br>Antes de falar de plano, me conta um pouco: o que te fez pensar em começar agora? Assim a gente entende como cuidar de você da melhor forma — no seu tempo e com segurança."</p></div>
+    </div>
+    <p class="note-v">A diferença: <b>acolhe primeiro, entende a pessoa, e só então orienta</b> — cuidado antes de venda.</p>
+
+    <h3 class="sub3">Antes de publicar</h3>
+    <p class="lead">Cinco perguntas para validar qualquer texto na marca:</p>
+    <ol class="check">
+      <li>Isso <b>acolhe antes de vender</b>?</li>
+      <li>Tem alguma <b>promessa de prazo ou milagre</b>?</li>
+      <li>Tem <b>jargão técnico sem tradução</b>?</li>
+      <li>Fala <b>com a pessoa</b> — ou fala para uma massa?</li>
+      <li>Está <b>sem erro de digitação</b>? (o valor "ordem e zelo" também vale para o texto)</li>
+    </ol>
+  </section>
+
   <!-- DOWNLOADS -->
   <section id="downloads">
-    <div class="kick"><span class="n">08</span> Arquivos</div>
+    <div class="kick"><span class="n">09</span> Arquivos</div>
     <h2>Central de downloads</h2>
     <p class="lead">Todo o material oficial da marca em um lugar. <b>SVG</b> para qualquer escala e impressão; <b>PNG</b> transparente para uso rápido; <b>PDF</b> para a gráfica.</p>
     <div class="scrollx">
