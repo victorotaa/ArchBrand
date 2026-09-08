@@ -1,0 +1,30 @@
+/* Chronos — design tokens
+ * Documento de Marca · gerado a partir do manual oficial
+ */
+
+:root{
+  /* ——— cor ——— */
+  --chronos-rei: #07101C;  /* CMYK 100, 85, 55, 80 · Pantone 7547 C — Fundo profundo, containers */
+  --chronos-marinho: #0F1F39;  /* CMYK 75, 45, 0, 80 · Pantone 539 C — Base predominante da marca */
+  --chronos-marinho-2: #1A2C4E;  /* CMYK 65, 45, 0, 70 · Pantone 534 C — Superfícies e cartões */
+  --chronos-vital: #2E57D1;  /* CMYK 85, 65, 0, 0 · Pantone 2174 C — Azul da marca — símbolo */
+  --chronos-vital-claro: #2980F2;  /* CMYK 80, 50, 0, 0 · Pantone 2173 C — Realce e estados ativos */
+  --chronos-ceu: #3E78B2;  /* CMYK 65, 35, 0, 30 · Pantone 646 C — Azul de apoio, links */
+  --chronos-gradiente: #8B97AF;  /* CMYK 50, 35, 20, 5 · Pantone 7529 C — Transições e degradês */
+  --chronos-neutro: #8A97AC;  /* CMYK 20, 10, 0, 35 · Pantone 7543 C — Texto terciário, bordas */
+  --chronos-areia: #D9CBB3;  /* CMYK 0, 5, 20, 15 · Pantone 468 C — Claro quente — papel */
+  --chronos-neve: #EEF0F1;  /* CMYK 9, 5, 6, 0 · Pantone Cool Gray 1 C — Claro frio — fundo claro */
+  --chronos-dourado: #CBA152;  /* CMYK 0, 20, 60, 20 · Pantone 7407 C — Acento nobre */
+  --chronos-terracota: #B4623F;  /* CMYK 0, 45, 65, 30 · Pantone 7522 C — Acento quente */
+
+  /* ——— tipografia ——— */
+  --chronos-display: 'Zalando Sans Expanded', sans-serif;
+  --chronos-display-sport: 'Sport Break', 'Zalando Sans Expanded', sans-serif;
+  --chronos-body: 'Manrope', sans-serif;
+  --chronos-afeto: 'Caveat', cursive;
+
+  /* ——— forma ——— */
+  --chronos-r-sm: 6px;  --chronos-r-md: 10px;
+  --chronos-r-lg: 16px; --chronos-r-xl: 22px; --chronos-r-pill: 100px;
+  --chronos-ease: cubic-bezier(.22,1,.36,1);
+}
