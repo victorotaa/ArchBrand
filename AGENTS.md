@@ -1,6 +1,13 @@
 # AGENTS.md — ArchBrand (Codex + Claude Code)
 
-Repositório de branding de **Victor Ota** (método autoral ArchBrand). Entregáveis de cliente em `<cliente>/` (ex.: `chronos/`), HTML single-file autocontido. Deploy estático: **Vercel** (produção e previews de PR, a partir do `main`) — decisão do Victor; Netlify foi descartado. Doutrina de marca: skill **`branding-victor-ota`** em `.claude/skills/`.
+Repositório de branding de **Victor Ota** (método autoral ArchBrand). Entregáveis de cliente em `<cliente>/` (ex.: `chronos/`), HTML single-file autocontido. Doutrina de marca: skill **`branding-victor-ota`** em `.claude/skills/`.
+
+## Publicação
+
+- **GitHub Pages publica a URL oficial**, a partir do `main`: `https://victorotaa.github.io/ArchBrand/<cliente>/`. É o endereço que vai para clientes, designers, programadores e fornecedores — repositório público, sem login. O `.nojekyll` na raiz é requisito: sem ele o Jekyll processa o site.
+- **Vercel serve as previews de PR.** A produção dela está atrás de *Deployment Protection* (`302 → vercel.com/sso-api`), então **não** funciona como link público — só abre para quem tem login no time. O `vercel.json` mantém o redirect da raiz para o cliente vigente, caso a proteção seja desligada um dia.
+- **Netlify: descartado.**
+- **A raiz redireciona.** `index.html` na raiz leva ao cliente vigente (hoje `chronos/`), com link visível de fallback. O instrumento de briefing por arquétipos vive em **`briefing.html`**.
 
 > **Exceção de autocontenção — páginas com download.** Um manual de marca precisa servir arquivos reais (SVG, PNG, PDF, ZIP). Nesses casos a página continua **autocontida para renderizar** (pré-visualizações embutidas inline, abre e funciona offline) e os arquivos ficam em `<cliente>/assets/`, existindo apenas para download. Ver `chronos/manual.html`.
 
